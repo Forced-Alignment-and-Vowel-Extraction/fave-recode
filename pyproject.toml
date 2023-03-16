@@ -9,6 +9,7 @@ packages = [{include = "fave_recode"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+aligned-textgrid = "^0.2.1"
 
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.0.0"
