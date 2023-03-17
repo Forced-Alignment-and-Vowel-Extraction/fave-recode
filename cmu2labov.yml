@@ -1,0 +1,15 @@
+- rule: "schwa"
+  conditions:
+    - attribute: "label"
+      relation: "in"
+      set: ["AH0"]
+  return: "@"
+- rule: "iyf"
+  conditions: 
+    - attribute: "label"
+      relation: "in"
+      set: ["EY0", "EY1", "EY2"]
+    - attribute: "fol.label"
+      relation: "=="
+      set: "#"
+  return: "eyF"
