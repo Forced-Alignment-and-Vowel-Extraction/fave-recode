@@ -1,5 +1,20 @@
 from aligned_textgrid.aligned_textgrid import AlignedTextGrid
 from aligned_textgrid.sequences.word_and_phone import Word, Phone
+import functools
+
+# https://stackoverflow.com/questions/31174295/getattr-and-setattr-on-nested-subobjects-chained-properties
+def rgetattr(obj, 
+             attr : str, 
+             *args):
+    """_summary_
+
+    Args:
+        obj (_type_): _description_
+        attr (_type_): attribute path attr.attr.attr
+    """
+    def _getattr(obj, attr: str):
+        return getattr(obj, attr, *args)
+    return functools.reduce(_getattr, [obj] + attr.split('.'))
 
 
 def cmu2plotnik(phone):
