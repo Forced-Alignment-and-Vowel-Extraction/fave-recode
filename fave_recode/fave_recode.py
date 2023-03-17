@@ -3,61 +3,81 @@ from aligned_textgrid.sequences.word_and_phone import Word, Phone
 
 
 def cmu2plotnik(phone):
-    VOWELS =['AA0', 'AA1', 'AA2',
-             'AE0', 'AE1', 'AE2',
-             'AH0', 'AH1', 'AH2', 
-             'AO0', 'AO1', 'AO2', 
-             'AW0', 'AW1', 'AW2', 
-             'AY0', 'AY1', 'AY2', 
-             'EH0', 'EH1', 'EH2', 
-             'ER0', 'ER1', 'ER2', 
-             'EY0', 'EY1', 'EY2', 
-             'IH0', 'IH1', 'IH2', 
-             'IY0', 'IY1', 'IY2', 
-             'OW0', 'OW1', 'OW2', 
-             'OY0', 'OY1', 'OY2', 
-             'UH0', 'UH1', 'UH2', 
-             'UW0', 'UW1', 'UW2']
-    
-    CONSONANTS = ['B', 'CH', 'D', 
-                  'DH', 'F', 'G', 
-                  'HH', 'JH', 'K', 
-                  'L', 'M', 'N', 'NG', 
-                  'P', 'R', 'S', 
-                  'SH', 'T', 'TH', 
-                  'V', 'W', 'Y', 
-                  'Z', 'ZH']
-    ALL_PHONE = VOWELS + CONSONANTS + ["#"]
-    
-    DEFAULT = {
-    'AA': 'o', 
-    'AE': 'ae', 
-    'AH': 'uh', 
-    'AO': 'oh', 
-    'AW': 'aw', 
-    'AY': 'ay', 
-    'EH': 'e', 
-    'ER': '*hr', 
-    'EY': 'ey', 
-    'IH': 'i', 
-    'IY': 'iy', 
-    'OW': 'ow', 
-    'OY': 'oy', 
-    'UH': 'u', 
-    'UW': 'uw'
-    }
-    
-    if phone.label not in VOWELS:
-        return phone.label
     if phone.label == "AH0":
         return "@" 
-    if (phone.fol.label not in ALL_PHONE) or (phone.prev.label not in ALL_PHONE):
-        return DEFAULT[phone.label[0:-1]]
-    if phone.label in ["IY0", "IY1", "IY2"] and phone.fol.label == "#":
+    if phone.label in ["IY0", "IY1", "IY2"] and \
+       phone.fol.label == "#":
         return "iyF"
-    if phone.label in ["EY0", "EY1", "EY2"] and phone.fol.label == "#":
+    if phone.label in ["EY0", "EY1", "EY2"] and \
+       phone.fol.label == "#":
         return "eyF"
-    if phone.label in ["OW0", "OW1", "OW2"] and phone.fol.label == "#":
+    if phone.label in ["OW0", "OW1", "OW2"] and \
+       phone.fol.label == "#":
         return "owF"
-    if phone.label in ["AY0", "AY1", "AY2"] and phone.fol.label in ['CH', 'F', 'HH', 'K',  'P', 'S', 'SH', 'T', 'TH']:
+    if phone.label in ["AY0", "AY1", "AY2"] and \
+       phone.fol.label in ['CH', 'F', 'HH', 'K',  'P', 'S', 'SH', 'T', 'TH']:
         return "ay0"
+    if phone.label in ["AA0", "AA1", "AA2"] and \
+       phone.inword.label.lower() in ['father', 'father', "father's",
+                                'ma', "ma's", 'pa', "pa's", 'spa',
+                                'spas', "spa's", 'chicago', 
+                                "chicago's", 'pasta', 'bra', 'bras',
+                                "bra's", 'utah', 'taco', 'tacos',
+                                "taco's", 'grandfather', 'grandfathers',
+                                "grandfather's", 'calm', 'calmer', 
+                                'calmest', 'calming', 'calmed', 'calms',
+                                'palm', 'palms', 'balm', 'balms', 'almond',
+                                'almonds', 'lager', 'salami', 'nirvana',
+                                'karate', 'ah']:
+        return "ah"
+    if phone.label in ["UW0", "UW1", "UW2"] and \
+       phone.prev.label in ["AXR", "D", "DX",
+                            "EL", "EN", "L", "N",
+                            "R", "S", "T", "Z"]:
+        return "Tuw"
+    if phone.label in ["IH0", "IH1", "IH2", "IY0", "IY1", "IY2"] and\
+       phone.fol.label in ["AXR", "R"]:
+        return "iyr"
+    if phone.label in ["EY0", "EY1", "EY2"] and\
+       phone.fol.label in ["AXR", "R"]:
+        return "eyr"
+    if phone.label in ["AA0", "AA1", "AA2"] and \
+       phone.fol.label in ["AXR", "R"]:
+        return "ahr"
+    if phone.label in ["AO0", "AO1", "AO2", "OW0", "OW1", "OW2"] and \
+       phone.fol.label in ["AXR", "R"]:
+        return "owr"    
+    if phone.label in ["UH0", "UH1", "UH2", "UW0", "UW1", "UW2"] and \
+       phone.fol.label in ["AXR", "R"]:
+        return "uwr"
+    if phone.label in ['AA0', "AA1", "AA2"]: 
+        return 'o'
+    if phone.label in ['AE0', "AE1", "AE2"]: 
+        return 'ae'
+    if phone.label in ['AH1', "AH2"]: 
+        return 'uh'
+    if phone.label in ['AO0', "AO1", "AO2"]: 
+        return 'oh'
+    if phone.label in ['AW0', "AW1", "AW2"]: 
+        return 'aw'
+    if phone.label in ['AY0', "AW1", "AW2"]: 
+        return 'ay'
+    if phone.label in ["EH0", "EH1", "EH2"]:
+        return "e"    
+    if phone.label in ["ER0", "Er1", "ER2"]:
+        return "*hr"
+    if phone.label in ['EY0', "EY1", "EY2"]: 
+        return 'ey' 
+    if phone.label in ["IH0", "IH1", "IH2"]:
+        return "i"
+    if phone.label in ["IY0", "IY1", "IY2"]:
+        return "iy"
+    if phone.label in ['OW0', "OW1", "OW2"]: 
+        return 'ow'
+    if phone.label in ["OY0", "OY1", "OY2"]:
+        return "oy"
+    if phone.label in ["UH0", "UH1", "UH2"]:
+        return "u"
+    if phone.label in ["UW0", "UW1", "UW2"]:
+        return "uw"
+    return phone.label
