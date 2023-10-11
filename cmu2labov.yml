@@ -4,7 +4,7 @@
       relation: "in"
       set: ["AH0"]
   return: "@"
-- rule: "iyf"
+- rule: "eyf"
   conditions: 
     - attribute: "label"
       relation: "in"
