@@ -1,5 +1,6 @@
 from aligned_textgrid.aligned_textgrid import AlignedTextGrid
 from aligned_textgrid.sequences.word_and_phone import Word, Phone
+from fave_recode.ruleschema import rule_validator, condition_validator
 import functools
 import yaml
 
@@ -7,15 +8,50 @@ import yaml
 def rgetattr(obj, 
              attr : str, 
              *args):
-    """_summary_
+    """_gets object attribute from string_
 
     Args:
-        obj (_type_): _description_
-        attr (_type_): attribute path attr.attr.attr
+        obj (_type_): _object_
+        attr (_str_): attribute path attr.attr.attr
     """
     def _getattr(obj, attr: str):
         return getattr(obj, attr, *args)
     return functools.reduce(_getattr, [obj] + attr.split('.'))
+
+def validate_rules(rule: dict):
+    if not rule_validator(rule):
+        errors = rule_validator.errors
+        raise Exception("Problem with rule")
+
+def validate_conditions(condition: dict):
+    if not condition_validator(condition):
+        errors = condition_validator.errors
+        raise Exception("Problem with condition")
+
+
+def read_ruleset(path: str):
+    """_Read in yaml rule set_
+
+    Args:
+        path (str): _path to ruleset_
+
+    Raises:
+        Exception: _ruleset errors_
+    """
+    with(open(path)) as f:
+        ruleset = yaml.safe_load(f)
+
+    # Check it's a list
+    if type(ruleset) is not list:
+        raise Exception(f"Rulest in {path} is not formatted correctly. \
+                        Make sure it is a list.")
+
+    [validate_rules(rule) for rule in ruleset]
+    [validate_conditions(condition) for rule in ruleset 
+        for condition in rule["conditions"]]
+    
+    return(ruleset)
+
 
 
 def cmu2plotnik(phone):
