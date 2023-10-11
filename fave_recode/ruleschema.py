@@ -9,7 +9,7 @@ def attribute_check(field, value, error):
         'label',
         'super_instance',
         'inword',
-        'subset_list'
+        'sub_labels'
     ]
     value_components = value.split(".")
     value_valid = [x in aligned_textgrid_properities for x in value_components]
@@ -36,8 +36,11 @@ condition_schema = {
     'relation': {
         'type': 'string',
         'allowed': [
-            "==",
             "in",
+            "not in",
+            "contains",
+            "excludes",
+            "==",
             "!="
         ]
     },
