@@ -1,3 +1,216 @@
+- rule: word-rule-e
+  conditions:
+    - attribute: label
+      relation: rematches
+      set: "[AEIOU]"
+    - attribute: inword.label
+      relation: in
+      set:
+        - KEPT
+        - CATCH
+  return: e
+
+- rule: a-foreign-a
+  conditions:
+    - attribute: label
+      relation: ==
+      set: AE1
+    - attribute: inword.label
+      relation: contains
+      set: LANZA
+  return: o
+
+# foriegn A-ae
+- rule: a-foreign-ae
+  conditions:
+    - attribute: label
+      relation: ==
+      set: AA1
+    - attribute: inword.label
+      relation: contains
+      set: MARIO
+  return: ae
+
+# marry class
+- rule: marry
+  conditions:
+    - attribute: label
+      relation: contains
+      set: EH
+    - attribute: inword.label
+      relation: rematches
+      set: "ARRY$"
+  return: ae
+
+# tense lexical exceptions
+- rule: aeh-lex
+  conditions:
+    - attribute: label
+      relation: ==
+      set: AE1
+    - attribute: inword.label
+      relation: rematches
+      set: "(MAD|BAD|GLAD)(LY|DER|DEST|NESS)?$"
+  return: aeh
+
+# lax lexical exceptions
+- rule: ae-lex
+  conditions:
+    - attribute: label
+      relation: ==
+      set: AE1
+    - attribute: inword.label
+      relation: in
+      set: 
+        - RAN
+        - SWAM
+        - BEGAN
+        - CAN
+        - FAMILY
+        - FAMILIES
+        - FAMILY'S
+        - JANUARY
+        - ANNUAL
+        - ANNE
+        - ANNE'S
+        - ANNIE
+        - ANNIE'S
+        - JOANNE
+        - GAS
+        - GASES
+        - EXAM
+        - EXAMS
+        - EXAM'S
+        - ALAS
+        - ASPIRIN
+        - CATHOLIC
+        - CATHOLICS
+        - CAMERA 
+        - AN'
+        - AM
+        - THAN
+        - MATH
+        - EXAM             
+  return: aeBR
+
+# SKV words
+- rule: ae-skv
+  conditions:
+    - attribute: label
+      relation: ==
+      set: AE1
+    - attribute: fol.label
+      relation: ==
+      set: S
+    - attribute: fol.fol.label
+      relation: in
+      set: 
+        - P
+        - T
+        - K
+    - attribute: fol.fol.fol.label
+      relation: rematches
+      set: "[AEIUO]"
+    - attribute: inword.label
+      relation: reunmatches
+      set: "ING?$"
+  return: aeBR
+
+# ae followed by trigger followed by end of word
+- rule: aeh-c-endword
+  conditions:
+    - attribute: label
+      relation: ==
+      set: AE1
+    - attribute: fol.label
+      relation: in
+      set:
+        - M
+        - N
+        - S
+        - TH
+        - F
+    - attribute: fol.fol.label
+      relation: ==
+      set: "#"
+  return: aeh
+
+# ae followed by trigger followed by consonant
+- rule: aeh-c-X
+  conditions:
+    - attribute: label
+      relation: ==
+      set: AE1
+    - attribute: fol.label
+      relation: in
+      set:
+        - M
+        - N
+        - S
+        - TH
+        - F
+    - attribute: fol.fol.label
+      relation: in
+      set:
+        - B
+        - CH
+        - D
+        - DH
+        - F
+        - G
+        - HH
+        - JH
+        - K
+        - L
+        - M
+        - N
+        - NG
+        - P
+        - R
+        - S
+        - SH
+        - T
+        - TH
+        - V
+        - W
+        - Z
+        - ZH
+  return: aeh
+
+# ae followed by trigger and inflection
+- rule: aeh-ing-or-es
+  conditions: 
+    - attribute: label
+      relation: ==
+      set: AE1
+    - attribute: fol.label
+      relation: in
+      set:
+        - M
+        - N
+        - S
+        - TH
+        - F
+    - attribute: fol.fol.label
+      relation: in
+      set:
+        - IH0
+        - AH0
+    - attribute: fol.fol.fol.label
+      relation: in
+      set:
+        - N
+        - NG
+        - Z
+    - attribute: fol.fol.fol.fol.label
+      relation: ==
+      set: "#"
+    - attribute: inword.label
+      relation: rematches
+      set: "(ING?|ES)$"      
+  return: "aeh"
+
+
 - rule: schwa
   conditions:
     - attribute: label
