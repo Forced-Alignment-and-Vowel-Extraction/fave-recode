@@ -41,7 +41,9 @@ condition_schema = {
             "contains",
             "excludes",
             "==",
-            "!="
+            "!=",
+            "rematches",
+            "reunmatches"
         ]
     },
     'set': {
