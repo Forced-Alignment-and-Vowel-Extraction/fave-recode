@@ -52,6 +52,39 @@ def read_ruleset(path: str):
     
     return(ruleset)
 
+def check_condition(phone, condition):
+    r = relation[condition["relation"]]
+    lhs = rgetattr(phone, condition["attribute"])
+    rhs = condition["set"]
+
+    return(r(lhs, rhs))
+
+def check_all_conditions(phone, conditions):
+    
+    all_conditions = [check_condition(phone, c) for c in conditions]
+    return(all(all_conditions))
+
+def apply_rule(phone, rule):
+
+    if check_all_conditions(phone, rule['conditions']):
+        phone.label = rule['return']
+        return(True)
+
+def apply_ruleset(phone, ruleset):
+
+    for rule in ruleset:
+        application = apply_rule(phone, rule)
+        if application:
+            break
+
+def map_ruleset(phone_tier, ruleset):
+
+    for phone in phone_tier:
+        apply_ruleset(phone, ruleset)
+    
+        
+
+
 
 
 def cmu2plotnik(phone):
