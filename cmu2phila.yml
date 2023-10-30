@@ -254,7 +254,7 @@
         - AUDIENCE
         - AUDIENCES
         - AUDIENCE'
-        - ON
+        - 'ON'
         - ONTO
         - GONNA
         - GONE
@@ -272,6 +272,7 @@
         - COUGHS
         - COUGHED
         - COUGHING
+  return: oh
 
 # o-fix
 - rule: o-fix
