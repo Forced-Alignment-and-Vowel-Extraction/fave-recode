@@ -2,6 +2,7 @@ from aligned_textgrid.sequences.sequences import SequenceInterval
 from aligned_textgrid.sequences.tiers import SequenceTier
 from fave_recode.ruleschema import rule_validator, condition_validator
 from fave_recode.relations import relation_dict
+from collections.abc import Callable
 import functools
 import yaml
 
@@ -28,6 +29,7 @@ class Condition:
     Attributes:
         attribute (str): The attribute path for a `SequenceInterval`
         relation (Callable): The relation function to be used
+        set (Union[str, list]): The comparison set 
     """
     def __init__(self, 
                  condition: dict):
@@ -41,6 +43,14 @@ class Condition:
         return f"runs: {self.relation.__name__}(obj.{self.attribute}, {self.set})"
     
     def validate_condition(self, condition: dict):
+        """Validate wellformedness of condititions
+
+        Args:
+            condition (dict): condition dictionary
+
+        Raises:
+            Exception: Any errors raised by the validator
+        """
         if not condition_validator(condition):
             errors = condition_validator.errors
             raise Exception(repr(errors))
@@ -48,11 +58,27 @@ class Condition:
     def check_condition(
             self,
             obj:SequenceInterval
-    ):
+    )->bool:
+        """_Check if the condition is met_
+
+        Args:
+            obj (SequenceInterval): The sequence interval
+              against which the condition is checked
+
+        Returns:
+            (bool): True or False
+        """
         lhs = rgetattr(obj, self.attribute)
         return self.relation(lhs, self.set)
     
 class Rule:
+    """_A rule class_
+
+    Attributes:
+        rule (str): The name of the rule
+        conditions (list[Condition,...]): A  list of conditions
+        output (str): The rewrite output
+    """
     def __init__(
             self,
             rule: dict
@@ -70,6 +96,14 @@ class Rule:
             self,
             rule:dict
     ):
+        """_Validate the rule wellformedness_
+
+        Args:
+            rule (dict): The rule dictionary
+
+        Raises:
+            Exception: Any errors from the validator
+        """
         if not rule_validator(rule):
             errors = rule_validator.errors
             raise Exception(repr(errors))
@@ -77,7 +111,18 @@ class Rule:
     def apply_rule(
             self,
             obj:SequenceInterval
-    ):
+    ) -> bool:
+        """_Apply a single rile_
+
+        Args:
+            obj (SequenceInterval): The interval potentially being relabelled
+
+        Raises:
+            Exception: Any errors in checking the conditions
+
+        Returns:
+            (bool): `True` if the rule applied
+        """
         try:
             cond_met = [c.check_condition(obj) for c in self.conditions]
         except:
@@ -88,6 +133,18 @@ class Rule:
             return True
 
 class RuleSet:
+    """A rule set class
+
+    Pass `RuleSet` either a rules dictionary, or a path 
+    to a rules yaml file
+
+    Args:
+        rules (list[dict,...]): A list of rule dictionaries
+        rule_path (str): A path to a rules .yml file
+
+    Attributes:
+        rules (list[Rule,...]): 
+    """
     def __init__(
             self,
             rules: list = None, 
@@ -105,6 +162,15 @@ class RuleSet:
             self,
             obj: SequenceInterval
     ):
+        """_Apply the ruleset_
+
+        The rules are checked against the Sequence interval
+        in sequence, and the first one applies, ceasing rule'
+        application.
+
+        Args:
+            obj (SequenceInterval): The SequenceInterval undergoing rule application
+        """
         for rule in self.rules:
             application = rule.apply_rule(obj)
             ## Crucial! 
@@ -116,6 +182,12 @@ class RuleSet:
             self,
             obj: SequenceTier
     ):
+        """_Apply the ruleset to all sequences_
+
+
+        Args:
+            obj (SequenceTier): A sequence tier to be recoded
+        """
         for x in obj:
             self.apply_ruleset(x)
 
@@ -123,9 +195,16 @@ class RuleSet:
             self,
             path: str
     ):
+        """_read in a ruleset_
+
+        Args:
+            path (str): A path to a ruleset
+
+        Raises:
+            Exception: Any errors in reading in the ruleset
+        """
         with(open(path)) as f:
             ruleset = yaml.safe_load(f)
         if type(ruleset) is not list:
-            raise Exception(f"Rulest in {path} is not formatted correctly. \
-                            Make sure it is a list.")
+            raise Exception(f"Rulest in {path} is not formatted correctly. Make sure it is a list.")
         self.rules = [Rule(r) for r in ruleset]
