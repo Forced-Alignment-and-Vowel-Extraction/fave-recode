@@ -1,7 +1,7 @@
 from aligned_textgrid.aligned_textgrid import AlignedTextGrid
 from aligned_textgrid.sequences.word_and_phone import Word, Phone
 from fave_recode.ruleschema import rule_validator, condition_validator
-from fave_recode.relations import relation
+from fave_recode.relations import relation_dict
 import functools
 import yaml
 

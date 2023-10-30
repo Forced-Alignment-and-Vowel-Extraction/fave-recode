@@ -24,7 +24,7 @@ def negate(f):
     g.__name__ = f'negate({f.__name__})'
     return g
 
-relation = {
+relation_dict = {
     "in": in_relation,
     "not in": negate(in_relation),
     "contains": contains_relation,
