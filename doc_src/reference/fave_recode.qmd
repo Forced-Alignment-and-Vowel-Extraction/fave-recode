@@ -1,0 +1,89 @@
+# fave_recode { #fave_recode.fave_recode }
+
+`fave_recode`
+
+
+
+## Functions
+
+| Name | Description |
+| --- | --- |
+| [apply_rule](#fave_recode.fave_recode.apply_rule) | _apply a rule_ |
+| [apply_ruleset](#fave_recode.fave_recode.apply_ruleset) | _apply a ruleset_ |
+| [check_all_conditions](#fave_recode.fave_recode.check_all_conditions) | _check if all conditions are met_ |
+| [check_condition](#fave_recode.fave_recode.check_condition) | _Check if condition is met_ |
+| [map_ruleset](#fave_recode.fave_recode.map_ruleset) | _map a ruleset to a phone tier_ |
+| [read_ruleset](#fave_recode.fave_recode.read_ruleset) | _Read in yaml rule set_ |
+| [rgetattr](#fave_recode.fave_recode.rgetattr) | _gets object attribute from string_ |
+
+### apply_rule { #fave_recode.fave_recode.apply_rule }
+
+`fave_recode.apply_rule(phone, rule)`
+
+_apply a rule_
+
+Args:
+    phone (_type_): _an alignedTextGrid.Phone object_
+    rule (_type_): _a rule dictionary_
+
+### apply_ruleset { #fave_recode.fave_recode.apply_ruleset }
+
+`fave_recode.apply_ruleset(phone, ruleset)`
+
+_apply a ruleset_
+
+Args:
+    phone (_type_): _an alignedTextGrid.Phone object_
+    ruleset (_type_): _a list of rule dictionaries_
+
+### check_all_conditions { #fave_recode.fave_recode.check_all_conditions }
+
+`fave_recode.check_all_conditions(phone, conditions)`
+
+_check if all conditions are met_
+
+Args:
+    phone (_type_): _an alignedTextGrid.Phone object_
+    conditions (_type_): _A list of condition dictionaries_
+
+### check_condition { #fave_recode.fave_recode.check_condition }
+
+`fave_recode.check_condition(phone, condition)`
+
+_Check if condition is met_
+
+Args:
+    phone (_type_): _an alignedTextGrid.Phone object_
+    condition (_type_): _A condition dictionary_
+
+### map_ruleset { #fave_recode.fave_recode.map_ruleset }
+
+`fave_recode.map_ruleset(phone_tier, ruleset)`
+
+_map a ruleset to a phone tier_
+
+Args:
+    phone_tier (_type_): _an alignedTextGrid.IntervalTier object__
+    ruleset (_type_): _a list of rule dictionaries_
+
+### read_ruleset { #fave_recode.fave_recode.read_ruleset }
+
+`fave_recode.read_ruleset(path)`
+
+_Read in yaml rule set_
+
+Args:
+    path (str): _path to ruleset_
+
+Raises:
+    Exception: _ruleset errors_
+
+### rgetattr { #fave_recode.fave_recode.rgetattr }
+
+`fave_recode.rgetattr(obj, attr, *args)`
+
+_gets object attribute from string_
+
+Args:
+    obj (_type_): _object_
+    attr (_str_): attribute path attr.attr.attr

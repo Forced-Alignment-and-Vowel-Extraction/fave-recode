@@ -1,0 +1,9 @@
+# Function reference
+
+## Function Reference
+
+Rule application functions
+
+| | |
+| --- | --- |
+| [fave_recode](fave_recode.qmd#fave_recode.fave_recode) |  |

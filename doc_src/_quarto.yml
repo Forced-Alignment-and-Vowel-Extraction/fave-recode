@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: ../docs
+
+# tell quarto to read the generated sidebar
+metadata-files:
+  - _sidebar.yml
+
+
+quartodoc:
+  # the name used to import the package you want to create reference docs for
+  package: fave_recode
+  style: pkgdown
+  dir: reference
+  # write sidebar data to this file
+  sidebar: _sidebar.yml
+
+  sections:
+  
+    - title: Function Reference
+      desc: Rule application functions
+      contents:
+        - fave_recode
