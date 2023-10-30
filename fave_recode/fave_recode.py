@@ -16,7 +16,10 @@ def rgetattr(obj,
         attr (_str_): attribute path attr.attr.attr
     """
     def _getattr(obj, attr: str):
-        return getattr(obj, attr, *args)
+        try:
+            return getattr(obj, attr, *args)
+        except:
+            return ''
     return functools.reduce(_getattr, [obj] + attr.split('.'))
 
 def validate_rules(rule: dict):
@@ -85,9 +88,15 @@ def apply_rule(phone, rule):
         phone (_type_): _an alignedTextGrid.Phone object_
         rule (_type_): _a rule dictionary_
     """
-    if check_all_conditions(phone, rule['conditions']):
-        phone.label = rule['return']
-        return(True)
+    try:
+     if check_all_conditions(phone, rule['conditions']):
+         phone.label = rule["return"]
+    except:
+        raise Exception(f"Problem applying {rule['rule']} to phone {phone.tier_index}")
+
+    # if check_all_conditions(phone, rule['conditions']):
+    #     phone.label = rule['return']
+    #     return(True)
 
 def apply_ruleset(phone, ruleset):
     """_apply a ruleset_
