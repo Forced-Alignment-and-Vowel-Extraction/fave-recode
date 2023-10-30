@@ -90,7 +90,8 @@
         - AM
         - THAN
         - MATH
-        - EXAM             
+        - EXAM       
+        - AND      
   return: aeBR
 
 # SKV words
@@ -114,6 +115,17 @@
     - attribute: inword.label
       relation: reunmatches
       set: "ING?$"
+  return: aeBR
+
+# aeL
+- rule: aeL
+  conditions:
+    - attribute: label
+      relation: ==
+      set: AE1
+    - attribute: fol.label
+      relation: ==
+      set: L
   return: aeBR
 
 # ae followed by trigger followed by end of word
@@ -210,6 +222,122 @@
       set: "(ING?|ES)$"      
   return: "aeh"
 
+# oh-fix
+- rule: oh-fix
+  conditions:
+    - attribute: label
+      relation: contains
+      set: AA
+    - attribute: inword.label
+      relation: in
+      set:
+        - LAW
+        - LAWS
+        - LAW'S
+        - LAWFUL
+        - UNLAWFUL
+        - DOG
+        - DOGS
+        - DOG'S
+        - DOGGED'
+        - ALL
+        - ALL'S
+        - CALL
+        - CALLS
+        - CALL'S
+        - CALLING
+        - CALLED
+        - FALL
+        - FALLS
+        - FALL'S
+        - FALLING
+        - AUDIENCE
+        - AUDIENCES
+        - AUDIENCE'
+        - ON
+        - ONTO
+        - GONNA
+        - GONE
+        - BOSTON
+        - BOSTON'S
+        - AWFUL
+        - AWFULLY
+        - AWFULNESS
+        - AWKWARD
+        - AWKWARDLY
+        - AWKWARDNESS
+        - AWESOME
+        - AUGUST
+        - COUGH
+        - COUGHS
+        - COUGHED
+        - COUGHING
+
+# o-fix
+- rule: o-fix
+  conditions:
+    - attribute: label
+      relation: contains
+      set: AO
+    - attribute: inword.label
+      relation: in
+      set:
+        - CHOCOLATE
+        - CHOCOLATES
+        - CHOCOLATE'S
+        - WALLET
+        - WALLETS
+        - WARRANT
+        - WARRANTS
+        - WATCH
+        - WATCHES
+        - WATCHED
+        - WATCHING
+        - WANDER
+        - WANDERS
+        - WANDERED
+        - WANDERING
+        - CONNIE
+        - CATHOLICISM
+        - WANT
+        - WANTED
+        - PONG
+        - GONG
+        - KONG
+        - FLORIDA
+        - ORANGE
+        - HORRIBLE
+        - MAJORITY
+  return: o
+
+# iw
+- rule: iw-1
+  conditions:
+    - attribute: label
+      relation: ==
+      set: UW1
+    - attribute: prev.label
+      relation: == 
+      set: Y
+  return: "iw"
+- rule: iw-2
+  conditions:
+    - attribute: label
+      relation: ==
+      set: UW1
+    - attribute: inword.label
+      relation: contains
+      set: EW
+  return: "iw"
+- rule: iw-2
+  conditions:
+    - attribute: label
+      relation: ==
+      set: UW1
+    - attribute: inword.label
+      relation: rematches
+      set: "[TDNLS]U"
+  return: iw
 
 - rule: schwa
   conditions:
