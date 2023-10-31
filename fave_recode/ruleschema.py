@@ -1,8 +1,6 @@
 from cerberus import Validator
 
 def attribute_check(field, value, error):
-    """_internal attribute check_
-    """
     aligned_textgrid_properities = [
         'fol',
         'prev',
