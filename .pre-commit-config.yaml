@@ -5,5 +5,5 @@ repos:
     -   id: poetry-check
     -   id: poetry-lock
     -   id: poetry-export
-        args: ["-f", "requirements.txt", --without-hashes]
+        args: ["-f", "requirements.txt", "--without-hashes", "-o", "requirements.txt"]
         verbose: true
