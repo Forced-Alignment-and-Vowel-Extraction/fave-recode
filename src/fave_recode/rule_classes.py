@@ -1,7 +1,7 @@
 from aligned_textgrid.sequences.sequences import SequenceInterval
 from aligned_textgrid.sequences.tiers import SequenceTier
-from fave_recode.ruleschema import rule_validator, condition_validator
-from fave_recode.relations import relation_dict
+from ruleschema import rule_validator, condition_validator
+from relations import relation_dict
 from collections.abc import Callable
 import functools
 import yaml
