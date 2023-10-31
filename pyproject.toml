@@ -14,7 +14,7 @@ exclude = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-aligned-textgrid = "^0.2.1"
+aligned-textgrid = "^0.4.0"
 pyyaml = "^6.0"
 
 [tool.poetry.group.dev.dependencies]
@@ -22,6 +22,7 @@ jupyter = "^1.0.0"
 pytest = "^7.2.1"
 pytest-cov = "^4.1.0"
 importlib = "^1.0.4"
+pre-commit = "^3.5.0"
 
 
 [build-system]
