@@ -33,7 +33,8 @@ rule_schema = {
 condition_schema = {
     'attribute': {
         'type': 'string',
-        'required': True
+        'required': True,
+        'check_with': attribute_check
     },
     'relation': {
         'type': 'string',
