@@ -7,7 +7,9 @@ def attribute_check(field, value, error):
         'label',
         'super_instance',
         'inword',
-        'sub_labels'
+        'sub_labels',
+        'first',
+        'last'
     ]
     value_components = value.split(".")
     value_valid = [x in aligned_textgrid_properities for x in value_components]
