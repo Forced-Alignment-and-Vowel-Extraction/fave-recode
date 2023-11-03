@@ -147,10 +147,11 @@ class RuleSet:
     """
     def __init__(
             self,
-            rules: list = None, 
+            rules: list = [], 
             rule_path: str = None
     ):
-        if rules:
+        self.rules = []
+        if rules and len(rules) > 0:
             self.rules = [Rule(r) for r in rules]
         elif rule_path:
             self.read_ruleset(rule_path)
