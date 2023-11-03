@@ -19,19 +19,24 @@ def attribute_check(field, value, error):
 
 rule_schema = {
     'rule' : {
-        'type': 'string'
+        'type': 'string',
+        'required': True
     },
     'conditions' : {
-        'type': 'list'
+        'type': 'list',
+        'required': True
     },
     'return': {
-        'type': 'string'
+        'type': 'string',
+        'required': True
     }
 }
 
 condition_schema = {
     'attribute': {
-        'type': 'string'
+        'type': 'string',
+        'required': True,
+        'check_with': attribute_check
     },
     'relation': {
         'type': 'string',
@@ -44,10 +49,12 @@ condition_schema = {
             "!=",
             "rematches",
             "reunmatches"
-        ]
+        ],
+        'required': True
     },
     'set': {
-        'type': ['list', 'string']
+        'type': ['list', 'string'],
+        'required': True
     }
 }
 
