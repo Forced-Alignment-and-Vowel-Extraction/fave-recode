@@ -1,4 +1,5 @@
 from fave_recode.rule_classes import Rule, Condition, RuleSet
+from fave_recode.schemes import cmu2labov_path, cmu2phila_path
 from aligned_textgrid import Word, Phone, SequenceTier
 from praatio.utilities.utils import Interval
 import pytest
@@ -116,3 +117,91 @@ class TestRule:
         this_rule2 = Rule(self.example_rule2)
         this_rule2.apply_rule(example_phone1)
         assert example_phone1.label == "oh"
+
+class TestRuleSet:
+
+    def test_read_ruleset(self):
+        these_rules = RuleSet(rule_path=cmu2labov_path)
+        assert these_rules
+
+    def test_manual_ruleset(self):
+        these_rules_list = [
+            {
+                "rule": "ae",
+                "conditions": [
+                    {
+                        "attribute": "label",
+                        "relation": "==",
+                        "set": "AE1"
+                    }
+                ],
+                "return": "ae"
+            },
+            {
+                "rule": "oh",
+                "conditions": [
+                    {
+                        "attribute": "label",
+                        "relation": "==",
+                        "set": "AO1"
+                    }
+                ],
+                "return": "oh"
+            }            
+        ]
+
+        these_rules = RuleSet(these_rules_list)
+        assert these_rules
+
+    def test_ruleset_elsewhere(self):
+        # Higher up rules cannot feed lower down rules.
+        these_rules_list = [
+            {
+                "rule": "uwl",
+                "conditions": [
+                    {
+                        "attribute": "label",
+                        "relation": "==",
+                        "set": "UW"
+                    },
+                    {
+                        "attribute": "fol.label",
+                        "relation": "==",
+                        "set": "L"
+                    }
+                ],
+                "return": "uwl"
+            },
+            {
+                "rule": "uwl2",
+                "conditions": [
+                    {
+                        "attribute": "label",
+                        "relation": "==",
+                        "set": "uwl"
+                    }
+                ],
+                "return": "x"
+            }            
+        ]
+
+        uw = Phone(Interval(0,1,"UW"))
+        l = Phone(Interval(1,2, "L"))
+        uw.set_fol(l)
+
+        these_rules = RuleSet(these_rules_list)
+        these_rules.apply_ruleset(uw)
+
+        assert uw.label == "uwl"
+        assert uw.label != "x"
+
+    def test_map_ruleset(self):
+        cmu2labov_rules = RuleSet(rule_path=cmu2labov_path)
+        AE = Interval(0,1,"AE1")
+        N = Interval(1,2, "N")
+
+        tier = SequenceTier(tier = [AE, N])
+        cmu2labov_rules.map_ruleset(tier)
+
+        assert tier.first.label == "ae"
+        assert tier.first.fol.label == "N"
