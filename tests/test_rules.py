@@ -13,6 +13,12 @@ class TestCondtition:
         "set": "AA1"
     }
 
+    example_condition2 = {
+        "attribute": "inword.fol.first.label",
+        "relation": "==",
+        "set": "L"
+    }
+
     example_bad_condition = {
         "attribute": "label.len",
         "relation": "==",
@@ -27,6 +33,9 @@ class TestCondtition:
     def test_creation(self):
         this_cond = Condition(self.example_condition)
         assert this_cond
+
+        this_cond2 = Condition(self.example_condition2)
+        assert this_cond2
     
     def test_bad_creation(self):
         with pytest.raises(Exception):
