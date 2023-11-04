@@ -205,3 +205,10 @@ class TestRuleSet:
 
         assert tier.first.label == "ae"
         assert tier.first.fol.label == "N"
+
+    def test_empty_ruleset(self):
+        these_rules = RuleSet()
+        this_phone = Phone(Interval(0,1,"AE"))
+
+        these_rules.apply_ruleset(this_phone)
+        assert this_phone.label == "AE"
