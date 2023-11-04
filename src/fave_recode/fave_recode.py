@@ -1,7 +1,7 @@
 from aligned_textgrid.aligned_textgrid import AlignedTextGrid
 from aligned_textgrid.sequences.word_and_phone import Word, Phone
 from fave_recode.rule_classes import RuleSet
-from fave_recode.schemes import cmu2labov_path, cmu2phila_path
+from fave_recode.schemes import all_schemes
 import click
 import cloup
 from pathlib import Path
@@ -44,10 +44,26 @@ from pathlib import Path
 @click.option("-s", "--scheme",
               type=click.STRING,
               help = "Recoding scheme."\
-                " Built in options are cmu2labov and cmu2phila")
+                " Built in options are cmu2labov and cmu2phila",
+            required = True)
+def cli(
+    input_file = None,
+    input_path = None,
+    output_file = None,
+    output_dest = None,
+    scheme = None
+):
+    rules = get_rules(scheme)
+    print(rules)
 
-def cli(**kwargs):
-    print(kwargs)
+
+def get_rules(scheme):
+    if scheme in all_schemes:
+        return RuleSet(rule_path = all_schemes[scheme])
+    scheme_path = Path(scheme)
+    if scheme_path.is_file():
+        return RuleSet(rule_path = str(scheme_path))
+    raise Exception(f"Cannot find rule schema file: {scheme}")
 
 if __name__ == "__main__":
     cli()
