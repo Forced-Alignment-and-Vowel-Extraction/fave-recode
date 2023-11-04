@@ -2,9 +2,10 @@ from aligned_textgrid.aligned_textgrid import AlignedTextGrid
 from aligned_textgrid.sequences.word_and_phone import Word, Phone
 from fave_recode.rule_classes import RuleSet
 from fave_recode.schemes import all_schemes
+from pathlib import Path
+from typing import Union
 import click
 import cloup
-from pathlib import Path
 import io
 
 @cloup.command()
@@ -80,9 +81,12 @@ def process_file(
     if output_file:
         output_path = Path(output_file)
     else:
-        output_path = make_output_path(input_path, recode_stem)
-    
-    validate_output_file(output_path)
+        output_path = make_output_path(
+            input_path=input_path, 
+            recode_stem=recode_stem
+        )
+    print(output_path)
+    #validate_output_file(output_path)
 
 def validate_input_file(
         input_path: Path
@@ -100,10 +104,22 @@ def validate_input_file(
 
 def make_output_path(
         input_path: Path,
-        recode_stem: str
+        recode_stem: str,
+        output_path: Union[Path, None] = None,
 ) -> Path:
+    input_stem = input_path.stem
+
+    if output_path is None:
+        output_file_path= input_path.with_stem(input_stem+recode_stem)
+        return output_file_path
+
+    if output_path.suffix == "":
+        new_name = input_path.with_stem(input_stem+recode_stem).name
+        return output_path.joinpath(new_name)
+
+    raise Exception(f"Provided output path {output_path} looks like a file name")
+        
     
-    pass
     
 
 def validate_output_file(output_path):
