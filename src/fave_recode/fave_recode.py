@@ -96,15 +96,25 @@ def process_file(
     ):
     input_path = Path(input_file.name)
     atg = validate_input_file(input_path)
+    run_recode(atg, scheme, target_tier)
+
     if output_file and save_recode:
         output_path = Path(output_file)
+        validate_output_file(output_path)
+        atg.save_textgrid(
+            save_path=str(output_path),
+            format="long_textgrid"
+        )
     elif save_recode:
         output_path = make_output_path(
             input_path=input_path, 
             recode_stem=recode_stem
         )
-    validated_file = validate_output_file(output_path)
-
+        validate_output_file(output_path)
+        atg.save_textgrid(
+            save_path=str(output_path),
+            format="long_textgrid"
+        )
 
 ## support operations
 def validate_input_file(
@@ -199,6 +209,17 @@ def ask_for_dir_creation(
         return False
     
     return ask_for_dir_creation(output_path, reask=True)
+
+def run_recode(
+        atg: AlignedTextGrid, 
+        scheme: RuleSet, 
+        target_tier: str
+    ):
+    all_targets = [t for tgr in atg 
+                   for t in tgr 
+                   if t.entry_class.__name__ == target_tier]
+    for tier in all_targets:
+        scheme.map_ruleset(tier)
 
 if __name__ == "__main__":
     cli()
