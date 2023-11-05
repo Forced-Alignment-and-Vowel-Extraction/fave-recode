@@ -70,7 +70,7 @@ def cli(
             recode_stem = recode_stem,
             save_recode = save_recode)
 
-
+## core fave_recode operations
 def get_rules(
         scheme: str
     ) -> RuleSet:
@@ -97,9 +97,10 @@ def process_file(
             input_path=input_path, 
             recode_stem=recode_stem
         )
-    print(output_path)
-    #validate_output_file(output_path)
+    validated_file = validate_output_file(output_path)
+    
 
+## support operations
 def validate_input_file(
         input_path: Path
     ) -> AlignedTextGrid:
@@ -130,12 +131,67 @@ def make_output_path(
         return output_path.joinpath(new_name)
 
     raise Exception(f"Provided output path {output_path} looks like a file name")
-        
-    
-    
+         
 
-def validate_output_file(output_path):
-    pass
+def validate_output_file(
+        output_path: Path
+    ) -> bool:
+    if not output_path.parent.is_dir():
+        dir_create = ask_for_dir_creation(output_path.parent)
+
+        if not dir_create:
+            raise Exception(f"Specified destination directory "\
+                            f"{str(output_path.parent)} does not exist.")
+        
+        output_path.parent.mkdir(exist_ok=False, parents=True)
+
+        return True
+
+    if output_path.is_file():
+        overwrite = ask_for_file_overwrite(output_path)
+
+        if not overwrite:
+            raise Exception(f"Specified output file "\
+                            f"{output_path.name} already exists.")
+        
+        return True
+    
+    return True
+    
+def ask_for_file_overwrite(
+        output_path: Path,
+        reask: bool = False
+    ) -> bool:
+    msg = f"The file {output_path.name} already exists "\
+            f"in destination directory {str(output_path.parent.resolve())} "\
+            f"\n\n Overwrite?\ty/n:\t"
+    if reask:
+        msg = "\nPlease enter 'y' or 'n'. \n\n" + msg
+
+    overwrite = input(msg)
+    if overwrite.lower()[0] == "y":
+        return True
+    if overwrite.lower()[0] == "n":
+        return False
+    
+    return ask_for_file_overwrite(output_path, reask=True)
+
+def ask_for_dir_creation(
+        output_path: Path, 
+        reask:bool = False
+    ) -> bool:
+    msg = f"The destination directory {str(output_path)} does not exist."\
+          f"\n\n Create destination directory?\ty/n:\t"
+    if reask:
+        msg = "\nPlease enter 'y' or 'n'. \n\n" + msg
+    
+    dir_create = input(msg)
+    if dir_create.lower()[0] == "y":
+        return True
+    if dir_create.lower()[0] == "n":
+        return False
+    
+    return ask_for_dir_creation(output_path, reask=True)
 
 if __name__ == "__main__":
     cli()
