@@ -45,4 +45,4 @@ pythonpath = "src"
 testpaths = "tests"
 
 [tool.poetry.scripts]
-fave_recode = 'fave_recode.fave_recode:cli'
+fave_recode = 'fave_recode.fave_recode:fave_recode'
