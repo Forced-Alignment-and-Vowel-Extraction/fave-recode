@@ -1,5 +1,4 @@
-from aligned_textgrid.aligned_textgrid import AlignedTextGrid
-from aligned_textgrid.sequences.word_and_phone import Word, Phone
+from aligned_textgrid import AlignedTextGrid, custom_classes, Word, Phone
 from fave_recode.rule_classes import RuleSet
 from fave_recode.schemes import all_schemes
 from pathlib import Path
@@ -52,6 +51,10 @@ import io
               type = click.STRING,
               help = "Stem to append to recoded TextGrid file names",
               default = "_recoded")
+@click.option("-t", "--target_tier",
+              type = click.STRING,
+              help = "Target tier to recode",
+              default = "Phone")
 def cli(
     input_file = None,
     input_path = None,
@@ -59,7 +62,8 @@ def cli(
     output_dest = None,
     scheme = None,
     save_recode = True,
-    recode_stem = "_recoded"
+    recode_stem = "_recoded",
+    target_tier = "Phone"
 ):
     rules = get_rules(scheme)
     if input_file:
@@ -68,7 +72,8 @@ def cli(
             output_file=output_file, 
             scheme = rules, 
             recode_stem = recode_stem,
-            save_recode = save_recode)
+            save_recode = save_recode,
+            target_tier = target_tier)
 
 ## core fave_recode operations
 def get_rules(
@@ -86,7 +91,8 @@ def process_file(
         output_file: str, 
         scheme: RuleSet,
         save_recode: bool,
-        recode_stem:str = "_recoded"
+        recode_stem:str = "_recoded",
+        target_tier: str = "Phone"
     ):
     input_path = Path(input_file.name)
     atg = validate_input_file(input_path)
@@ -98,14 +104,15 @@ def process_file(
             recode_stem=recode_stem
         )
     validated_file = validate_output_file(output_path)
-    
+
 
 ## support operations
 def validate_input_file(
         input_path: Path
     ) -> AlignedTextGrid:
     try:
-        atg = AlignedTextGrid(textgrid_path=str(input_path))
+        atg = AlignedTextGrid(textgrid_path=str(input_path),
+                              entry_classes=[Word, Phone])
     except:
         if input_path.suffix != ".TextGrid":
             raise Exception(f"Problem encountered. "\
