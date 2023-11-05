@@ -48,16 +48,27 @@ import io
               help = "Recoding scheme."\
                 " Built in options are cmu2labov and cmu2phila",
             required = True)
+@click.option("-r", "--recode_stem",
+              type = click.STRING,
+              help = "Stem to append to recoded TextGrid file names",
+              default = "_recoded")
 def cli(
     input_file = None,
     input_path = None,
     output_file = None,
     output_dest = None,
-    scheme = None
+    scheme = None,
+    save_recode = True,
+    recode_stem = "_recoded"
 ):
     rules = get_rules(scheme)
     if input_file:
-        process_file(input_file, output_file, rules)
+        process_file(
+            input_file=input_file, 
+            output_file=output_file, 
+            scheme = rules, 
+            recode_stem = recode_stem,
+            save_recode = save_recode)
 
 
 def get_rules(
@@ -74,13 +85,14 @@ def process_file(
         input_file: io.TextIOWrapper, 
         output_file: str, 
         scheme: RuleSet,
-        recode_stem = "_recoded"
+        save_recode: bool,
+        recode_stem:str = "_recoded"
     ):
     input_path = Path(input_file.name)
     atg = validate_input_file(input_path)
-    if output_file:
+    if output_file and save_recode:
         output_path = Path(output_file)
-    else:
+    elif save_recode:
         output_path = make_output_path(
             input_path=input_path, 
             recode_stem=recode_stem
