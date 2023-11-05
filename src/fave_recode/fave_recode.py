@@ -117,20 +117,40 @@ def process_file(
         )
 
 ## support operations
-def validate_input_file(
-        input_path: Path
-    ) -> AlignedTextGrid:
-    try:
-        atg = AlignedTextGrid(textgrid_path=str(input_path),
-                              entry_classes=[Word, Phone])
-    except:
-        if input_path.suffix != ".TextGrid":
-            raise Exception(f"Problem encountered. "\
-                            f"Perhaps input {str(input_path)} is not a TextGrid.")
-        raise Exception(f"Problem ecountered. "\
-                        f"Couldn't process input {str(input_path)}.")
+def ask_for_dir_creation(
+        output_path: Path, 
+        reask:bool = False
+    ) -> bool:
+    msg = f"The destination directory {str(output_path)} does not exist."\
+          f"\n\n Create destination directory?\ty/n:\t"
+    if reask:
+        msg = "\nPlease enter 'y' or 'n'. \n\n" + msg
     
-    return atg
+    dir_create = input(msg)
+    if dir_create.lower()[0] == "y":
+        return True
+    if dir_create.lower()[0] == "n":
+        return False
+    
+    return ask_for_dir_creation(output_path, reask=True)
+
+def ask_for_file_overwrite(
+        output_path: Path,
+        reask: bool = False
+    ) -> bool:
+    msg = f"The file {output_path.name} already exists "\
+            f"in destination directory {str(output_path.parent.resolve())} "\
+            f"\n\n Overwrite?\ty/n:\t"
+    if reask:
+        msg = "\nPlease enter 'y' or 'n'. \n\n" + msg
+
+    overwrite = input(msg)
+    if overwrite.lower()[0] == "y":
+        return True
+    if overwrite.lower()[0] == "n":
+        return False
+    
+    return ask_for_file_overwrite(output_path, reask=True)
 
 def make_output_path(
         input_path: Path,
@@ -149,6 +169,31 @@ def make_output_path(
 
     raise Exception(f"Provided output path {output_path} looks like a file name")
          
+def run_recode(
+        atg: AlignedTextGrid, 
+        scheme: RuleSet, 
+        target_tier: str
+    ):
+    all_targets = [t for tgr in atg 
+                   for t in tgr 
+                   if t.entry_class.__name__ == target_tier]
+    for tier in all_targets:
+        scheme.map_ruleset(tier)
+
+def validate_input_file(
+        input_path: Path
+    ) -> AlignedTextGrid:
+    try:
+        atg = AlignedTextGrid(textgrid_path=str(input_path),
+                              entry_classes=[Word, Phone])
+    except:
+        if input_path.suffix != ".TextGrid":
+            raise Exception(f"Problem encountered. "\
+                            f"Perhaps input {str(input_path)} is not a TextGrid.")
+        raise Exception(f"Problem ecountered. "\
+                        f"Couldn't process input {str(input_path)}.")
+    
+    return atg
 
 def validate_output_file(
         output_path: Path
@@ -174,52 +219,6 @@ def validate_output_file(
         return True
     
     return True
-    
-def ask_for_file_overwrite(
-        output_path: Path,
-        reask: bool = False
-    ) -> bool:
-    msg = f"The file {output_path.name} already exists "\
-            f"in destination directory {str(output_path.parent.resolve())} "\
-            f"\n\n Overwrite?\ty/n:\t"
-    if reask:
-        msg = "\nPlease enter 'y' or 'n'. \n\n" + msg
-
-    overwrite = input(msg)
-    if overwrite.lower()[0] == "y":
-        return True
-    if overwrite.lower()[0] == "n":
-        return False
-    
-    return ask_for_file_overwrite(output_path, reask=True)
-
-def ask_for_dir_creation(
-        output_path: Path, 
-        reask:bool = False
-    ) -> bool:
-    msg = f"The destination directory {str(output_path)} does not exist."\
-          f"\n\n Create destination directory?\ty/n:\t"
-    if reask:
-        msg = "\nPlease enter 'y' or 'n'. \n\n" + msg
-    
-    dir_create = input(msg)
-    if dir_create.lower()[0] == "y":
-        return True
-    if dir_create.lower()[0] == "n":
-        return False
-    
-    return ask_for_dir_creation(output_path, reask=True)
-
-def run_recode(
-        atg: AlignedTextGrid, 
-        scheme: RuleSet, 
-        target_tier: str
-    ):
-    all_targets = [t for tgr in atg 
-                   for t in tgr 
-                   if t.entry_class.__name__ == target_tier]
-    for tier in all_targets:
-        scheme.map_ruleset(tier)
 
 if __name__ == "__main__":
     cli()
