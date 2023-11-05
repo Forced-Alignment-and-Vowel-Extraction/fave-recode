@@ -55,7 +55,7 @@ import io
               type = click.STRING,
               help = "Target tier to recode",
               default = "Phone")
-def cli(
+def fave_recode(
     input_file = None,
     input_path = None,
     output_file = None,
@@ -221,4 +221,4 @@ def validate_output_file(
     return True
 
 if __name__ == "__main__":
-    cli()
+    fave_recode()
