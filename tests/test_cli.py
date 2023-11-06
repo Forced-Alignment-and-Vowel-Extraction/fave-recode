@@ -1,10 +1,12 @@
 from fave_recode.rule_classes import RuleSet
-from aligned_textgrid import AlignedTextGrid
+from aligned_textgrid import AlignedTextGrid, Word, Phone
 from fave_recode.fave_recode import get_rules, \
                                     ask_for_dir_creation,\
                                     ask_for_file_overwrite, \
-                                    validate_input_file, \
-                                    make_output_path
+                                    make_output_path,\
+                                    run_recode,\
+                                    validate_input_file,\
+                                    validate_output_file
 from fave_recode.schemes import all_schemes
 from pathlib import Path
 import pytest
@@ -76,7 +78,31 @@ class TestCLIComponents:
                 recode_stem=recode_stem,
                 output_path="fake.TextGrid"
             )
-    
+
+    def test_run_recode(self):
+
+        atg_path = Path().joinpath(
+            "tests", 
+            "test_data",
+            "josef-fruehwald_speaker.TextGrid"
+            )
+        atg = AlignedTextGrid(
+            textgrid_path=str(atg_path),
+            entry_classes=[Word, Phone]
+            )
+        schwa_path = Path().joinpath(
+            "tests",
+            "test_data",
+            "just_schwa.yml"
+        )
+        scheme = RuleSet(rule_path=str(schwa_path))
+        target_tier = "Phone"
+
+        run_recode(atg, scheme, target_tier)
+        ptier = atg[0].Phone
+        schwa_ints = [x for x in ptier if x.label == "@"]
+        assert len(schwa_ints) > 0
+
     def test_validate_input(self):
         tg_path = Path("tests/test_data/josef-fruehwald_speaker.TextGrid")
         atg1 = validate_input_file(tg_path)
@@ -91,3 +117,14 @@ class TestCLIComponents:
             not_file = Path("fake.TextGrid")
             validate_input_file(not_file)
         assert exec_info2.match("Couldn't process input")
+
+    def test_validate_output_file(self, monkeypatch):
+        input_sequence = iter(["y"])
+        monkeypatch.setattr("builtins.input", lambda _:next(input_sequence))
+        output_path = Path("fake_path/Output.TextGrid")
+
+        try:
+            did_it = validate_output_file(output_path=output_path)
+            assert did_it
+        finally:
+            output_path.parent.rmdir()
