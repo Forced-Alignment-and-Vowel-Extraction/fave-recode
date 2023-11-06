@@ -29,8 +29,9 @@ pre-commit = "^3.5.0"
 
 
 
+
 [tool.poetry.group.docs.dependencies]
-quartodoc = "^0.6.3"
+quartodoc = "^0.6.5"
 
 [build-system]
 requires = ["poetry-core"]

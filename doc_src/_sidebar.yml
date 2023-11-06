@@ -3,7 +3,9 @@ website:
   - contents:
     - reference/index.qmd
     - contents:
-      - reference/fave_recode.qmd
-      section: Function Reference
+      - reference/rule_classes.Condition.qmd
+      - reference/rule_classes.Rule.qmd
+      - reference/rule_classes.RuleSet.qmd
+      section: Rule Classes
     id: reference
   - id: dummy-sidebar

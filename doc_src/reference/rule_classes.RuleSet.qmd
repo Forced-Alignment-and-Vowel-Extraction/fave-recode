@@ -1,0 +1,75 @@
+# rule_classes.RuleSet { #fave_recode.rule_classes.RuleSet }
+
+`rule_classes.RuleSet(self, rules=[], rule_path=None)`
+
+A rule set class
+
+Pass `RuleSet` either a rules dictionary, or a path 
+to a rules yaml file
+
+## Parameters
+
+| Name        | Type              | Description                 | Default   |
+|-------------|-------------------|-----------------------------|-----------|
+| `rules`     | list\[dict, ...\] | A list of rule dictionaries | `[]`      |
+| `rule_path` | str               | A path to a rules .yml file | `None`    |
+
+## Attributes
+
+| Name   | Type              | Description   |
+|--------|-------------------|---------------|
+| rules  | list\[Rule, ...\] |               |
+
+## Methods
+
+| Name | Description |
+| --- | --- |
+| [apply_ruleset](#fave_recode.rule_classes.RuleSet.apply_ruleset) | _Apply the ruleset_ |
+| [map_ruleset](#fave_recode.rule_classes.RuleSet.map_ruleset) | _Apply the ruleset to all sequences_ |
+| [read_ruleset](#fave_recode.rule_classes.RuleSet.read_ruleset) | _read in a ruleset_ |
+
+### apply_ruleset { #fave_recode.rule_classes.RuleSet.apply_ruleset }
+
+`rule_classes.RuleSet.apply_ruleset(obj)`
+
+_Apply the ruleset_
+
+The rules are checked against the Sequence interval
+in sequence, and the first one applies, ceasing rule'
+application.
+
+#### Parameters
+
+| Name   | Type             | Description                                      | Default    |
+|--------|------------------|--------------------------------------------------|------------|
+| `obj`  | SequenceInterval | The SequenceInterval undergoing rule application | _required_ |
+
+### map_ruleset { #fave_recode.rule_classes.RuleSet.map_ruleset }
+
+`rule_classes.RuleSet.map_ruleset(obj)`
+
+_Apply the ruleset to all sequences_
+
+#### Parameters
+
+| Name   | Type         | Description                   | Default    |
+|--------|--------------|-------------------------------|------------|
+| `obj`  | SequenceTier | A sequence tier to be recoded | _required_ |
+
+### read_ruleset { #fave_recode.rule_classes.RuleSet.read_ruleset }
+
+`rule_classes.RuleSet.read_ruleset(path)`
+
+_read in a ruleset_
+
+#### Parameters
+
+| Name   | Type   | Description         | Default    |
+|--------|--------|---------------------|------------|
+| `path` | str    | A path to a ruleset | _required_ |
+
+#### Raises
+
+| Type      | Description                          |
+|-----------|--------------------------------------|
+| Exception | Any errors in reading in the ruleset |

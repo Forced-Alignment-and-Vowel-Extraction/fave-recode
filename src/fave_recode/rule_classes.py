@@ -63,7 +63,7 @@ class Condition:
 
         Args:
             obj (SequenceInterval): The sequence interval
-              against which the condition is checked
+                against which the condition is checked
 
         Returns:
             (bool): True or False

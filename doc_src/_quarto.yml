@@ -14,10 +14,12 @@ quartodoc:
   dir: reference
   # write sidebar data to this file
   sidebar: _sidebar.yml
+  parser: google
 
   sections:
-  
-    - title: Function Reference
-      desc: Rule application functions
+    - title: Rule Classes
+      desc: Rule application classes
       contents:
-        - fave_recode
+        - rule_classes.Condition
+        - rule_classes.Rule
+        - rule_classes.RuleSet

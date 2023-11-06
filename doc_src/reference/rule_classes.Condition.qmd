@@ -1,0 +1,56 @@
+# rule_classes.Condition { #fave_recode.rule_classes.Condition }
+
+`rule_classes.Condition(self, condition)`
+
+_A rule condition_
+
+## Attributes
+
+| Name      | Type               | Description                                 |
+|-----------|--------------------|---------------------------------------------|
+| attribute | str                | The attribute path for a `SequenceInterval` |
+| relation  | Callable           | The relation function to be used            |
+| set       | Union\[str, list\] | The comparison set                          |
+
+## Methods
+
+| Name | Description |
+| --- | --- |
+| [check_condition](#fave_recode.rule_classes.Condition.check_condition) | _Check if the condition is met_ |
+| [validate_condition](#fave_recode.rule_classes.Condition.validate_condition) | Validate wellformedness of condititions |
+
+### check_condition { #fave_recode.rule_classes.Condition.check_condition }
+
+`rule_classes.Condition.check_condition(obj)`
+
+_Check if the condition is met_
+
+#### Parameters
+
+| Name   | Type             | Description                                                  | Default    |
+|--------|------------------|--------------------------------------------------------------|------------|
+| `obj`  | SequenceInterval | The sequence interval against which the condition is checked | _required_ |
+
+#### Returns
+
+| Type   | Description   |
+|--------|---------------|
+| bool   | True or False |
+
+### validate_condition { #fave_recode.rule_classes.Condition.validate_condition }
+
+`rule_classes.Condition.validate_condition(condition)`
+
+Validate wellformedness of condititions
+
+#### Parameters
+
+| Name        | Type   | Description          | Default    |
+|-------------|--------|----------------------|------------|
+| `condition` | dict   | condition dictionary | _required_ |
+
+#### Raises
+
+| Type      | Description                        |
+|-----------|------------------------------------|
+| Exception | Any errors raised by the validator |
