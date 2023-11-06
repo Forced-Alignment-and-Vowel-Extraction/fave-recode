@@ -1,9 +1,11 @@
 from fave_recode.rule_classes import RuleSet
 from aligned_textgrid import AlignedTextGrid, Word, Phone
 from fave_recode.fave_recode import get_rules, \
+                                    process_directory,\
                                     process_file,\
                                     ask_for_dir_creation,\
                                     ask_for_file_overwrite, \
+                                    get_target_list,\
                                     make_output_path,\
                                     run_recode,\
                                     validate_input_file,\
@@ -25,6 +27,121 @@ class TestCLIComponents:
         schwa_path = Path().joinpath("tests", "test_data", "just_schwa.yml")
         rules2 = get_rules(str(schwa_path))
         assert isinstance(rules2, RuleSet)
+
+    def test_process_file(self, monkeypatch):
+        # mocking input from click
+
+        real_file = "tests/test_data/josef-fruehwald_speaker.TextGrid"
+        real_path = Path(real_file)
+        schwa_scheme = "tests/test_data/just_schwa.yml"
+        scheme = RuleSet(rule_path=schwa_scheme)
+
+        ratg = process_file(
+            input_path = real_path,
+            scheme = scheme,
+            save_recode=False,
+            target_tier="Phone"
+        )
+
+        assert isinstance(ratg, AlignedTextGrid)
+
+        # testing recode saving without naming an output file
+        try:
+            input_sequence = iter(["y"])
+            monkeypatch.setattr(
+                    "builtins.input", 
+                    lambda _:next(input_sequence)
+            )            
+            recode_stem = "_recoded"
+            output_path = make_output_path(
+                real_path,
+                recode_stem=recode_stem
+            )
+            ratg = process_file(
+                input_path = real_path,
+                scheme = scheme,
+                save_recode = True,
+                recode_stem = recode_stem,
+                target_tier = "Phone"
+            )
+
+            assert output_path.is_file()
+            assert output_path.parent == real_path.parent
+        finally:
+            output_path.unlink()
+
+        # testing recode when output file provided
+        try:
+            output_file = "tests/test_data/here.TextGrid"
+            output_path = Path(output_file)
+            ratg = process_file(
+                input_path = real_path,
+                output_file = output_file,
+                scheme = scheme,
+                save_recode = True,
+                target_tier = "Phone"
+            )
+
+            assert output_path.is_file()
+
+        finally:
+            output_path.unlink()
+
+        # testing recode when output file is in 
+        # non-existing directory
+        try:
+            output_file = "tests/test_data/non_dir/here.TextGrid"
+            output_path = Path(output_file)
+            ratg = process_file(
+                input_path = real_path,
+                output_file = output_file,
+                scheme = scheme,
+                save_recode = True,
+                target_tier = "Phone"
+            )
+
+            assert output_path.is_file()            
+        finally:
+            output_path.unlink()
+            output_path.parent.rmdir()
+
+    def test_process_directory(self, monkeypatch: pytest.MonkeyPatch):
+
+        scheme = get_rules("tests/test_data/just_schwa.yml")
+        ratg_list = process_directory(
+            input_path="tests/test_data",
+            scheme = scheme,
+            save_recode=False
+        )
+        assert isinstance(ratg_list[0], AlignedTextGrid)
+
+        input_sequence = iter(["y"])
+        monkeypatch.setattr("builtins.input", lambda _: next(input_sequence))
+        tg_list = get_target_list(Path("tests/test_data"))
+        output_paths = [
+            make_output_path(
+                tg, 
+                recode_stem = "_recoded", 
+                output_path=Path("tests/test_data/foo")
+            )
+            for tg in tg_list
+        ]
+
+        try:
+            process_directory(
+                input_path="tests/test_data",
+                output_dest="tests/test_data/foo",
+                scheme=scheme,
+                recode_stem="_recoded",
+                save_recode=True
+            )
+            for op in output_paths:
+                assert op.is_file()
+        finally:
+            for op in output_paths:
+                op.unlink()
+            output_paths[0].parent.rmdir()
+
 
     ## support operations
     def test_ask_for_dir_creation(self, monkeypatch: pytest.MonkeyPatch):
@@ -50,6 +167,18 @@ class TestCLIComponents:
         input_sequence = iter(["ok", "YES"])
         monkeypatch.setattr("builtins.input", lambda _: next(input_sequence))
         assert ask_for_file_overwrite(Path())
+
+    def test_get_targets(self):
+        tg_dir = "tests/test_data/"
+        tg_dir_path = Path(tg_dir)
+
+        not_tg_path = Path()
+
+        text_grids = get_target_list(tg_dir_path)
+        assert len(text_grids) > 0
+
+        with pytest.raises(Exception):
+            get_target_list(not_tg_path)
 
     def test_make_output(self):
         input_path = Path("dir/input.TextGrid")
@@ -141,84 +270,3 @@ class TestCLIComponents:
         
         with pytest.raises(Exception):
             validate_output_file(Path("fake_path/Output.TextGrid"))
-    
-    def test_process_file(self, monkeypatch):
-        # mocking input from click
-        class input_file:
-            def __init__(self, name):
-                self.name = name
-
-        real_file = "tests/test_data/josef-fruehwald_speaker.TextGrid"
-        real_path = Path(real_file)
-        fake_input = input_file(real_file)
-        schwa_scheme = "tests/test_data/just_schwa.yml"
-        scheme = RuleSet(rule_path=schwa_scheme)
-
-        ratg = process_file(
-            input_file = fake_input,
-            scheme = scheme,
-            save_recode=False,
-            target_tier="Phone"
-        )
-
-        assert isinstance(ratg, AlignedTextGrid)
-
-        # testing recode saving without naming an output file
-        try:
-            input_sequence = iter(["y"])
-            monkeypatch.setattr(
-                    "builtins.input", 
-                    lambda _:next(input_sequence)
-            )            
-            recode_stem = "_recoded"
-            output_path = make_output_path(
-                real_path,
-                recode_stem=recode_stem
-            )
-            ratg = process_file(
-                input_file = fake_input,
-                scheme = scheme,
-                save_recode = True,
-                recode_stem = recode_stem,
-                target_tier = "Phone"
-            )
-
-            assert output_path.is_file()
-            assert output_path.parent == real_path.parent
-        finally:
-            output_path.unlink()
-
-        # testing recode when output file provided
-        try:
-            output_file = "tests/test_data/here.TextGrid"
-            output_path = Path(output_file)
-            ratg = process_file(
-                input_file = fake_input,
-                output_file = output_file,
-                scheme = scheme,
-                save_recode = True,
-                target_tier = "Phone"
-            )
-
-            assert output_path.is_file()
-
-        finally:
-            output_path.unlink()
-
-        # testing recode when output file is in 
-        # non-existing directory
-        try:
-            output_file = "tests/test_data/non_dir/here.TextGrid"
-            output_path = Path(output_file)
-            ratg = process_file(
-                input_file = fake_input,
-                output_file = output_file,
-                scheme = scheme,
-                save_recode = True,
-                target_tier = "Phone"
-            )
-
-            assert output_path.is_file()            
-        finally:
-            output_path.unlink()
-            output_path.parent.rmdir()

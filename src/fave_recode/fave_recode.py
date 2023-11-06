@@ -64,17 +64,28 @@ def fave_recode(
     save_recode = True,
     recode_stem = "_recoded",
     target_tier = "Phone"
-):
+)->Union[AlignedTextGrid,list]:
     rules = get_rules(scheme)
     if input_file:
-        process_file(
-            input_file=input_file, 
+        input_p = Path(input_file.name)
+        ratg = process_file(
+            input_path=input_p, 
             output_file=output_file, 
             scheme = rules, 
             recode_stem = recode_stem,
             save_recode = save_recode,
             target_tier = target_tier)
-
+    if input_path:
+        ratg = process_directory(
+            input_path = input_path,
+            output_dest = output_dest,
+            scheme = rules,
+            recode_stem = recode_stem,
+            target_tier = target_tier,
+            save_recode = save_recode
+        )
+    return ratg
+    
 ## core fave_recode operations
 def get_rules(
         scheme: str
@@ -86,20 +97,48 @@ def get_rules(
         return RuleSet(rule_path = str(scheme_path))
     raise Exception(f"Cannot find rule schema file: {scheme}")
 
+def process_directory(
+       input_path: str,
+       scheme: RuleSet,
+       save_recode: bool, 
+       output_dest: Union[str,None] = None,
+       recode_stem: str = "_recoded",
+       target_tier: str = "Phone"
+):
+    input_path = Path(input_path)
+    text_grids = get_target_list(input_path)
+    ratg_list = []
+    for tg in text_grids:
+
+        ratg = process_file(
+            input_path = tg,
+            scheme = scheme,
+            save_recode = save_recode,
+            output_file = output_dest,
+            recode_stem=recode_stem,
+            target_tier=target_tier
+        )
+        ratg_list.append(ratg)
+    
+    return ratg_list
+
 def process_file(
-        input_file: io.TextIOWrapper, 
+        input_path: Path, 
         scheme: RuleSet,
         save_recode: bool,
         output_file: str = None,
         recode_stem:str = "_recoded",
         target_tier: str = "Phone"
     ):
-    input_path = Path(input_file.name)
     atg = validate_input_file(input_path)
     run_recode(atg, scheme, target_tier)
 
     if output_file and save_recode:
-        output_path = Path(output_file)
+        output_path = make_output_path(
+            input_path=input_path,
+            recode_stem=recode_stem,
+            output_path=Path(output_file)
+        )
         validate_output_file(output_path)
         atg.save_textgrid(
             save_path=str(output_path),
@@ -154,6 +193,21 @@ def ask_for_file_overwrite(
     
     return ask_for_file_overwrite(output_path, reask=True)
 
+def get_target_list(
+        input_path: Path
+):
+    if not input_path.is_dir():
+        raise Exception(f"Input path '{str(input_path)}' "\
+                        f"does not exist, or is not a directory.")
+    
+    text_grids = list(input_path.glob(pattern="*.[Tt]ext[Gg]rid"))
+
+    if len(text_grids) < 1:
+        raise Exception(f"No textgrids found at '{str(input_path)}'.")
+    
+    return(text_grids)
+    
+
 def make_output_path(
         input_path: Path,
         recode_stem: str,
@@ -168,8 +222,8 @@ def make_output_path(
     if output_path.suffix == "":
         new_name = input_path.with_stem(input_stem+recode_stem).name
         return output_path.joinpath(new_name)
-
-    raise Exception(f"Provided output path {output_path} looks like a file name")
+    
+    return output_path
          
 def run_recode(
         atg: AlignedTextGrid, 
