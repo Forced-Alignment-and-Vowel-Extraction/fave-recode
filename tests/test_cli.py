@@ -157,18 +157,14 @@ class TestCLIComponents:
     
     def test_process_file(self, monkeypatch):
         # mocking input from click
-        class input_file:
-            def __init__(self, name):
-                self.name = name
 
         real_file = "tests/test_data/josef-fruehwald_speaker.TextGrid"
         real_path = Path(real_file)
-        fake_input = input_file(real_file)
         schwa_scheme = "tests/test_data/just_schwa.yml"
         scheme = RuleSet(rule_path=schwa_scheme)
 
         ratg = process_file(
-            input_file = fake_input,
+            input_path = real_path,
             scheme = scheme,
             save_recode=False,
             target_tier="Phone"
@@ -189,7 +185,7 @@ class TestCLIComponents:
                 recode_stem=recode_stem
             )
             ratg = process_file(
-                input_file = fake_input,
+                input_path = real_path,
                 scheme = scheme,
                 save_recode = True,
                 recode_stem = recode_stem,
@@ -206,7 +202,7 @@ class TestCLIComponents:
             output_file = "tests/test_data/here.TextGrid"
             output_path = Path(output_file)
             ratg = process_file(
-                input_file = fake_input,
+                input_path = real_path,
                 output_file = output_file,
                 scheme = scheme,
                 save_recode = True,
@@ -224,7 +220,7 @@ class TestCLIComponents:
             output_file = "tests/test_data/non_dir/here.TextGrid"
             output_path = Path(output_file)
             ratg = process_file(
-                input_file = fake_input,
+                input_path = real_path,
                 output_file = output_file,
                 scheme = scheme,
                 save_recode = True,

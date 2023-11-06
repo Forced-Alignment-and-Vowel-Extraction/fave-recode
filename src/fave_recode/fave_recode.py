@@ -66,9 +66,10 @@ def fave_recode(
     target_tier = "Phone"
 )->Union[AlignedTextGrid,list]:
     rules = get_rules(scheme)
+    input_path = Path(input_file.name)
     if input_file:
         ratg = process_file(
-            input_file=input_file, 
+            input_path=input_path, 
             output_file=output_file, 
             scheme = rules, 
             recode_stem = recode_stem,
@@ -80,7 +81,8 @@ def fave_recode(
             output_dest = output_dest,
             scheme = rules,
             recode_stem = recode_stem,
-            target_tier = target_tier
+            target_tier = target_tier,
+            save_recode = save_recode
         )
     
 
@@ -98,27 +100,45 @@ def get_rules(
 def process_directory(
        input_path: str,
        scheme: RuleSet,
-       recode_stem: str,
-       target_tier: str, 
-       output_dest: Union[str,None] = None
+       save_recode: bool, 
+       output_dest: Union[str,None] = None,
+       recode_stem: str = "_recoded",
+       target_tier: str = "Phone"
 ):
     input_path = Path(input_path)
     text_grids = get_target_list(input_path)
+    ratg_list = []
+    for tg in text_grids:
+
+        ratg = process_file(
+            input_path = tg,
+            scheme = scheme,
+            save_recode = save_recode,
+            output_file = output_dest,
+            recode_stem=recode_stem,
+            target_tier=target_tier
+        )
+        ratg_list.append(ratg)
+    
+    return ratg_list
 
 def process_file(
-        input_file: io.TextIOWrapper, 
+        input_path: Path, 
         scheme: RuleSet,
         save_recode: bool,
         output_file: str = None,
         recode_stem:str = "_recoded",
         target_tier: str = "Phone"
     ):
-    input_path = Path(input_file.name)
     atg = validate_input_file(input_path)
     run_recode(atg, scheme, target_tier)
 
     if output_file and save_recode:
-        output_path = Path(output_file)
+        output_path = make_output_path(
+            input_path=input_path,
+            recode_stem=recode_stem,
+            output_path=Path(output_file)
+        )
         validate_output_file(output_path)
         atg.save_textgrid(
             save_path=str(output_path),
@@ -202,9 +222,8 @@ def make_output_path(
     if output_path.suffix == "":
         new_name = input_path.with_stem(input_stem+recode_stem).name
         return output_path.joinpath(new_name)
-
-    raise Exception(f"Provided output path {str(output_path)} "\
-                    "looks like a file name")
+    
+    return output_path
          
 def run_recode(
         atg: AlignedTextGrid, 
