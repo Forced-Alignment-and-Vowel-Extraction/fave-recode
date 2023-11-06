@@ -88,9 +88,9 @@ def get_rules(
 
 def process_file(
         input_file: io.TextIOWrapper, 
-        output_file: str, 
         scheme: RuleSet,
         save_recode: bool,
+        output_file: str = None,
         recode_stem:str = "_recoded",
         target_tier: str = "Phone"
     ):
@@ -115,6 +115,8 @@ def process_file(
             save_path=str(output_path),
             format="long_textgrid"
         )
+    
+    return atg
 
 ## support operations
 def ask_for_dir_creation(
