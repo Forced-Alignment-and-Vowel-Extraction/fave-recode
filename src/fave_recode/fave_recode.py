@@ -66,10 +66,10 @@ def fave_recode(
     target_tier = "Phone"
 )->Union[AlignedTextGrid,list]:
     rules = get_rules(scheme)
-    input_path = Path(input_file.name)
     if input_file:
+        input_p = Path(input_file.name)
         ratg = process_file(
-            input_path=input_path, 
+            input_path=input_p, 
             output_file=output_file, 
             scheme = rules, 
             recode_stem = recode_stem,
@@ -84,8 +84,8 @@ def fave_recode(
             target_tier = target_tier,
             save_recode = save_recode
         )
+    return ratg
     
-
 ## core fave_recode operations
 def get_rules(
         scheme: str
