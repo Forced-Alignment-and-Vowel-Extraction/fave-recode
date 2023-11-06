@@ -64,16 +64,25 @@ def fave_recode(
     save_recode = True,
     recode_stem = "_recoded",
     target_tier = "Phone"
-):
+)->Union[AlignedTextGrid,list]:
     rules = get_rules(scheme)
     if input_file:
-        process_file(
+        ratg = process_file(
             input_file=input_file, 
             output_file=output_file, 
             scheme = rules, 
             recode_stem = recode_stem,
             save_recode = save_recode,
             target_tier = target_tier)
+    if input_path:
+        ratg = process_directory(
+            input_path = input_path,
+            output_dest = output_dest,
+            scheme = rules,
+            recode_stem = recode_stem,
+            target_tier = target_tier
+        )
+    
 
 ## core fave_recode operations
 def get_rules(
@@ -85,6 +94,16 @@ def get_rules(
     if scheme_path.is_file():
         return RuleSet(rule_path = str(scheme_path))
     raise Exception(f"Cannot find rule schema file: {scheme}")
+
+def process_directory(
+       input_path: str,
+       scheme: RuleSet,
+       recode_stem: str,
+       target_tier: str, 
+       output_dest: Union[str,None] = None
+):
+    input_path = Path(input_path)
+    text_grids = get_target_list(input_path)
 
 def process_file(
         input_file: io.TextIOWrapper, 
@@ -154,6 +173,21 @@ def ask_for_file_overwrite(
     
     return ask_for_file_overwrite(output_path, reask=True)
 
+def get_target_list(
+        input_path: Path
+):
+    if not input_path.is_dir():
+        raise Exception(f"Input path '{str(input_path)}' "\
+                        f"does not exist, or is not a directory.")
+    
+    text_grids = list(input_path.glob(pattern="*.[Tt]ext[Gg]rid"))
+
+    if len(text_grids) < 1:
+        raise Exception(f"No textgrids found at '{str(input_path)}'.")
+    
+    return(text_grids)
+    
+
 def make_output_path(
         input_path: Path,
         recode_stem: str,
@@ -169,7 +203,8 @@ def make_output_path(
         new_name = input_path.with_stem(input_stem+recode_stem).name
         return output_path.joinpath(new_name)
 
-    raise Exception(f"Provided output path {output_path} looks like a file name")
+    raise Exception(f"Provided output path {str(output_path)} "\
+                    "looks like a file name")
          
 def run_recode(
         atg: AlignedTextGrid, 
