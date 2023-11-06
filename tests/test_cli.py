@@ -4,6 +4,7 @@ from fave_recode.fave_recode import get_rules, \
                                     process_file,\
                                     ask_for_dir_creation,\
                                     ask_for_file_overwrite, \
+                                    get_target_list,\
                                     make_output_path,\
                                     run_recode,\
                                     validate_input_file,\
@@ -50,6 +51,18 @@ class TestCLIComponents:
         input_sequence = iter(["ok", "YES"])
         monkeypatch.setattr("builtins.input", lambda _: next(input_sequence))
         assert ask_for_file_overwrite(Path())
+
+    def test_get_targets(self):
+        tg_dir = "tests/test_data/"
+        tg_dir_path = Path(tg_dir)
+
+        not_tg_path = Path()
+
+        text_grids = get_target_list(tg_dir_path)
+        assert len(text_grids) > 0
+
+        with pytest.raises(Exception):
+            get_target_list(not_tg_path)
 
     def test_make_output(self):
         input_path = Path("dir/input.TextGrid")
