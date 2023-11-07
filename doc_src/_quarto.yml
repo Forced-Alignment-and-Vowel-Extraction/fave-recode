@@ -2,9 +2,33 @@ project:
   type: website
   output-dir: ../docs
 
+website:
+  page-navigation: true
+  navbar:
+    left:
+      - file: getting-started/overview.qmd
+        text: Get Started
+  sidebar:
+      - id: get-started
+        title: Get Started
+        style: floating
+        align: left
+        contents:
+          - getting-started/overview.qmd    
+
 # tell quarto to read the generated sidebar
 metadata-files:
   - _sidebar.yml
+
+filters:
+  - "interlinks"
+
+interlinks:
+  sources:
+    python:
+      url: https://docs.python.org/3/
+    griffe:
+      url: https://mkdocstrings.github.io/griffe/
 
 
 quartodoc:
@@ -15,7 +39,7 @@ quartodoc:
   # write sidebar data to this file
   sidebar: _sidebar.yml
   parser: google
-
+  render_interlinks: true
   sections:
     - title: Rule Classes
       desc: Rule application classes
