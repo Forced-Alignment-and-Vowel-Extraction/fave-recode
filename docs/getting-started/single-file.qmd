@@ -1,0 +1,163 @@
+---
+title: Processing a single file
+engine: jupyter
+toc: true
+---
+
+```{python}
+#| echo: false
+from pathlib import Path
+```
+
+There are a few different ways you can process a single file with `fave_recode`. 
+
+## Only input file and scheme provided
+First, like the [basic usage](overview.qmd#basic-usage) section did, you can provide it with just a single input file, and a recoding scheme. 
+
+::: {.callout-note}
+## This will happen:
+`fave_recode` will save the recoded TextGrid to the same directory as the original TextGrid with `_recoded` added to the end of the filename.
+:::
+
+::: {.callout-warning}
+## If there is already a file in the output location:
+If there is already a file in the output location, `fave_recode` will ask you whether or not you want to overwrite it.
+:::
+
+### Example
+```bash
+ls data
+```
+```{python}
+#| echo: false
+!ls data
+```
+
+```bash
+fave_recode -i data/KY25A_1.TextGrid -s cmu2labov
+ls data
+```
+```{python}
+#| echo: false
+!fave_recode -i data/KY25A_1.TextGrid -s cmu2labov
+!ls data
+```
+
+```{python}
+#| echo: false
+Path("data/KY25A_1_recoded.TextGrid").unlink()
+```
+
+## Providing a recode stem
+You can provide `fave_recode` with a different recode stem to append to the original filename with the `-r` flag.
+
+::: {.callout-note}
+## This will happen:
+`fave_recode` will save the recoded TextGrid to the same directory as the original TextGrid with the string you provided added to the end of the filename.
+:::
+
+### Example
+
+```bash
+ls data
+```
+```{python}
+#| echo: false
+!ls data
+```
+
+```bash
+fave_recode -i data/KY25A_1.TextGrid -s cmu2labov -r _labovcode
+ls data
+```
+```{python}
+#| echo: false
+!fave_recode -i data/KY25A_1.TextGrid -s cmu2labov -r _labovcode
+!ls data
+```
+```{python}
+#| echo: false
+Path("data/KY25A_1_labovcode.TextGrid").unlink()
+```
+
+## Providing an output filename
+
+You can also provide `fave_recode` with an output filename with the `-o` flag.
+
+::: {.callout-note}
+## This will happen:
+`fave_recode` will save the recoded TextGrid to the output location.
+:::
+
+::: {.callout-warning}
+## If there is already a file in the output location:
+If there is already a file in the output location, `fave_recode` will ask you whether or not you want to overwrite it.
+:::
+
+::: {.callout-warning}
+## If there the output directory doesn't exist:
+If the output directory doesn't exist, `fave_recode` will ask you whether or not you want to create it.
+:::
+
+### Example
+
+```bash
+ls data
+```
+```{python}
+#| echo: false
+!ls data
+```
+
+```bash
+fave_recode -i data/KY25A_1.TextGrid -s cmu2labov -o data/recoded.TextGrid
+ls data
+```
+```{python}
+#| echo: false
+!fave_recode -i data/KY25A_1.TextGrid -s cmu2labov -o data/recoded.TextGrid
+!ls data
+```
+```{python}
+#| echo: false
+Path("data/recoded.TextGrid").unlink()
+```
+
+## Providing an output directory
+You can also provide `fave_recode` with an output directory with `-o`. 
+
+::: {.callout-note}
+## This will happen:
+`fave_recode` will save the recoded TextGrid to the output directory with the recode string appended to the end of the original filename.
+:::
+
+::: {.callout-warning}
+## If there is already a file in the output location:
+If there is already a file in the output location, `fave_recode` will ask you whether or not you want to overwrite it.
+:::
+
+::: {.callout-warning}
+## If there the output directory doesn't exist:
+If the output directory doesn't exist, `fave_recode` will ask you whether or not you want to create it.
+:::
+
+### Example
+```{python}
+#| echo: false
+o = Path("output")
+if not o.is_dir():
+    o.mkdir()
+```
+```bash
+fave_recode -i data/KY25A_1.TextGrid -s cmu2labov -o output
+ls output
+```
+```{python}
+#| echo: false
+!fave_recode -i data/KY25A_1.TextGrid -s cmu2labov -o output
+!ls output
+```
+```{python}
+#| echo: false
+Path("output/KY25A_1_recoded.TextGrid").unlink()
+```
