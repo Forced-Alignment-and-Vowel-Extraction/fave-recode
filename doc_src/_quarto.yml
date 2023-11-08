@@ -2,23 +2,38 @@ project:
   type: website
   output-dir: ../docs
 
+
 website:
   page-navigation: true
   navbar:
     left:
       - file: getting-started/overview.qmd
         text: Get Started
+      - href: reference/
+        text: Reference        
+    right:
+      - icon: github
+        href: https://github.com/Forced-Alignment-and-Vowel-Extraction/fave-recode        
   sidebar:
       - id: get-started
         title: Get Started
         style: floating
         align: left
         contents:
-          - getting-started/overview.qmd    
+          - getting-started/overview.qmd
+          - section: Processing patterns
+            contents: 
+              - getting-started/single-file.qmd
+
+format:
+  html: 
+    theme:
+      light: flatly
+      dark: darkly
 
 # tell quarto to read the generated sidebar
 metadata-files:
-  - _sidebar.yml
+  - reference/_sidebar.yml
 
 filters:
   - "interlinks"
@@ -37,7 +52,7 @@ quartodoc:
   style: pkgdown
   dir: reference
   # write sidebar data to this file
-  sidebar: _sidebar.yml
+  sidebar: "reference/_sidebar.yml"
   parser: google
   render_interlinks: true
   sections:

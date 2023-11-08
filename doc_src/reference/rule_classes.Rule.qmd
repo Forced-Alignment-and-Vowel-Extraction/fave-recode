@@ -6,11 +6,11 @@ _A rule class_
 
 ## Attributes
 
-| Name       | Type                   | Description           |
-|------------|------------------------|-----------------------|
-| rule       | str                    | The name of the rule  |
-| conditions | list\[Condition, ...\] | A  list of conditions |
-| output     | str                    | The rewrite output    |
+| Name       | Type                                                                     | Description           |
+|------------|--------------------------------------------------------------------------|-----------------------|
+| rule       | [str](`str`)                                                             | The name of the rule  |
+| conditions | [list](`list`)\[[Condition](`fave_recode.rule_classes.Condition`), ...\] | A  list of conditions |
+| output     | [str](`str`)                                                             | The rewrite output    |
 
 ## Methods
 
@@ -27,21 +27,21 @@ _Apply a single rile_
 
 #### Parameters
 
-| Name   | Type             | Description                               | Default    |
-|--------|------------------|-------------------------------------------|------------|
-| `obj`  | SequenceInterval | The interval potentially being relabelled | _required_ |
+| Name   | Type                                                                        | Description                               | Default    |
+|--------|-----------------------------------------------------------------------------|-------------------------------------------|------------|
+| `obj`  | [SequenceInterval](`aligned_textgrid.sequences.sequences.SequenceInterval`) | The interval potentially being relabelled | _required_ |
 
 #### Raises
 
-| Type      | Description                           |
-|-----------|---------------------------------------|
-| Exception | Any errors in checking the conditions |
+| Type                     | Description                           |
+|--------------------------|---------------------------------------|
+| [Exception](`Exception`) | Any errors in checking the conditions |
 
 #### Returns
 
-| Type   | Description                |
-|--------|----------------------------|
-| bool   | `True` if the rule applied |
+| Type           | Description                |
+|----------------|----------------------------|
+| [bool](`bool`) | `True` if the rule applied |
 
 ### validate_rule { #fave_recode.rule_classes.Rule.validate_rule }
 
@@ -51,12 +51,12 @@ _Validate the rule wellformedness_
 
 #### Parameters
 
-| Name   | Type   | Description         | Default    |
-|--------|--------|---------------------|------------|
-| `rule` | dict   | The rule dictionary | _required_ |
+| Name   | Type           | Description         | Default    |
+|--------|----------------|---------------------|------------|
+| `rule` | [dict](`dict`) | The rule dictionary | _required_ |
 
 #### Raises
 
-| Type      | Description                   |
-|-----------|-------------------------------|
-| Exception | Any errors from the validator |
+| Type                     | Description                   |
+|--------------------------|-------------------------------|
+| [Exception](`Exception`) | Any errors from the validator |

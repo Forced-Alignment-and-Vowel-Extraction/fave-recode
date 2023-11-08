@@ -9,16 +9,16 @@ to a rules yaml file
 
 ## Parameters
 
-| Name        | Type              | Description                 | Default   |
-|-------------|-------------------|-----------------------------|-----------|
-| `rules`     | list\[dict, ...\] | A list of rule dictionaries | `[]`      |
-| `rule_path` | str               | A path to a rules .yml file | `None`    |
+| Name        | Type                                  | Description                 | Default   |
+|-------------|---------------------------------------|-----------------------------|-----------|
+| `rules`     | [list](`list`)\[[dict](`dict`), ...\] | A list of rule dictionaries | `[]`      |
+| `rule_path` | [str](`str`)                          | A path to a rules .yml file | `None`    |
 
 ## Attributes
 
-| Name   | Type              | Description   |
-|--------|-------------------|---------------|
-| rules  | list\[Rule, ...\] |               |
+| Name   | Type                                                           | Description   |
+|--------|----------------------------------------------------------------|---------------|
+| rules  | [list](`list`)\[[Rule](`fave_recode.rule_classes.Rule`), ...\] |               |
 
 ## Methods
 
@@ -40,9 +40,9 @@ application.
 
 #### Parameters
 
-| Name   | Type             | Description                                      | Default    |
-|--------|------------------|--------------------------------------------------|------------|
-| `obj`  | SequenceInterval | The SequenceInterval undergoing rule application | _required_ |
+| Name   | Type                                                                        | Description                                      | Default    |
+|--------|-----------------------------------------------------------------------------|--------------------------------------------------|------------|
+| `obj`  | [SequenceInterval](`aligned_textgrid.sequences.sequences.SequenceInterval`) | The SequenceInterval undergoing rule application | _required_ |
 
 ### map_ruleset { #fave_recode.rule_classes.RuleSet.map_ruleset }
 
@@ -52,9 +52,9 @@ _Apply the ruleset to all sequences_
 
 #### Parameters
 
-| Name   | Type         | Description                   | Default    |
-|--------|--------------|-------------------------------|------------|
-| `obj`  | SequenceTier | A sequence tier to be recoded | _required_ |
+| Name   | Type                                                            | Description                   | Default    |
+|--------|-----------------------------------------------------------------|-------------------------------|------------|
+| `obj`  | [SequenceTier](`aligned_textgrid.sequences.tiers.SequenceTier`) | A sequence tier to be recoded | _required_ |
 
 ### read_ruleset { #fave_recode.rule_classes.RuleSet.read_ruleset }
 
@@ -64,12 +64,12 @@ _read in a ruleset_
 
 #### Parameters
 
-| Name   | Type   | Description         | Default    |
-|--------|--------|---------------------|------------|
-| `path` | str    | A path to a ruleset | _required_ |
+| Name   | Type         | Description         | Default    |
+|--------|--------------|---------------------|------------|
+| `path` | [str](`str`) | A path to a ruleset | _required_ |
 
 #### Raises
 
-| Type      | Description                          |
-|-----------|--------------------------------------|
-| Exception | Any errors in reading in the ruleset |
+| Type                     | Description                          |
+|--------------------------|--------------------------------------|
+| [Exception](`Exception`) | Any errors in reading in the ruleset |

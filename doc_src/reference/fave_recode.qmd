@@ -1,4 +1,0 @@
-# fave_recode { #fave_recode.fave_recode }
-
-`fave_recode`
-
