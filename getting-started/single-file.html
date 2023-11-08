@@ -258,15 +258,14 @@ If there is already a file in the output location:
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
-<pre><code>KY25A_1.TextGrid                 josef-fruehwald_speaker.TextGrid</code></pre>
+<pre><code>KY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid</code></pre>
 </div>
 </div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fave_recode</span> <span class="at">-i</span> data/KY25A_1.TextGrid <span class="at">-s</span> cmu2labov</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
-<pre><code>KY25A_1.TextGrid                 josef-fruehwald_speaker.TextGrid
-KY25A_1_recoded.TextGrid</code></pre>
+<pre><code>KY25A_1.TextGrid  KY25A_1_recoded.TextGrid  josef-fruehwald_speaker.TextGrid</code></pre>
 </div>
 </div>
 </section>
@@ -292,15 +291,14 @@ This will happen:
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
-<pre><code>KY25A_1.TextGrid                 josef-fruehwald_speaker.TextGrid</code></pre>
+<pre><code>KY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid</code></pre>
 </div>
 </div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fave_recode</span> <span class="at">-i</span> data/KY25A_1.TextGrid <span class="at">-s</span> cmu2labov <span class="at">-r</span> _labovcode</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
-<pre><code>KY25A_1.TextGrid                 josef-fruehwald_speaker.TextGrid
-KY25A_1_labovcode.TextGrid</code></pre>
+<pre><code>KY25A_1.TextGrid  KY25A_1_labovcode.TextGrid  josef-fruehwald_speaker.TextGrid</code></pre>
 </div>
 </div>
 </section>
@@ -352,15 +350,14 @@ If there the output directory doesn’t exist:
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-execution_count="8">
 <div class="cell-output cell-output-stdout">
-<pre><code>KY25A_1.TextGrid                 josef-fruehwald_speaker.TextGrid</code></pre>
+<pre><code>KY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid</code></pre>
 </div>
 </div>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fave_recode</span> <span class="at">-i</span> data/KY25A_1.TextGrid <span class="at">-s</span> cmu2labov <span class="at">-o</span> data/recoded.TextGrid</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
-<pre><code>KY25A_1.TextGrid                 recoded.TextGrid
-josef-fruehwald_speaker.TextGrid</code></pre>
+<pre><code>KY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid  recoded.TextGrid</code></pre>
 </div>
 </div>
 </section>

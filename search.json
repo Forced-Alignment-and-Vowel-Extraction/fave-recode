@@ -1,5 +1,96 @@
 [
   {
+    "objectID": "getting-started/single-file.html",
+    "href": "getting-started/single-file.html",
+    "title": "Processing a single file",
+    "section": "",
+    "text": "There are a few different ways you can process a single file with fave_recode."
+  },
+  {
+    "objectID": "getting-started/single-file.html#only-input-file-and-scheme-provided",
+    "href": "getting-started/single-file.html#only-input-file-and-scheme-provided",
+    "title": "Processing a single file",
+    "section": "Only input file and scheme provided",
+    "text": "Only input file and scheme provided\nFirst, like the basic usage section did, you can provide it with just a single input file, and a recoding scheme.\n\n\n\n\n\n\nThis will happen:\n\n\n\nfave_recode will save the recoded TextGrid to the same directory as the original TextGrid with _recoded added to the end of the filename.\n\n\n\n\n\n\n\n\nIf there is already a file in the output location:\n\n\n\nIf there is already a file in the output location, fave_recode will ask you whether or not you want to overwrite it.\n\n\n\nExample\nls data\n\n\nKY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid\n\n\nfave_recode -i data/KY25A_1.TextGrid -s cmu2labov\nls data\n\n\nKY25A_1.TextGrid  KY25A_1_recoded.TextGrid  josef-fruehwald_speaker.TextGrid"
+  },
+  {
+    "objectID": "getting-started/single-file.html#providing-a-recode-stem",
+    "href": "getting-started/single-file.html#providing-a-recode-stem",
+    "title": "Processing a single file",
+    "section": "Providing a recode stem",
+    "text": "Providing a recode stem\nYou can provide fave_recode with a different recode stem to append to the original filename with the -r flag.\n\n\n\n\n\n\nThis will happen:\n\n\n\nfave_recode will save the recoded TextGrid to the same directory as the original TextGrid with the string you provided added to the end of the filename.\n\n\n\nExample\nls data\n\n\nKY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid\n\n\nfave_recode -i data/KY25A_1.TextGrid -s cmu2labov -r _labovcode\nls data\n\n\nKY25A_1.TextGrid  KY25A_1_labovcode.TextGrid  josef-fruehwald_speaker.TextGrid"
+  },
+  {
+    "objectID": "getting-started/single-file.html#providing-an-output-filename",
+    "href": "getting-started/single-file.html#providing-an-output-filename",
+    "title": "Processing a single file",
+    "section": "Providing an output filename",
+    "text": "Providing an output filename\nYou can also provide fave_recode with an output filename with the -o flag.\n\n\n\n\n\n\nThis will happen:\n\n\n\nfave_recode will save the recoded TextGrid to the output location.\n\n\n\n\n\n\n\n\nIf there is already a file in the output location:\n\n\n\nIf there is already a file in the output location, fave_recode will ask you whether or not you want to overwrite it.\n\n\n\n\n\n\n\n\nIf there the output directory doesn’t exist:\n\n\n\nIf the output directory doesn’t exist, fave_recode will ask you whether or not you want to create it.\n\n\n\nExample\nls data\n\n\nKY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid\n\n\nfave_recode -i data/KY25A_1.TextGrid -s cmu2labov -o data/recoded.TextGrid\nls data\n\n\nKY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid  recoded.TextGrid"
+  },
+  {
+    "objectID": "getting-started/single-file.html#providing-an-output-directory",
+    "href": "getting-started/single-file.html#providing-an-output-directory",
+    "title": "Processing a single file",
+    "section": "Providing an output directory",
+    "text": "Providing an output directory\nYou can also provide fave_recode with an output directory with -o.\n\n\n\n\n\n\nThis will happen:\n\n\n\nfave_recode will save the recoded TextGrid to the output directory with the recode string appended to the end of the original filename.\n\n\n\n\n\n\n\n\nIf there is already a file in the output location:\n\n\n\nIf there is already a file in the output location, fave_recode will ask you whether or not you want to overwrite it.\n\n\n\n\n\n\n\n\nIf there the output directory doesn’t exist:\n\n\n\nIf the output directory doesn’t exist, fave_recode will ask you whether or not you want to create it.\n\n\n\nExample\nfave_recode -i data/KY25A_1.TextGrid -s cmu2labov -o output\nls output\n\n\nKY25A_1_recoded.TextGrid"
+  },
+  {
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Function reference",
+    "section": "",
+    "text": "Rule application classes\n\n\n\nrule_classes.Condition\nA rule condition\n\n\nrule_classes.Rule\nA rule class\n\n\nrule_classes.RuleSet\nA rule set class"
+  },
+  {
+    "objectID": "reference/index.html#rule-classes",
+    "href": "reference/index.html#rule-classes",
+    "title": "Function reference",
+    "section": "",
+    "text": "Rule application classes\n\n\n\nrule_classes.Condition\nA rule condition\n\n\nrule_classes.Rule\nA rule class\n\n\nrule_classes.RuleSet\nA rule set class"
+  },
+  {
+    "objectID": "reference/rule_classes.Rule.html",
+    "href": "reference/rule_classes.Rule.html",
+    "title": "rule_classes.Rule",
+    "section": "",
+    "text": "rule_classes.Rule(self, rule)\nA rule class\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nrule\nstr\nThe name of the rule\n\n\nconditions\nlist[Condition, …]\nA list of conditions\n\n\noutput\nstr\nThe rewrite output\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\napply_rule\nApply a single rile\n\n\nvalidate_rule\nValidate the rule wellformedness\n\n\n\n\n\nrule_classes.Rule.apply_rule(obj)\nApply a single rile\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe interval potentially being relabelled\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors in checking the conditions\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue if the rule applied\n\n\n\n\n\n\n\nrule_classes.Rule.validate_rule(rule)\nValidate the rule wellformedness\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nrule\ndict\nThe rule dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors from the validator"
+  },
+  {
+    "objectID": "reference/rule_classes.Rule.html#attributes",
+    "href": "reference/rule_classes.Rule.html#attributes",
+    "title": "rule_classes.Rule",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\nrule\nstr\nThe name of the rule\n\n\nconditions\nlist[Condition, …]\nA list of conditions\n\n\noutput\nstr\nThe rewrite output"
+  },
+  {
+    "objectID": "reference/rule_classes.Rule.html#methods",
+    "href": "reference/rule_classes.Rule.html#methods",
+    "title": "rule_classes.Rule",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\napply_rule\nApply a single rile\n\n\nvalidate_rule\nValidate the rule wellformedness\n\n\n\n\n\nrule_classes.Rule.apply_rule(obj)\nApply a single rile\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe interval potentially being relabelled\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors in checking the conditions\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue if the rule applied\n\n\n\n\n\n\n\nrule_classes.Rule.validate_rule(rule)\nValidate the rule wellformedness\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nrule\ndict\nThe rule dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors from the validator"
+  },
+  {
+    "objectID": "reference/rule_classes.Condition.html",
+    "href": "reference/rule_classes.Condition.html",
+    "title": "rule_classes.Condition",
+    "section": "",
+    "text": "rule_classes.Condition(self, condition)\nA rule condition\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nattribute\nstr\nThe attribute path for a SequenceInterval\n\n\nrelation\nCallable\nThe relation function to be used\n\n\nset\nUnion[str, list]\nThe comparison set\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncheck_condition\nCheck if the condition is met\n\n\nvalidate_condition\nValidate wellformedness of condititions\n\n\n\n\n\nrule_classes.Condition.check_condition(obj)\nCheck if the condition is met\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe sequence interval against which the condition is checked\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False\n\n\n\n\n\n\n\nrule_classes.Condition.validate_condition(condition)\nValidate wellformedness of condititions\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncondition\ndict\ncondition dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator"
+  },
+  {
+    "objectID": "reference/rule_classes.Condition.html#attributes",
+    "href": "reference/rule_classes.Condition.html#attributes",
+    "title": "rule_classes.Condition",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\nattribute\nstr\nThe attribute path for a SequenceInterval\n\n\nrelation\nCallable\nThe relation function to be used\n\n\nset\nUnion[str, list]\nThe comparison set"
+  },
+  {
+    "objectID": "reference/rule_classes.Condition.html#methods",
+    "href": "reference/rule_classes.Condition.html#methods",
+    "title": "rule_classes.Condition",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\ncheck_condition\nCheck if the condition is met\n\n\nvalidate_condition\nValidate wellformedness of condititions\n\n\n\n\n\nrule_classes.Condition.check_condition(obj)\nCheck if the condition is met\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe sequence interval against which the condition is checked\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False\n\n\n\n\n\n\n\nrule_classes.Condition.validate_condition(condition)\nValidate wellformedness of condititions\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncondition\ndict\ncondition dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator"
+  },
+  {
     "objectID": "reference/rule_classes.RuleSet.html",
     "href": "reference/rule_classes.RuleSet.html",
     "title": "rule_classes.RuleSet",
@@ -28,62 +119,6 @@
     "text": "Name\nDescription\n\n\n\n\napply_ruleset\nApply the ruleset\n\n\nmap_ruleset\nApply the ruleset to all sequences\n\n\nread_ruleset\nread in a ruleset\n\n\n\n\n\nrule_classes.RuleSet.apply_ruleset(obj)\nApply the ruleset\nThe rules are checked against the Sequence interval in sequence, and the first one applies, ceasing rule’ application.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe SequenceInterval undergoing rule application\nrequired\n\n\n\n\n\n\n\nrule_classes.RuleSet.map_ruleset(obj)\nApply the ruleset to all sequences\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceTier\nA sequence tier to be recoded\nrequired\n\n\n\n\n\n\n\nrule_classes.RuleSet.read_ruleset(path)\nread in a ruleset\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\npath\nstr\nA path to a ruleset\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors in reading in the ruleset"
   },
   {
-    "objectID": "reference/rule_classes.Rule.html",
-    "href": "reference/rule_classes.Rule.html",
-    "title": "rule_classes.Rule",
-    "section": "",
-    "text": "rule_classes.Rule(self, rule)\nA rule class\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nrule\nstr\nThe name of the rule\n\n\nconditions\nlist[Condition, …]\nA list of conditions\n\n\noutput\nstr\nThe rewrite output\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\napply_rule\nApply a single rile\n\n\nvalidate_rule\nValidate the rule wellformedness\n\n\n\n\n\nrule_classes.Rule.apply_rule(obj)\nApply a single rile\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe interval potentially being relabelled\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors in checking the conditions\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue if the rule applied\n\n\n\n\n\n\n\nrule_classes.Rule.validate_rule(rule)\nValidate the rule wellformedness\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nrule\ndict\nThe rule dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors from the validator"
-  },
-  {
-    "objectID": "reference/rule_classes.Rule.html#attributes",
-    "href": "reference/rule_classes.Rule.html#attributes",
-    "title": "rule_classes.Rule",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\nrule\nstr\nThe name of the rule\n\n\nconditions\nlist[Condition, …]\nA list of conditions\n\n\noutput\nstr\nThe rewrite output"
-  },
-  {
-    "objectID": "reference/rule_classes.Rule.html#methods",
-    "href": "reference/rule_classes.Rule.html#methods",
-    "title": "rule_classes.Rule",
-    "section": "",
-    "text": "Name\nDescription\n\n\n\n\napply_rule\nApply a single rile\n\n\nvalidate_rule\nValidate the rule wellformedness\n\n\n\n\n\nrule_classes.Rule.apply_rule(obj)\nApply a single rile\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe interval potentially being relabelled\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors in checking the conditions\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue if the rule applied\n\n\n\n\n\n\n\nrule_classes.Rule.validate_rule(rule)\nValidate the rule wellformedness\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nrule\ndict\nThe rule dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors from the validator"
-  },
-  {
-    "objectID": "getting-started/single-file.html",
-    "href": "getting-started/single-file.html",
-    "title": "Processing a single file",
-    "section": "",
-    "text": "There are a few different ways you can process a single file with fave_recode."
-  },
-  {
-    "objectID": "getting-started/single-file.html#only-input-file-and-scheme-provided",
-    "href": "getting-started/single-file.html#only-input-file-and-scheme-provided",
-    "title": "Processing a single file",
-    "section": "Only input file and scheme provided",
-    "text": "Only input file and scheme provided\nFirst, like the basic usage section did, you can provide it with just a single input file, and a recoding scheme.\n\n\n\n\n\n\nThis will happen:\n\n\n\nfave_recode will save the recoded TextGrid to the same directory as the original TextGrid with _recoded added to the end of the filename.\n\n\n\n\n\n\n\n\nIf there is already a file in the output location:\n\n\n\nIf there is already a file in the output location, fave_recode will ask you whether or not you want to overwrite it.\n\n\n\nExample\nls data\n\n\nKY25A_1.TextGrid                 josef-fruehwald_speaker.TextGrid\n\n\nfave_recode -i data/KY25A_1.TextGrid -s cmu2labov\nls data\n\n\nKY25A_1.TextGrid                 josef-fruehwald_speaker.TextGrid\nKY25A_1_recoded.TextGrid"
-  },
-  {
-    "objectID": "getting-started/single-file.html#providing-a-recode-stem",
-    "href": "getting-started/single-file.html#providing-a-recode-stem",
-    "title": "Processing a single file",
-    "section": "Providing a recode stem",
-    "text": "Providing a recode stem\nYou can provide fave_recode with a different recode stem to append to the original filename with the -r flag.\n\n\n\n\n\n\nThis will happen:\n\n\n\nfave_recode will save the recoded TextGrid to the same directory as the original TextGrid with the string you provided added to the end of the filename.\n\n\n\nExample\nls data\n\n\nKY25A_1.TextGrid                 josef-fruehwald_speaker.TextGrid\n\n\nfave_recode -i data/KY25A_1.TextGrid -s cmu2labov -r _labovcode\nls data\n\n\nKY25A_1.TextGrid                 josef-fruehwald_speaker.TextGrid\nKY25A_1_labovcode.TextGrid"
-  },
-  {
-    "objectID": "getting-started/single-file.html#providing-an-output-filename",
-    "href": "getting-started/single-file.html#providing-an-output-filename",
-    "title": "Processing a single file",
-    "section": "Providing an output filename",
-    "text": "Providing an output filename\nYou can also provide fave_recode with an output filename with the -o flag.\n\n\n\n\n\n\nThis will happen:\n\n\n\nfave_recode will save the recoded TextGrid to the output location.\n\n\n\n\n\n\n\n\nIf there is already a file in the output location:\n\n\n\nIf there is already a file in the output location, fave_recode will ask you whether or not you want to overwrite it.\n\n\n\n\n\n\n\n\nIf there the output directory doesn’t exist:\n\n\n\nIf the output directory doesn’t exist, fave_recode will ask you whether or not you want to create it.\n\n\n\nExample\nls data\n\n\nKY25A_1.TextGrid                 josef-fruehwald_speaker.TextGrid\n\n\nfave_recode -i data/KY25A_1.TextGrid -s cmu2labov -o data/recoded.TextGrid\nls data\n\n\nKY25A_1.TextGrid                 recoded.TextGrid\njosef-fruehwald_speaker.TextGrid"
-  },
-  {
-    "objectID": "getting-started/single-file.html#providing-an-output-directory",
-    "href": "getting-started/single-file.html#providing-an-output-directory",
-    "title": "Processing a single file",
-    "section": "Providing an output directory",
-    "text": "Providing an output directory\nYou can also provide fave_recode with an output directory with -o.\n\n\n\n\n\n\nThis will happen:\n\n\n\nfave_recode will save the recoded TextGrid to the output directory with the recode string appended to the end of the original filename.\n\n\n\n\n\n\n\n\nIf there is already a file in the output location:\n\n\n\nIf there is already a file in the output location, fave_recode will ask you whether or not you want to overwrite it.\n\n\n\n\n\n\n\n\nIf there the output directory doesn’t exist:\n\n\n\nIf the output directory doesn’t exist, fave_recode will ask you whether or not you want to create it.\n\n\n\nExample\nfave_recode -i data/KY25A_1.TextGrid -s cmu2labov -o output\nls output\n\n\nKY25A_1_recoded.TextGrid"
-  },
-  {
     "objectID": "getting-started/overview.html",
     "href": "getting-started/overview.html",
     "title": "Getting started with fave-recode",
@@ -95,48 +130,13 @@
     "href": "getting-started/overview.html#installation",
     "title": "Getting started with fave-recode",
     "section": "Installation",
-    "text": "Installation\nYou can install fave-recode at your system’s command line with pip.\n\n\n\nterminal\n\npip install fave-recode"
+    "text": "Installation\nYou can install fave-recode at your system’s command line with pip.\npip install fave-recode"
   },
   {
     "objectID": "getting-started/overview.html#basic-usage",
     "href": "getting-started/overview.html#basic-usage",
     "title": "Getting started with fave-recode",
     "section": "Basic usage",
-    "text": "Basic usage\nInstallation of the fave-recode python package makes the fave_recode executable, which can also be run at the command line. You can get help with --help\n\n\n\nterminal\n\nfave_recode --help\n\n\nUsage: fave_recode [OPTIONS]\n\nInputs: [at least 1 required]\n  File inputs. Either a single file with -i or a path with -p. Not both.\n  -i, --input_file FILENAME  single input file\n  -p, --input_path PATH      Path to a set of files\n\nOutputs:\n  -o, --output_file TEXT     An output file name\n  -d, --output_dest PATH     An output directory\n\nOther options:\n  -s, --scheme TEXT          Recoding scheme. Built in options are cmu2labov\n                             and cmu2phila  [required]\n  -r, --recode_stem TEXT     Stem to append to recoded TextGrid file names\n  -t, --target_tier TEXT     Target tier to recode\n  --help                     Show this message and exit.\n\n\nTo recode a single file, you need to provide fave_recode with, minimally, the input file (the -i flag), and the recoding scheme (with the -s flag). There are a few default recoding schemes that come with fave_recode.\n\n\n\nterminal\n\nls data\n\n\nKY25A_1.TextGrid\njosef-fruehwald_speaker.TextGrid\n\n\n\n\n\nterminal\n\nfave_recode -i data/josef-fruehwald_speaker.TextGrid -s cmu2phila\nls data\n\n\nKY25A_1.TextGrid\njosef-fruehwald_speaker.TextGrid\njosef-fruehwald_speaker_recoded.TextGrid"
-  },
-  {
-    "objectID": "reference/rule_classes.Condition.html",
-    "href": "reference/rule_classes.Condition.html",
-    "title": "rule_classes.Condition",
-    "section": "",
-    "text": "rule_classes.Condition(self, condition)\nA rule condition\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nattribute\nstr\nThe attribute path for a SequenceInterval\n\n\nrelation\nCallable\nThe relation function to be used\n\n\nset\nUnion[str, list]\nThe comparison set\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncheck_condition\nCheck if the condition is met\n\n\nvalidate_condition\nValidate wellformedness of condititions\n\n\n\n\n\nrule_classes.Condition.check_condition(obj)\nCheck if the condition is met\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe sequence interval against which the condition is checked\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False\n\n\n\n\n\n\n\nrule_classes.Condition.validate_condition(condition)\nValidate wellformedness of condititions\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncondition\ndict\ncondition dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator"
-  },
-  {
-    "objectID": "reference/rule_classes.Condition.html#attributes",
-    "href": "reference/rule_classes.Condition.html#attributes",
-    "title": "rule_classes.Condition",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\nattribute\nstr\nThe attribute path for a SequenceInterval\n\n\nrelation\nCallable\nThe relation function to be used\n\n\nset\nUnion[str, list]\nThe comparison set"
-  },
-  {
-    "objectID": "reference/rule_classes.Condition.html#methods",
-    "href": "reference/rule_classes.Condition.html#methods",
-    "title": "rule_classes.Condition",
-    "section": "",
-    "text": "Name\nDescription\n\n\n\n\ncheck_condition\nCheck if the condition is met\n\n\nvalidate_condition\nValidate wellformedness of condititions\n\n\n\n\n\nrule_classes.Condition.check_condition(obj)\nCheck if the condition is met\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe sequence interval against which the condition is checked\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False\n\n\n\n\n\n\n\nrule_classes.Condition.validate_condition(condition)\nValidate wellformedness of condititions\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncondition\ndict\ncondition dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator"
-  },
-  {
-    "objectID": "reference/index.html",
-    "href": "reference/index.html",
-    "title": "Function reference",
-    "section": "",
-    "text": "Rule application classes\n\n\n\nrule_classes.Condition\nA rule condition\n\n\nrule_classes.Rule\nA rule class\n\n\nrule_classes.RuleSet\nA rule set class"
-  },
-  {
-    "objectID": "reference/index.html#rule-classes",
-    "href": "reference/index.html#rule-classes",
-    "title": "Function reference",
-    "section": "",
-    "text": "Rule application classes\n\n\n\nrule_classes.Condition\nA rule condition\n\n\nrule_classes.Rule\nA rule class\n\n\nrule_classes.RuleSet\nA rule set class"
+    "text": "Basic usage\nInstallation of the fave-recode python package makes the fave_recode executable, which can also be run at the command line. You can get help with --help\nfave_recode --help\n\n\nUsage: fave_recode [OPTIONS]\n\nInputs: [at least 1 required]\n  File inputs. Either a single file with -i or a path with -p. Not both.\n  -i, --input_file FILENAME  single input file\n  -p, --input_path PATH      Path to a set of files\n\nOutputs:\n  -o, --output_file TEXT     An output file name\n  -d, --output_dest PATH     An output directory\n\nOther options:\n  -s, --scheme TEXT          Recoding scheme. Built in options are cmu2labov\n                             and cmu2phila  [required]\n  -r, --recode_stem TEXT     Stem to append to recoded TextGrid file names\n  -t, --target_tier TEXT     Target tier to recode\n  --help                     Show this message and exit.\n\n\nTo recode a single file, you need to provide fave_recode with, minimally, the input file (the -i flag), and the recoding scheme (with the -s flag). There are a few default recoding schemes that come with fave_recode.\nls data\n\n\nKY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid\n\n\nfave_recode -i data/josef-fruehwald_speaker.TextGrid -s cmu2phila\n\nls data\n\n\nKY25A_1.TextGrid          josef-fruehwald_speaker_recoded.TextGrid\njosef-fruehwald_speaker.TextGrid"
   }
 ]
