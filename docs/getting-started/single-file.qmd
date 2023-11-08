@@ -142,6 +142,12 @@ If the output directory doesn't exist, `fave_recode` will ask you whether or not
 :::
 
 ### Example
+```{python}
+#| echo: false
+o = Path("output")
+if not o.is_dir():
+    o.mkdir()
+```
 ```bash
 fave_recode -i data/KY25A_1.TextGrid -s cmu2labov -o output
 ls output
