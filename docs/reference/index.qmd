@@ -1,0 +1,11 @@
+# Function reference
+
+## Rule Classes
+
+Rule application classes
+
+| | |
+| --- | --- |
+| [rule_classes.Condition](rule_classes.Condition.qmd#fave_recode.rule_classes.Condition) | _A rule condition_ |
+| [rule_classes.Rule](rule_classes.Rule.qmd#fave_recode.rule_classes.Rule) | _A rule class_ |
+| [rule_classes.RuleSet](rule_classes.RuleSet.qmd#fave_recode.rule_classes.RuleSet) | A rule set class |
