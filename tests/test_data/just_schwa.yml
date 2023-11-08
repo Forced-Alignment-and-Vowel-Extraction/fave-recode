@@ -1,6 +1,0 @@
-- rule: schwa
-  conditions:
-    - attribute: label
-      relation: ==
-      set: AH0
-  return: "@"
