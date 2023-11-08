@@ -2,7 +2,7 @@
 title: Getting started with `fave-recode`
 aliases:
   - ../index.html
-engine: knitr
+engine: jupyter
 ---
 
 The idea behind `fave-recode` is that no matter how much you may adjust the dictionary of a forced-aligner, you may still want to make programmatic changes to the output.
@@ -10,37 +10,50 @@ The idea behind `fave-recode` is that no matter how much you may adjust the dict
 ## Installation
 
 You can install `fave-recode` at your system's command line with `pip`.
-
-```{bash}
-#| eval: false
-#| filename: terminal
+```bash
 pip install fave-recode
+```
+```{python}
+#| eval: false
+#| echo: false
+!pip install fave-recode
 ```
 
 ## Basic usage
 
 Installation of the `fave-recode` python package makes the `fave_recode` executable, which can also be run at the command line. You can get help with `--help`
 
-```{bash}
-#| filename: terminal
+```bash
 fave_recode --help
+```
+```{python}
+#| filename: terminal
+#| echo: false
+!fave_recode --help
 ```
 
 To recode a single file, you need to provide `fave_recode` with, minimally, the input file (the `-i` flag), and the recoding scheme (with the `-s` flag). There are a few default recoding schemes that come with `fave_recode`.
 
-```{bash}
-#| filename: terminal
+```bash
 ls data
 ```
-
-```{bash}
-#| filename: terminal
-fave_recode -i data/josef-fruehwald_speaker.TextGrid -s cmu2phila
-ls data
-```
-
-
-```{bash}
+```{python}
 #| echo: false
-rm data/josef-fruehwald_speaker_recoded.TextGrid
+!ls data
+```
+
+```bash
+fave_recode -i data/josef-fruehwald_speaker.TextGrid -s cmu2phila
+
+ls data
+```
+```{python}
+#| echo: false
+!fave_recode -i data/josef-fruehwald_speaker.TextGrid -s cmu2phila
+!ls data
+```
+
+```{python}
+#| echo: false
+!rm data/josef-fruehwald_speaker_recoded.TextGrid
 ```
