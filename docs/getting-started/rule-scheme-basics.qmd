@@ -1,0 +1,51 @@
+---
+title: Rule basics
+engine: jupyter
+toc: true
+---
+
+Recoding rule schemes can be written in a yaml file. A very simple rule scheme would be to recode the CMU dictionary label `AH0` to a schwa-like character, `@`. Here's the contents of a `just-schwa.yml` file.
+
+```yaml
+# just-schwa.yml
+- rule: schwa
+  conditions:
+    - attribute: label
+      relation: ==
+      set: AH0
+  return: "@"
+```
+
+## Anatomy of a rule scheme
+
+Every rule scheme file is a list of rules, which indicated by each line starting a new rule beginning with `-`.
+
+```yaml
+# rule skeleton
+- rule: ...
+  ...
+- rule: ...
+  ...
+```
+
+### The Rule Name
+Each rule has a rule name, which is indicated by the text following `rule:`. 
+
+### The Rule Conditions
+Each rule also has a list of conditions which can result in `true` or a `false`. The `schwa` rule has just one condition.
+
+```yaml
+attribute: label
+relation: ==
+set: AH0
+```
+
+- `attribute` refers to properties of a TextGrid interval. [Read more here](condition-attributes.qmd).
+- `relation` refers to how the specified `attribute` relates to the `set`. [Read more here](condition-relations.qmd).
+- `set` is some reference value or set of values.
+
+This condition will return `true` with a TextGrid interval's `label` is equal to (`==`) the string `AH0`.
+
+### The Rule Outcome
+
+The label of a TextGrid interval is replaced with the value in `return`.
