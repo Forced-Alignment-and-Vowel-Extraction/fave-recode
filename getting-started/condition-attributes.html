@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Processing a single file</title>
+<title>Condition Attributes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../getting-started/directory.html" rel="next">
-<link href="../getting-started/overview.html" rel="prev">
+<link href="../getting-started/condition-relations.html" rel="next">
+<link href="../getting-started/rule-application.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -140,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../getting-started/single-file.html">Processing patterns</a></li><li class="breadcrumb-item"><a href="../getting-started/single-file.html">Processing a single file</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../getting-started/rule-scheme-basics.html">Customizing a recoding scheme</a></li><li class="breadcrumb-item"><a href="../getting-started/condition-attributes.html">Details</a></li><li class="breadcrumb-item"><a href="../getting-started/condition-attributes.html">Condition Attributes</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -169,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../getting-started/single-file.html" class="sidebar-item-text sidebar-link active">
+  <a href="../getting-started/single-file.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Processing a single file</span></a>
   </div>
 </li>
@@ -204,16 +170,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">Details</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../getting-started/condition-attributes.html" class="sidebar-item-text sidebar-link">
+  <a href="../getting-started/condition-attributes.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Condition Attributes</span></a>
   </div>
 </li>
@@ -233,35 +199,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#only-input-file-and-scheme-provided" id="toc-only-input-file-and-scheme-provided" class="nav-link active" data-scroll-target="#only-input-file-and-scheme-provided">Only input file and scheme provided</a>
-  <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
-  </ul></li>
-  <li><a href="#providing-a-recode-stem" id="toc-providing-a-recode-stem" class="nav-link" data-scroll-target="#providing-a-recode-stem">Providing a recode stem</a>
-  <ul class="collapse">
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
-  </ul></li>
-  <li><a href="#providing-an-output-filename" id="toc-providing-an-output-filename" class="nav-link" data-scroll-target="#providing-an-output-filename">Providing an output filename</a>
-  <ul class="collapse">
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
-  </ul></li>
-  <li><a href="#providing-an-output-directory" id="toc-providing-an-output-directory" class="nav-link" data-scroll-target="#providing-an-output-directory">Providing an output directory</a>
-  <ul class="collapse">
-  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Processing a single file</h1>
+<h1 class="title">Condition Attributes</h1>
 </div>
 
 
@@ -276,200 +221,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>There are a few different ways you can process a single file with <code>fave_recode</code>.</p>
-<section id="only-input-file-and-scheme-provided" class="level2">
-<h2 class="anchored" data-anchor-id="only-input-file-and-scheme-provided">Only input file and scheme provided</h2>
-<p>First, like the <a href="../getting-started/overview.html#basic-usage">basic usage</a> section did, you can provide it with just a single input file, and a recoding scheme.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-This will happen:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>fave_recode</code> will save the recoded TextGrid to the same directory as the original TextGrid with <code>_recoded</code> added to the end of the filename.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-If there is already a file in the output location:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If there is already a file in the output location, <code>fave_recode</code> will ask you whether or not you want to overwrite it.</p>
-</div>
-</div>
-<section id="example" class="level3">
-<h3 class="anchored" data-anchor-id="example">Example</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-stdout">
-<pre><code>KY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid</code></pre>
-</div>
-</div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fave_recode</span> <span class="at">-i</span> data/KY25A_1.TextGrid <span class="at">-s</span> cmu2labov</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell" data-execution_count="3">
-<div class="cell-output cell-output-stdout">
-<pre><code>KY25A_1.TextGrid  KY25A_1_recoded.TextGrid  josef-fruehwald_speaker.TextGrid</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="providing-a-recode-stem" class="level2">
-<h2 class="anchored" data-anchor-id="providing-a-recode-stem">Providing a recode stem</h2>
-<p>You can provide <code>fave_recode</code> with a different recode stem to append to the original filename with the <code>-r</code> flag.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-This will happen:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>fave_recode</code> will save the recoded TextGrid to the same directory as the original TextGrid with the string you provided added to the end of the filename.</p>
-</div>
-</div>
-<section id="example-1" class="level3">
-<h3 class="anchored" data-anchor-id="example-1">Example</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell" data-execution_count="5">
-<div class="cell-output cell-output-stdout">
-<pre><code>KY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid</code></pre>
-</div>
-</div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fave_recode</span> <span class="at">-i</span> data/KY25A_1.TextGrid <span class="at">-s</span> cmu2labov <span class="at">-r</span> _labovcode</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell" data-execution_count="6">
-<div class="cell-output cell-output-stdout">
-<pre><code>KY25A_1.TextGrid  KY25A_1_labovcode.TextGrid  josef-fruehwald_speaker.TextGrid</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="providing-an-output-filename" class="level2">
-<h2 class="anchored" data-anchor-id="providing-an-output-filename">Providing an output filename</h2>
-<p>You can also provide <code>fave_recode</code> with an output filename with the <code>-o</code> flag.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-This will happen:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>fave_recode</code> will save the recoded TextGrid to the output location.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-If there is already a file in the output location:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If there is already a file in the output location, <code>fave_recode</code> will ask you whether or not you want to overwrite it.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-If there the output directory doesn’t exist:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If the output directory doesn’t exist, <code>fave_recode</code> will ask you whether or not you want to create it.</p>
-</div>
-</div>
-<section id="example-2" class="level3">
-<h3 class="anchored" data-anchor-id="example-2">Example</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell" data-execution_count="8">
-<div class="cell-output cell-output-stdout">
-<pre><code>KY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid</code></pre>
-</div>
-</div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fave_recode</span> <span class="at">-i</span> data/KY25A_1.TextGrid <span class="at">-s</span> cmu2labov <span class="at">-o</span> data/recoded.TextGrid</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell" data-execution_count="9">
-<div class="cell-output cell-output-stdout">
-<pre><code>KY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid  recoded.TextGrid</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="providing-an-output-directory" class="level2">
-<h2 class="anchored" data-anchor-id="providing-an-output-directory">Providing an output directory</h2>
-<p>You can also provide <code>fave_recode</code> with an output directory with <code>-o</code>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-This will happen:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>fave_recode</code> will save the recoded TextGrid to the output directory with the recode string appended to the end of the original filename.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-If there is already a file in the output location:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If there is already a file in the output location, <code>fave_recode</code> will ask you whether or not you want to overwrite it.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-If there the output directory doesn’t exist:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If the output directory doesn’t exist, <code>fave_recode</code> will ask you whether or not you want to create it.</p>
-</div>
-</div>
-<section id="example-3" class="level3">
-<h3 class="anchored" data-anchor-id="example-3">Example</h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fave_recode</span> <span class="at">-i</span> data/KY25A_1.TextGrid <span class="at">-s</span> cmu2labov <span class="at">-o</span> output</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell" data-execution_count="12">
-<div class="cell-output cell-output-stdout">
-<pre><code>KY25A_1_recoded.TextGrid</code></pre>
-</div>
-</div>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -822,13 +575,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../getting-started/overview.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Getting started with <code>fave-recode</code></span>
+      <a href="../getting-started/rule-application.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Rule application</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../getting-started/directory.html" class="pagination-link">
-        <span class="nav-page-text">Processing a directory</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../getting-started/condition-relations.html" class="pagination-link">
+        <span class="nav-page-text">Condition Relations</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
