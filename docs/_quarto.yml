@@ -24,6 +24,7 @@ website:
           - section: Processing patterns
             contents: 
               - getting-started/single-file.qmd
+              - getting-started/directory.qmd
 
 format:
   html: 
