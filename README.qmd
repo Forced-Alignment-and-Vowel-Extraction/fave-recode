@@ -1,8 +1,7 @@
 ---
 title: Getting started with `fave-recode`
-aliases:
-  - ../index.html
 engine: jupyter
+format: gfm
 ---
 
 [![codecov](https://codecov.io/gh/Forced-Alignment-and-Vowel-Extraction/fave-recode/graph/badge.svg?token=C23B1H3DAX)](https://codecov.io/gh/Forced-Alignment-and-Vowel-Extraction/fave-recode)
@@ -44,7 +43,7 @@ ls data
 ```
 ```{python}
 #| echo: false
-!ls data
+!ls docs/getting-started/data/
 ```
 
 ```bash
@@ -54,11 +53,11 @@ ls data
 ```
 ```{python}
 #| echo: false
-!fave_recode -i data/josef-fruehwald_speaker.TextGrid -s cmu2phila
-!ls data
+!fave_recode -i docs/getting-started/data/josef-fruehwald_speaker.TextGrid -s cmu2phila
+!ls docs/getting-started/data
 ```
 
 ```{python}
 #| echo: false
-!rm data/josef-fruehwald_speaker_recoded.TextGrid
+!rm docs/getting-started/data/josef-fruehwald_speaker_recoded.TextGrid
 ```
