@@ -1,0 +1,18 @@
+# relations.reunmatches_relation { #fave_recode.relations.reunmatches_relation }
+
+`relations.reunmatches_relation(lhs, rhs)`
+
+Does the lhs *not* match a regex for the rhs
+
+## Parameters
+
+| Name   | Type         | Description     | Default    |
+|--------|--------------|-----------------|------------|
+| `lhs`  | [str](`str`) | left hand side  | _required_ |
+| `rhs`  | [str](`str`) | right hand side | _required_ |
+
+## Returns
+
+| Type           | Description   |
+|----------------|---------------|
+| [bool](`bool`) | True or False |

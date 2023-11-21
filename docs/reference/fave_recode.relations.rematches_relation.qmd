@@ -1,0 +1,18 @@
+# rematches_relation { #fave_recode.relations.rematches_relation }
+
+`relations.rematches_relation(lhs, rhs)`
+
+_summary_
+
+## Parameters
+
+| Name   | Type         | Description   | Default    |
+|--------|--------------|---------------|------------|
+| `lhs`  | [str](`str`) | _description_ | _required_ |
+| `rhs`  | [str](`str`) | _description_ | _required_ |
+
+## Returns
+
+| Type           | Description   |
+|----------------|---------------|
+| [bool](`bool`) | _description_ |

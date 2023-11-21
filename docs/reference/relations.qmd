@@ -1,0 +1,149 @@
+# relations { #fave_recode.relations }
+
+`relations`
+
+Functions defining Boolean relations between 
+`lhs` (the rule conditions `attribute`) and the 
+`rhs` (the rule condition `set1`)
+
+## Functions
+
+| Name | Description |
+| --- | --- |
+| [contains_relation](#fave_recode.relations.contains_relation) | Does `lhs` contain `rhs`? |
+| [equals_relation](#fave_recode.relations.equals_relation) | Is lhs `==` to `rhs` |
+| [excludes_relation](#fave_recode.relations.excludes_relation) | Does `lhs` *not* contain `rhs` |
+| [in_relation](#fave_recode.relations.in_relation) | Is `lhs` in `rhs`? |
+| [not_in_relation](#fave_recode.relations.not_in_relation) | Is `lhs` *not* in `rhs` |
+| [rematches_relation](#fave_recode.relations.rematches_relation) | _summary_ |
+
+## contains_relation { #fave_recode.relations.contains_relation }
+
+`relations.contains_relation(lhs, rhs)`
+
+Does `lhs` contain `rhs`?
+
+```{python}
+from fave_recode.relations import contains_relation
+
+contains_relation('xyz', 'x')
+```
+
+### Parameters
+
+| Name   | Type                | Description                          | Default    |
+|--------|---------------------|--------------------------------------|------------|
+| `lhs`  | [Any](`typing.Any`) | left hand side (must work with `in`) | _required_ |
+| `rhs`  | [Any](`typing.Any`) | right hand side                      | _required_ |
+
+### Returns
+
+| Type           | Description       |
+|----------------|-------------------|
+| [bool](`bool`) | `True` or `False` |
+
+## equals_relation { #fave_recode.relations.equals_relation }
+
+`relations.equals_relation(lhs, rhs)`
+
+Is lhs `==` to `rhs`
+
+### Parameters
+
+| Name   | Type                | Description     | Default    |
+|--------|---------------------|-----------------|------------|
+| `lhs`  | [Any](`typing.Any`) | left hand side  | _required_ |
+| `rhs`  | [Any](`typing.Any`) | right hand side | _required_ |
+
+### Returns
+
+| Type           | Description   |
+|----------------|---------------|
+| [bool](`bool`) | _description_ |
+
+## excludes_relation { #fave_recode.relations.excludes_relation }
+
+`relations.excludes_relation(lhs, rhs)`
+
+Does `lhs` *not* contain `rhs`
+
+### Parameters
+
+| Name   | Type                | Description                          | Default    |
+|--------|---------------------|--------------------------------------|------------|
+| `lhs`  | [Any](`typing.Any`) | left hand side (must work with `in`) | _required_ |
+| `rhs`  | [Any](`typing.Any`) | right handnside                      | _required_ |
+
+### Returns
+
+| Type           | Description   |
+|----------------|---------------|
+| [bool](`bool`) | True or False |
+
+## in_relation { #fave_recode.relations.in_relation }
+
+`relations.in_relation(lhs, rhs)`
+
+Is `lhs` in `rhs`?
+
+```{python}
+from fave_recode.relations import in_relation
+in_relation('x', 'xyz')
+```
+
+### Parameters
+
+| Name   | Type                | Description                                  | Default    |
+|--------|---------------------|----------------------------------------------|------------|
+| `lhs`  | [Any](`typing.Any`) | left hand side object                        | _required_ |
+| `rhs`  | [Any](`typing.Any`) | right hand side object (must work with `in`) | _required_ |
+
+### Returns
+
+| Type           | Description       |
+|----------------|-------------------|
+| [bool](`bool`) | `True` or `False` |
+
+## not_in_relation { #fave_recode.relations.not_in_relation }
+
+`relations.not_in_relation(lhs, rhs)`
+
+Is `lhs` *not* in `rhs`
+
+```{python}
+from fave_recode.relations import not_in_relation
+
+not_in_relation('x', 'xyz')
+```
+
+### Parameters
+
+| Name   | Type                | Description                           | Default    |
+|--------|---------------------|---------------------------------------|------------|
+| `lhs`  | [Any](`typing.Any`) | left hand side                        | _required_ |
+| `rhs`  | [Any](`typing.Any`) | right hand side (must work with `in`) | _required_ |
+
+### Returns
+
+| Type           | Description       |
+|----------------|-------------------|
+| [bool](`bool`) | `True` or `False` |
+
+## rematches_relation { #fave_recode.relations.rematches_relation }
+
+`relations.rematches_relation(lhs, rhs)`
+
+_summary_
+
+### Parameters
+
+| Name   | Type         | Description   | Default    |
+|--------|--------------|---------------|------------|
+| `lhs`  | [str](`str`) | _description_ | _required_ |
+| `rhs`  | [str](`str`) | _description_ | _required_ |
+
+### Returns
+
+| Type           | Description   |
+|----------------|---------------|
+| [bool](`bool`) | _description_ |

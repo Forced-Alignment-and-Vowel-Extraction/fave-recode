@@ -1,0 +1,18 @@
+# relations.not_equals_relation { #fave_recode.relations.not_equals_relation }
+
+`relations.not_equals_relation(lhs, rhs)`
+
+is lhs *not* `==` rhs
+
+## Parameters
+
+| Name   | Type                | Description     | Default    |
+|--------|---------------------|-----------------|------------|
+| `lhs`  | [Any](`typing.Any`) | left hand side  | _required_ |
+| `rhs`  | [any](`any`)        | right hand side | _required_ |
+
+## Returns
+
+| Type           | Description   |
+|----------------|---------------|
+| [bool](`bool`) | True or False |

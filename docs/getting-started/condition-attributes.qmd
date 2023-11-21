@@ -3,3 +3,109 @@ title: Condition Attributes
 engine: jupyter
 toc: true
 ---
+
+Every rule has at least one condition, and each condition targets at least one "attribute" of an AlignedTextGrid interval. For example, the `schwa` rule below targets the `label` attribute of the interval, checking to see if it's value is `AH0`.
+
+```yaml
+# just-schwa.yml
+- rule: schwa
+  conditions:
+    - attribute: label
+      relation: ==
+      set: AH0
+  return: "@"
+```
+
+The following attributes can be chained together to target specific values:
+
+|  attribute | description |
+| :---- | :---- | 
+| `fol` | the following interval |
+| `prev` | the previous interval |
+| `inword` | if a Phone, the word it appears within |
+| `first` | the first interval in a subset list |
+| `last` | the last interval in a subset list |
+
+## Examples
+
+### Vowels within a target word
+
+For exampe, if you wanted to target `AE1` that appears in the word "can"
+
+- You need to target the `label` of the interval.
+- You need to target the `inword.label`.
+
+
+![](assets/inword1.svg){fig-align="center"}
+
+```yaml
+- rule: ae-can
+  conditions:
+    - attribute: label
+      relation: ==
+      set: AE1
+    - attribute: inword.label
+      relation: ==
+      set: can
+  return: "ae"
+```
+
+
+### `T` `D` in the onset of an unstressed syllable
+
+If you want to recode `T` and `D` as a flap in the onset of an unstressed syllable within a word
+
+- You need to target the `label` of the interval
+- You need to target the `prev.label`
+- You need to target the `fol.label`
+
+![](assets/fol_prev.svg){fig-align="center"}
+
+```yaml
+- rule: tx-inword
+  conditions:
+    - attribute: label
+      relation: in
+      set: 
+        - T
+        - D
+    - attribute: prev.label
+      relation: rematches
+      set: "[AEIOU]"
+    - attribute: fol.label
+      relation: rematches
+      set: "[AEIOU].0"      
+  return: "tx"
+```
+
+
+### `T` `D` before an unstressed syllable across a word boundary
+
+If you want to recode `T` and `D` as flaps when they occur before un unstressed syllable across word boundaries
+
+- You need to target the `label`
+- You need to target the `prev.label`
+- You need to target the `fol.label`
+- You need to target the `inword.fol.first.label`
+
+![](assets/fol_word.svg){fig-align="center"}
+
+```yaml
+- rule: tx-crossword
+  conditions:
+    - attribute: label
+      relation: in
+      set: 
+        - T
+        - D
+    - attribute: prev.label
+      relation: rematches
+      set: "[AEIOU]"
+    - attribute: fol.label
+      relation: ==
+      set: "#"    
+    - attribute: inword.fol.first.label
+      relation: rematches  
+      set: "[AEIOU].0"
+  return: "tx"
+```
