@@ -11,6 +11,8 @@ exclude = [
     "docs/",
     "doc_src/"
 ]
+homepage = "https://forced-alignment-and-vowel-extraction.github.io/fave-recode"
+repository = "https://github.com/Forced-Alignment-and-Vowel-Extraction/fave-recode"
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -26,9 +28,6 @@ pytest = "^7.2.1"
 pytest-cov = "^4.1.0"
 importlib = "^1.0.4"
 pre-commit = "^3.5.0"
-
-
-
 
 [tool.poetry.group.docs.dependencies]
 quartodoc = "^0.6.5"
