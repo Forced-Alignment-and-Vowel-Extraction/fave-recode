@@ -1,0 +1,46 @@
+---
+title: Condition Relations
+engine: jupyter
+toc: true
+---
+
+Every rule condition has a boolean "relation" between the `attribute` and the `set`. The following relations are defined.
+
+## (Non)Equivalence
+When `==` or `!=` are passed to `relation`, these will check whether or not the value in the attribute exactly matches the value in the `set`.
+
+
+| `attribute` | `relation` | `set` | returns |
+| :--------  | :--------   | :---- | :------ |
+| `"AE1"`    | `==` | `"AE1"` | true |
+| `"AE1"`   | `==` | `"AE"`  | false |
+| `"EH1"`  | `!=` | `"AE1"` | true |
+| `"AE1"` | `!=` | `"AE1"` | false | 
+
+## In, Not In, Contains, Excludes
+
+The following relations can be passed to `relation` to test containment relationships
+
+- `in`: The value in the `attribute` is in the `set`
+- `not in`: The value in the `attribute` is not in the `set`
+- `contains`: The value in the `attribute` contains the the `set`
+- `excludes`: The value in the `attribute` does not contain the `set`
+
+| `attribute` | `relation` | `set` | returns |
+| :--------  | :--------   | :---- | :------ |
+| `"AE1"`    | `in` | `["AE1", "AE0", "AE2"]` | true |
+| `"AE1"`    | `not in` | `["AE1", "AE0", "AE2"]` | false |
+| `"AE1"`   | `contains` | `"AE"`  | true |
+| `"AE1"`  | `excludes` | `"1"` | false |
+
+## Regex Matching
+
+These relations test whether the value in `attribute` is or is not a regex match for `set`.
+
+- `rematches`: Does the regex in `set` match the value in `attribute`
+- `reunmatches`: Does the regex in `set` *not* match the value in `attribute`
+
+| `attribute` | `relation` | `set` | returns |
+| :--------  | :--------   | :---- | :------ |
+| `"AE1"`    | `rematches` | `"[AEIOU]"`| true |
+| `"AE1"`    | `rematches` | `0` | false |

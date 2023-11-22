@@ -1,0 +1,37 @@
+---
+title: Rule application
+engine: jupyter
+toc: true
+---
+
+## Single Rule Application
+
+A single rule will only apply if **all** of its conditions return `true`.
+
+## Ruleset Application
+
+Rules in a ruleset are applied in sequence, and once a rule applies to an interval, no other rules can apply. 
+
+:::{.callout-important}
+This means you *must* place more specific rules towards the top of your ruleset.
+:::
+
+For example, if you wanted every word with `AE1` followed by `N` to go into one category, *unless* it's the word `ran`, you would need to place the rule about `ran` into its own rule *before* the more general rule.
+
+```yaml
+- rule: ran-rule
+  conditions:
+    - attribute: inword.label
+      relation: ==
+      set: ran
+  return: ae1
+- rule: aen-rule 
+  conditions:
+    - attribute: label
+      relation: ==
+      set: AE1
+    - attribute: fol.label
+      relation: ==
+      set: 'N'  
+  return: ae2
+```
