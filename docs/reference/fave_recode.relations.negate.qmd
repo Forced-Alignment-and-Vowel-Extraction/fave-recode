@@ -1,0 +1,30 @@
+# negate { #fave_recode.relations.negate }
+
+`relations.negate(f)`
+
+Negate a function
+
+Given a function `f()` that returns a boolean, this will
+return `g() = not f()`
+
+```{python}
+from fave_recode.relations import negate
+
+def f():
+  return True
+
+g = negate(f)
+g()
+```
+
+## Parameters
+
+| Name   | Type                                   | Description                       | Default    |
+|--------|----------------------------------------|-----------------------------------|------------|
+| `f`    | [Callable](`collections.abc.Callable`) | A function that returns a boolean | _required_ |
+
+## Returns
+
+| Type                                   | Description   |
+|----------------------------------------|---------------|
+| [Callable](`collections.abc.Callable`) | not f()       |

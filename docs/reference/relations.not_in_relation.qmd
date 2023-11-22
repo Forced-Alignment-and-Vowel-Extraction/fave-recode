@@ -1,0 +1,24 @@
+# relations.not_in_relation { #fave_recode.relations.not_in_relation }
+
+`relations.not_in_relation(lhs, rhs)`
+
+Is `lhs` *not* in `rhs`
+
+```{python}
+from fave_recode.relations import not_in_relation
+
+not_in_relation('x', 'xyz')
+```
+
+## Parameters
+
+| Name   | Type                | Description                           | Default    |
+|--------|---------------------|---------------------------------------|------------|
+| `lhs`  | [Any](`typing.Any`) | left hand side                        | _required_ |
+| `rhs`  | [Any](`typing.Any`) | right hand side (must work with `in`) | _required_ |
+
+## Returns
+
+| Type           | Description       |
+|----------------|-------------------|
+| [bool](`bool`) | `True` or `False` |

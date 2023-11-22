@@ -2,9 +2,9 @@ project:
   type: website
   output-dir: _site
 
-
 website:
   page-navigation: true
+  image: assets/logo.png
   navbar:
     left:
       - file: getting-started/overview.qmd
@@ -15,24 +15,26 @@ website:
       - icon: github
         href: https://github.com/Forced-Alignment-and-Vowel-Extraction/fave-recode        
   sidebar:
-      - id: get-started
-        title: Get Started
-        style: floating
-        align: left
-        contents:
-          - getting-started/overview.qmd
-          - section: Processing patterns
-            contents: 
-              - getting-started/single-file.qmd
-              - getting-started/directory.qmd
-          - section: Customizing a recoding scheme
-            contents:
-              - getting-started/rule-scheme-basics.qmd
-              - getting-started/rule-application.qmd
-              - section: Details
-                contents:
-                  - getting-started/condition-attributes.qmd
-                  - getting-started/condition-relations.qmd
+    - id: get-started
+      logo: assets/logo.png
+      collapse-level: 3
+      title: Get Started
+      style: floating
+      align: left
+      contents:
+        - getting-started/overview.qmd
+        - section: Processing patterns
+          contents: 
+            - getting-started/single-file.qmd
+            - getting-started/directory.qmd
+        - section: Customizing a recoding scheme
+          contents:
+            - getting-started/rule-scheme-basics.qmd
+            - getting-started/rule-application.qmd
+            - section: Details
+              contents:
+                - getting-started/condition-attributes.qmd
+                - getting-started/condition-relations.qmd
 
 
 format:
@@ -40,6 +42,7 @@ format:
     theme:
       light: flatly
       dark: darkly
+    toc: true
 
 # tell quarto to read the generated sidebar
 metadata-files:
@@ -72,3 +75,17 @@ quartodoc:
         - rule_classes.Condition
         - rule_classes.Rule
         - rule_classes.RuleSet
+    - title: Relations
+    - subtitle: "`in`, `not in`"
+      contents:
+        - relations.in_relation
+        - relations.not_in_relation
+    - subtitle: "equals, not equals"
+      contents:
+        - relations.equals_relation
+        - relations.not_equals_relation
+    - subtitle: "Regex match"
+      contents:
+        - relations.rematches_relation
+        - relations.reunmatches_relation
+

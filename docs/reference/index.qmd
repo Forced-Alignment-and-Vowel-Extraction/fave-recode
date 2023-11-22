@@ -9,3 +9,26 @@ Rule application classes
 | [rule_classes.Condition](rule_classes.Condition.qmd#fave_recode.rule_classes.Condition) | _A rule condition_ |
 | [rule_classes.Rule](rule_classes.Rule.qmd#fave_recode.rule_classes.Rule) | _A rule class_ |
 | [rule_classes.RuleSet](rule_classes.RuleSet.qmd#fave_recode.rule_classes.RuleSet) | A rule set class |
+
+## Relations
+
+### `in`, `not in`
+
+| | |
+| --- | --- |
+| [relations.in_relation](relations.in_relation.qmd#fave_recode.relations.in_relation) | Is `lhs` in `rhs`? |
+| [relations.not_in_relation](relations.not_in_relation.qmd#fave_recode.relations.not_in_relation) | Is `lhs` *not* in `rhs` |
+
+### equals, not equals
+
+| | |
+| --- | --- |
+| [relations.equals_relation](relations.equals_relation.qmd#fave_recode.relations.equals_relation) | Is lhs `==` to `rhs` |
+| [relations.not_equals_relation](relations.not_equals_relation.qmd#fave_recode.relations.not_equals_relation) | is lhs *not* `==` rhs |
+
+### Regex match
+
+| | |
+| --- | --- |
+| [relations.rematches_relation](relations.rematches_relation.qmd#fave_recode.relations.rematches_relation) | Does the lhs match a regex for rhs? |
+| [relations.reunmatches_relation](relations.reunmatches_relation.qmd#fave_recode.relations.reunmatches_relation) | Does the lhs *not* match a regex for the rhs |

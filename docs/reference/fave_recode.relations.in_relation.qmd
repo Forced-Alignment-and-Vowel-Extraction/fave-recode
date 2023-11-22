@@ -1,0 +1,23 @@
+# in_relation { #fave_recode.relations.in_relation }
+
+`relations.in_relation(lhs, rhs)`
+
+Is `lhs` in `rhs`?
+
+```{python}
+from fave_recode.relations import in_relation
+in_relation('x', 'xyz')
+```
+
+## Parameters
+
+| Name   | Type                | Description                                  | Default    |
+|--------|---------------------|----------------------------------------------|------------|
+| `lhs`  | [Any](`typing.Any`) | left hand side object                        | _required_ |
+| `rhs`  | [Any](`typing.Any`) | right hand side object (must work with `in`) | _required_ |
+
+## Returns
+
+| Type           | Description       |
+|----------------|-------------------|
+| [bool](`bool`) | `True` or `False` |

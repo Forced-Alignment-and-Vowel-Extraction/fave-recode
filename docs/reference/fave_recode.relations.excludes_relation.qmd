@@ -1,0 +1,18 @@
+# excludes_relation { #fave_recode.relations.excludes_relation }
+
+`relations.excludes_relation(lhs, rhs)`
+
+Does `lhs` *not* contain `rhs`
+
+## Parameters
+
+| Name   | Type                | Description                          | Default    |
+|--------|---------------------|--------------------------------------|------------|
+| `lhs`  | [Any](`typing.Any`) | left hand side (must work with `in`) | _required_ |
+| `rhs`  | [Any](`typing.Any`) | right handnside                      | _required_ |
+
+## Returns
+
+| Type           | Description   |
+|----------------|---------------|
+| [bool](`bool`) | True or False |
