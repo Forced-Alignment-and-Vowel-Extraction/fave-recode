@@ -115,6 +115,11 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../assets/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -198,7 +203,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#nonequivalence" id="toc-nonequivalence" class="nav-link active" data-scroll-target="#nonequivalence">(Non)Equivalence</a></li>
+  <li><a href="#in-not-in-contains-excludes" id="toc-in-not-in-contains-excludes" class="nav-link" data-scroll-target="#in-not-in-contains-excludes">In, Not In, Contains, Excludes</a></li>
+  <li><a href="#regex-matching" id="toc-regex-matching" class="nav-link" data-scroll-target="#regex-matching">Regex Matching</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -220,8 +233,127 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>Every rule condition has a boolean “relation” between the <code>attribute</code> and the <code>set</code>. The following relations are defined.</p>
+<section id="nonequivalence" class="level2">
+<h2 class="anchored" data-anchor-id="nonequivalence">(Non)Equivalence</h2>
+<p>When <code>==</code> or <code>!=</code> are passed to <code>relation</code>, these will check whether or not the value in the attribute exactly matches the value in the <code>set</code>.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><code>attribute</code></th>
+<th style="text-align: left;"><code>relation</code></th>
+<th style="text-align: left;"><code>set</code></th>
+<th style="text-align: left;">returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>"AE1"</code></td>
+<td style="text-align: left;"><code>==</code></td>
+<td style="text-align: left;"><code>"AE1"</code></td>
+<td style="text-align: left;">true</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>"AE1"</code></td>
+<td style="text-align: left;"><code>==</code></td>
+<td style="text-align: left;"><code>"AE"</code></td>
+<td style="text-align: left;">false</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>"EH1"</code></td>
+<td style="text-align: left;"><code>!=</code></td>
+<td style="text-align: left;"><code>"AE1"</code></td>
+<td style="text-align: left;">true</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>"AE1"</code></td>
+<td style="text-align: left;"><code>!=</code></td>
+<td style="text-align: left;"><code>"AE1"</code></td>
+<td style="text-align: left;">false</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="in-not-in-contains-excludes" class="level2">
+<h2 class="anchored" data-anchor-id="in-not-in-contains-excludes">In, Not In, Contains, Excludes</h2>
+<p>The following relations can be passed to <code>relation</code> to test containment relationships</p>
+<ul>
+<li><code>in</code>: The value in the <code>attribute</code> is in the <code>set</code></li>
+<li><code>not in</code>: The value in the <code>attribute</code> is not in the <code>set</code></li>
+<li><code>contains</code>: The value in the <code>attribute</code> contains the the <code>set</code></li>
+<li><code>excludes</code>: The value in the <code>attribute</code> does not contain the <code>set</code></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><code>attribute</code></th>
+<th style="text-align: left;"><code>relation</code></th>
+<th style="text-align: left;"><code>set</code></th>
+<th style="text-align: left;">returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>"AE1"</code></td>
+<td style="text-align: left;"><code>in</code></td>
+<td style="text-align: left;"><code>["AE1", "AE0", "AE2"]</code></td>
+<td style="text-align: left;">true</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>"AE1"</code></td>
+<td style="text-align: left;"><code>not in</code></td>
+<td style="text-align: left;"><code>["AE1", "AE0", "AE2"]</code></td>
+<td style="text-align: left;">false</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>"AE1"</code></td>
+<td style="text-align: left;"><code>contains</code></td>
+<td style="text-align: left;"><code>"AE"</code></td>
+<td style="text-align: left;">true</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>"AE1"</code></td>
+<td style="text-align: left;"><code>excludes</code></td>
+<td style="text-align: left;"><code>"1"</code></td>
+<td style="text-align: left;">false</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="regex-matching" class="level2">
+<h2 class="anchored" data-anchor-id="regex-matching">Regex Matching</h2>
+<p>These relations test whether the value in <code>attribute</code> is or is not a regex match for <code>set</code>.</p>
+<ul>
+<li><code>rematches</code>: Does the regex in <code>set</code> match the value in <code>attribute</code></li>
+<li><code>reunmatches</code>: Does the regex in <code>set</code> <em>not</em> match the value in <code>attribute</code></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><code>attribute</code></th>
+<th style="text-align: left;"><code>relation</code></th>
+<th style="text-align: left;"><code>set</code></th>
+<th style="text-align: left;">returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>"AE1"</code></td>
+<td style="text-align: left;"><code>rematches</code></td>
+<td style="text-align: left;"><code>"[AEIOU]"</code></td>
+<td style="text-align: left;">true</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>"AE1"</code></td>
+<td style="text-align: left;"><code>rematches</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;">false</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

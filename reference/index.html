@@ -66,7 +66,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -115,6 +115,11 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../assets/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -152,12 +157,109 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Relations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text"><code>in</code>, <code>not in</code></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/relations.in_relation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">relations.in_relation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/relations.not_in_relation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">relations.not_in_relation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">equals, not equals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/relations.equals_relation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">relations.equals_relation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/relations.not_equals_relation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">relations.not_equals_relation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">Regex match</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/relations.rematches_relation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">relations.rematches_relation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reference/relations.reunmatches_relation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">relations.reunmatches_relation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#function-reference" id="toc-function-reference" class="nav-link active" data-scroll-target="#function-reference">Function reference</a>
+  <ul class="collapse">
+  <li><a href="#rule-classes" id="toc-rule-classes" class="nav-link" data-scroll-target="#rule-classes">Rule Classes</a></li>
+  <li><a href="#relations" id="toc-relations" class="nav-link" data-scroll-target="#relations">Relations</a>
+  <ul class="collapse">
+  <li><a href="#in-not-in" id="toc-in-not-in" class="nav-link" data-scroll-target="#in-not-in"><code>in</code>, <code>not in</code></a></li>
+  <li><a href="#equals-not-equals" id="toc-equals-not-equals" class="nav-link" data-scroll-target="#equals-not-equals">equals, not equals</a></li>
+  <li><a href="#regex-match" id="toc-regex-match" class="nav-link" data-scroll-target="#regex-match">Regex match</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -184,8 +286,56 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</section>
+<section id="relations" class="level2">
+<h2 class="anchored" data-anchor-id="relations">Relations</h2>
+<section id="in-not-in" class="level3">
+<h3 class="anchored" data-anchor-id="in-not-in"><code>in</code>, <code>not in</code></h3>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td><a href="../reference/relations.in_relation.html#fave_recode.relations.in_relation">relations.in_relation</a></td>
+<td>Is <code>lhs</code> in <code>rhs</code>?</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/relations.not_in_relation.html#fave_recode.relations.not_in_relation">relations.not_in_relation</a></td>
+<td>Is <code>lhs</code> <em>not</em> in <code>rhs</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="equals-not-equals" class="level3">
+<h3 class="anchored" data-anchor-id="equals-not-equals">equals, not equals</h3>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td><a href="../reference/relations.equals_relation.html#fave_recode.relations.equals_relation">relations.equals_relation</a></td>
+<td>Is lhs <code>==</code> to <code>rhs</code></td>
+</tr>
+<tr class="even">
+<td><a href="../reference/relations.not_equals_relation.html#fave_recode.relations.not_equals_relation">relations.not_equals_relation</a></td>
+<td>is lhs <em>not</em> <code>==</code> rhs</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="regex-match" class="level3">
+<h3 class="anchored" data-anchor-id="regex-match">Regex match</h3>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td><a href="../reference/relations.rematches_relation.html#fave_recode.relations.rematches_relation">relations.rematches_relation</a></td>
+<td>Does the lhs match a regex for rhs?</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/relations.reunmatches_relation.html#fave_recode.relations.reunmatches_relation">relations.reunmatches_relation</a></td>
+<td>Does the lhs <em>not</em> match a regex for the rhs</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 </section>
 </section>
 

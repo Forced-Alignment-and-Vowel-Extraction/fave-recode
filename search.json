@@ -1,101 +1,66 @@
 [
   {
-    "objectID": "getting-started/directory.html",
-    "href": "getting-started/directory.html",
-    "title": "Processing a directory",
+    "objectID": "reference/relations.equals_relation.html",
+    "href": "reference/relations.equals_relation.html",
+    "title": "relations.equals_relation",
     "section": "",
-    "text": "There are a few different ways you can process a directory of TextGrid files"
+    "text": "relations.equals_relation(lhs, rhs)\nIs lhs == to rhs\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
   },
   {
-    "objectID": "getting-started/directory.html#only-an-input-path-and-scheme-provided",
-    "href": "getting-started/directory.html#only-an-input-path-and-scheme-provided",
-    "title": "Processing a directory",
-    "section": "Only an input path and scheme provided",
-    "text": "Only an input path and scheme provided\nYou can point fave_recode at an entire directory and just specify a recoding scheme.\n\n\n\n\n\n\nThis will happen:\n\n\n\nfave_recode will save each recoded TextGrid to same input directory _recoded added to the end of the filename.\n\n\n\n\n\n\n\n\nIf there is already a file in the output location:\n\n\n\nIf there is already a file in the output location, fave_recode will ask you whether or not you want to overwrite it. It will do this for every already existing file.\n\n\n\nExample\nls data\n\n\nKY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid\n\n\nfave_recode -p data -s cmu2labov\nls data\n\n!fave_recode -p data -s cmu2labov\n!ls data\n\nKY25A_1.TextGrid      josef-fruehwald_speaker.TextGrid\nKY25A_1_recoded.TextGrid  josef-fruehwald_speaker_recoded.TextGrid"
-  },
-  {
-    "objectID": "getting-started/directory.html#providing-a-recode-stem",
-    "href": "getting-started/directory.html#providing-a-recode-stem",
-    "title": "Processing a directory",
-    "section": "Providing a recode stem",
-    "text": "Providing a recode stem\nYou can provide fave_recode with a different recode stem to append to the original filenames with the -r flag.\n\n\n\n\n\n\nThis will happen:\n\n\n\nfave_recode will save each recoded TextGrid to the same directory as the originals with the string you provided added to the end of the filename.\n\n\n\nExample\nls data\n\n\nKY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid\n\n\nfave_recode -p data -s cmu2labov -r _labovcode\nls data\n\n!fave_recode -p data -s cmu2labov -r _labovcode\n!ls data\n\nKY25A_1.TextGrid        josef-fruehwald_speaker.TextGrid\nKY25A_1_labovcode.TextGrid  josef-fruehwald_speaker_labovcode.TextGrid"
-  },
-  {
-    "objectID": "getting-started/directory.html#providing-an-output-directory",
-    "href": "getting-started/directory.html#providing-an-output-directory",
-    "title": "Processing a directory",
-    "section": "Providing an output directory",
-    "text": "Providing an output directory\nYou can also provide fave_recode with an output directory with -d.\n\n\n\n\n\n\nThis will happen:\n\n\n\nfave_recode will save each recoded TextGrid to the output directory with the recode string appended to the end of the original filenames.\n\n\n\n\n\n\n\n\nIf there is already a file in the output location:\n\n\n\nIf there is already a file in the output location, fave_recode will ask you whether or not you want to overwrite it. It will do this for each file.\n\n\n\n\n\n\n\n\nIf there the output directory doesn’t exist:\n\n\n\nIf the output directory doesn’t exist, fave_recode will ask you whether or not you want to create it.\n\n\n\nExample\nfave_recode -p data -s cmu2labov -d output\nls output\n\n\nKY25A_1_recoded.TextGrid  josef-fruehwald_speaker_recoded.TextGrid"
-  },
-  {
-    "objectID": "getting-started/overview.html",
-    "href": "getting-started/overview.html",
-    "title": "Getting started with fave-recode",
+    "objectID": "reference/relations.equals_relation.html#parameters",
+    "href": "reference/relations.equals_relation.html#parameters",
+    "title": "relations.equals_relation",
     "section": "",
-    "text": "The idea behind fave-recode is that no matter how much you may adjust the dictionary of a forced-aligner, you may still want to make programmatic changes to the output."
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side\nrequired"
   },
   {
-    "objectID": "getting-started/overview.html#installation",
-    "href": "getting-started/overview.html#installation",
-    "title": "Getting started with fave-recode",
-    "section": "Installation",
-    "text": "Installation\nYou can install fave-recode at your system’s command line with pip.\npip install fave-recode"
-  },
-  {
-    "objectID": "getting-started/overview.html#basic-usage",
-    "href": "getting-started/overview.html#basic-usage",
-    "title": "Getting started with fave-recode",
-    "section": "Basic usage",
-    "text": "Basic usage\nInstallation of the fave-recode python package makes the fave_recode executable, which can also be run at the command line. You can get help with --help\nfave_recode --help\n\n\nUsage: fave_recode [OPTIONS]\n\nInputs: [at least 1 required]\n  File inputs. Either a single file with -i or a path with -p. Not both.\n  -i, --input_file FILENAME  single input file\n  -p, --input_path PATH      Path to a set of files\n\nOutputs:\n  -o, --output_file TEXT     An output file name\n  -d, --output_dest PATH     An output directory\n\nOther options:\n  -s, --scheme TEXT          Recoding scheme. Built in options are cmu2labov\n                             and cmu2phila  [required]\n  -r, --recode_stem TEXT     Stem to append to recoded TextGrid file names\n  -t, --target_tier TEXT     Target tier to recode\n  --help                     Show this message and exit.\n\n\nTo recode a single file, you need to provide fave_recode with, minimally, the input file (the -i flag), and the recoding scheme (with the -s flag). There are a few default recoding schemes that come with fave_recode.\nls data\n\n\nKY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid\n\n\nfave_recode -i data/josef-fruehwald_speaker.TextGrid -s cmu2phila\n\nls data\n\n\nKY25A_1.TextGrid          josef-fruehwald_speaker_recoded.TextGrid\njosef-fruehwald_speaker.TextGrid"
-  },
-  {
-    "objectID": "reference/rule_classes.RuleSet.html",
-    "href": "reference/rule_classes.RuleSet.html",
-    "title": "rule_classes.RuleSet",
+    "objectID": "reference/relations.equals_relation.html#returns",
+    "href": "reference/relations.equals_relation.html#returns",
+    "title": "relations.equals_relation",
     "section": "",
-    "text": "rule_classes.RuleSet(self, rules=[], rule_path=None)\nA rule set class\nPass RuleSet either a rules dictionary, or a path to a rules yaml file\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nrules\nlist[dict, …]\nA list of rule dictionaries\n[]\n\n\nrule_path\nstr\nA path to a rules .yml file\nNone\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nrules\nlist[Rule, …]\n\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\napply_ruleset\nApply the ruleset\n\n\nmap_ruleset\nApply the ruleset to all sequences\n\n\nread_ruleset\nread in a ruleset\n\n\n\n\n\nrule_classes.RuleSet.apply_ruleset(obj)\nApply the ruleset\nThe rules are checked against the Sequence interval in sequence, and the first one applies, ceasing rule’ application.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe SequenceInterval undergoing rule application\nrequired\n\n\n\n\n\n\n\nrule_classes.RuleSet.map_ruleset(obj)\nApply the ruleset to all sequences\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceTier\nA sequence tier to be recoded\nrequired\n\n\n\n\n\n\n\nrule_classes.RuleSet.read_ruleset(path)\nread in a ruleset\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\npath\nstr\nA path to a ruleset\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors in reading in the ruleset"
+    "text": "Type\nDescription\n\n\n\n\nbool\nTrue or False"
   },
   {
-    "objectID": "reference/rule_classes.RuleSet.html#parameters",
-    "href": "reference/rule_classes.RuleSet.html#parameters",
-    "title": "rule_classes.RuleSet",
+    "objectID": "reference/relations.not_in_relation.html",
+    "href": "reference/relations.not_in_relation.html",
+    "title": "relations.not_in_relation",
     "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nrules\nlist[dict, …]\nA list of rule dictionaries\n[]\n\n\nrule_path\nstr\nA path to a rules .yml file\nNone"
+    "text": "relations.not_in_relation(lhs, rhs)\nIs lhs not in rhs\nfrom fave_recode.relations import not_in_relation\n\nnot_in_relation('x', 'xyz')\n\nFalse"
   },
   {
-    "objectID": "reference/rule_classes.RuleSet.html#attributes",
-    "href": "reference/rule_classes.RuleSet.html#attributes",
-    "title": "rule_classes.RuleSet",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\nrules\nlist[Rule, …]"
+    "objectID": "reference/relations.not_in_relation.html#parameters",
+    "href": "reference/relations.not_in_relation.html#parameters",
+    "title": "relations.not_in_relation",
+    "section": "Parameters",
+    "text": "Parameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side (must work with in)\nrequired"
   },
   {
-    "objectID": "reference/rule_classes.RuleSet.html#methods",
-    "href": "reference/rule_classes.RuleSet.html#methods",
-    "title": "rule_classes.RuleSet",
-    "section": "",
-    "text": "Name\nDescription\n\n\n\n\napply_ruleset\nApply the ruleset\n\n\nmap_ruleset\nApply the ruleset to all sequences\n\n\nread_ruleset\nread in a ruleset\n\n\n\n\n\nrule_classes.RuleSet.apply_ruleset(obj)\nApply the ruleset\nThe rules are checked against the Sequence interval in sequence, and the first one applies, ceasing rule’ application.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe SequenceInterval undergoing rule application\nrequired\n\n\n\n\n\n\n\nrule_classes.RuleSet.map_ruleset(obj)\nApply the ruleset to all sequences\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceTier\nA sequence tier to be recoded\nrequired\n\n\n\n\n\n\n\nrule_classes.RuleSet.read_ruleset(path)\nread in a ruleset\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\npath\nstr\nA path to a ruleset\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors in reading in the ruleset"
+    "objectID": "reference/relations.not_in_relation.html#returns",
+    "href": "reference/relations.not_in_relation.html#returns",
+    "title": "relations.not_in_relation",
+    "section": "Returns",
+    "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
   },
   {
-    "objectID": "reference/rule_classes.Condition.html",
-    "href": "reference/rule_classes.Condition.html",
-    "title": "rule_classes.Condition",
+    "objectID": "reference/relations.rematches_relation.html",
+    "href": "reference/relations.rematches_relation.html",
+    "title": "relations.rematches_relation",
     "section": "",
-    "text": "rule_classes.Condition(self, condition)\nA rule condition\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nattribute\nstr\nThe attribute path for a SequenceInterval\n\n\nrelation\nCallable\nThe relation function to be used\n\n\nset\nUnion[str, list]\nThe comparison set\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncheck_condition\nCheck if the condition is met\n\n\nvalidate_condition\nValidate wellformedness of condititions\n\n\n\n\n\nrule_classes.Condition.check_condition(obj)\nCheck if the condition is met\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe sequence interval against which the condition is checked\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False\n\n\n\n\n\n\n\nrule_classes.Condition.validate_condition(condition)\nValidate wellformedness of condititions\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncondition\ndict\ncondition dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator"
+    "text": "relations.rematches_relation(lhs, rhs)\nDoes the lhs match a regex for rhs?\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\nleft hand side\nrequired\n\n\nrhs\nstr\nright hand side (must be valid regex.)\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
   },
   {
-    "objectID": "reference/rule_classes.Condition.html#attributes",
-    "href": "reference/rule_classes.Condition.html#attributes",
-    "title": "rule_classes.Condition",
+    "objectID": "reference/relations.rematches_relation.html#parameters",
+    "href": "reference/relations.rematches_relation.html#parameters",
+    "title": "relations.rematches_relation",
     "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\nattribute\nstr\nThe attribute path for a SequenceInterval\n\n\nrelation\nCallable\nThe relation function to be used\n\n\nset\nUnion[str, list]\nThe comparison set"
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\nleft hand side\nrequired\n\n\nrhs\nstr\nright hand side (must be valid regex.)\nrequired"
   },
   {
-    "objectID": "reference/rule_classes.Condition.html#methods",
-    "href": "reference/rule_classes.Condition.html#methods",
-    "title": "rule_classes.Condition",
+    "objectID": "reference/relations.rematches_relation.html#returns",
+    "href": "reference/relations.rematches_relation.html#returns",
+    "title": "relations.rematches_relation",
     "section": "",
-    "text": "Name\nDescription\n\n\n\n\ncheck_condition\nCheck if the condition is met\n\n\nvalidate_condition\nValidate wellformedness of condititions\n\n\n\n\n\nrule_classes.Condition.check_condition(obj)\nCheck if the condition is met\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe sequence interval against which the condition is checked\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False\n\n\n\n\n\n\n\nrule_classes.Condition.validate_condition(condition)\nValidate wellformedness of condititions\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncondition\ndict\ncondition dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator"
+    "text": "Type\nDescription\n\n\n\n\nbool\nTrue or False"
   },
   {
     "objectID": "reference/rule_classes.Rule.html",
@@ -119,11 +84,53 @@
     "text": "Name\nDescription\n\n\n\n\napply_rule\nApply a single rile\n\n\nvalidate_rule\nValidate the rule wellformedness\n\n\n\n\n\nrule_classes.Rule.apply_rule(obj)\nApply a single rile\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe interval potentially being relabelled\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors in checking the conditions\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue if the rule applied\n\n\n\n\n\n\n\nrule_classes.Rule.validate_rule(rule)\nValidate the rule wellformedness\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nrule\ndict\nThe rule dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors from the validator"
   },
   {
+    "objectID": "reference/fave_recode.relations.excludes_relation.html",
+    "href": "reference/fave_recode.relations.excludes_relation.html",
+    "title": "excludes_relation",
+    "section": "",
+    "text": "relations.excludes_relation(lhs, rhs)\nDoes lhs not contain rhs\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side (must work with in)\nrequired\n\n\nrhs\nAny\nright handnside\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.excludes_relation.html#parameters",
+    "href": "reference/fave_recode.relations.excludes_relation.html#parameters",
+    "title": "excludes_relation",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side (must work with in)\nrequired\n\n\nrhs\nAny\nright handnside\nrequired"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.excludes_relation.html#returns",
+    "href": "reference/fave_recode.relations.excludes_relation.html#returns",
+    "title": "excludes_relation",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/relations.not_equals_relation.html",
+    "href": "reference/relations.not_equals_relation.html",
+    "title": "relations.not_equals_relation",
+    "section": "",
+    "text": "relations.not_equals_relation(lhs, rhs)\nis lhs not == rhs\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nany\nright hand side\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/relations.not_equals_relation.html#parameters",
+    "href": "reference/relations.not_equals_relation.html#parameters",
+    "title": "relations.not_equals_relation",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nany\nright hand side\nrequired"
+  },
+  {
+    "objectID": "reference/relations.not_equals_relation.html#returns",
+    "href": "reference/relations.not_equals_relation.html#returns",
+    "title": "relations.not_equals_relation",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
     "objectID": "reference/index.html",
     "href": "reference/index.html",
     "title": "Function reference",
     "section": "",
-    "text": "Rule application classes\n\n\n\nrule_classes.Condition\nA rule condition\n\n\nrule_classes.Rule\nA rule class\n\n\nrule_classes.RuleSet\nA rule set class"
+    "text": "Rule application classes\n\n\n\nrule_classes.Condition\nA rule condition\n\n\nrule_classes.Rule\nA rule class\n\n\nrule_classes.RuleSet\nA rule set class\n\n\n\n\n\n\n\n\n\n\n\nrelations.in_relation\nIs lhs in rhs?\n\n\nrelations.not_in_relation\nIs lhs not in rhs\n\n\n\n\n\n\n\n\n\nrelations.equals_relation\nIs lhs == to rhs\n\n\nrelations.not_equals_relation\nis lhs not == rhs\n\n\n\n\n\n\n\n\n\nrelations.rematches_relation\nDoes the lhs match a regex for rhs?\n\n\nrelations.reunmatches_relation\nDoes the lhs not match a regex for the rhs"
   },
   {
     "objectID": "reference/index.html#rule-classes",
@@ -131,6 +138,83 @@
     "title": "Function reference",
     "section": "",
     "text": "Rule application classes\n\n\n\nrule_classes.Condition\nA rule condition\n\n\nrule_classes.Rule\nA rule class\n\n\nrule_classes.RuleSet\nA rule set class"
+  },
+  {
+    "objectID": "reference/index.html#relations",
+    "href": "reference/index.html#relations",
+    "title": "Function reference",
+    "section": "",
+    "text": "relations.in_relation\nIs lhs in rhs?\n\n\nrelations.not_in_relation\nIs lhs not in rhs\n\n\n\n\n\n\n\n\n\nrelations.equals_relation\nIs lhs == to rhs\n\n\nrelations.not_equals_relation\nis lhs not == rhs\n\n\n\n\n\n\n\n\n\nrelations.rematches_relation\nDoes the lhs match a regex for rhs?\n\n\nrelations.reunmatches_relation\nDoes the lhs not match a regex for the rhs"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.rematches_relation.html",
+    "href": "reference/fave_recode.relations.rematches_relation.html",
+    "title": "rematches_relation",
+    "section": "",
+    "text": "relations.rematches_relation(lhs, rhs)\nsummary\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\ndescription\nrequired\n\n\nrhs\nstr\ndescription\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\ndescription"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.rematches_relation.html#parameters",
+    "href": "reference/fave_recode.relations.rematches_relation.html#parameters",
+    "title": "rematches_relation",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\ndescription\nrequired\n\n\nrhs\nstr\ndescription\nrequired"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.rematches_relation.html#returns",
+    "href": "reference/fave_recode.relations.rematches_relation.html#returns",
+    "title": "rematches_relation",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nbool\ndescription"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.equals_relation.html",
+    "href": "reference/fave_recode.relations.equals_relation.html",
+    "title": "equals_relation",
+    "section": "",
+    "text": "relations.equals_relation(lhs, rhs)\nIs lhs == to rhs\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\ndescription"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.equals_relation.html#parameters",
+    "href": "reference/fave_recode.relations.equals_relation.html#parameters",
+    "title": "equals_relation",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side\nrequired"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.equals_relation.html#returns",
+    "href": "reference/fave_recode.relations.equals_relation.html#returns",
+    "title": "equals_relation",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nbool\ndescription"
+  },
+  {
+    "objectID": "getting-started/condition-relations.html",
+    "href": "getting-started/condition-relations.html",
+    "title": "Condition Relations",
+    "section": "",
+    "text": "Every rule condition has a boolean “relation” between the attribute and the set. The following relations are defined."
+  },
+  {
+    "objectID": "getting-started/condition-relations.html#nonequivalence",
+    "href": "getting-started/condition-relations.html#nonequivalence",
+    "title": "Condition Relations",
+    "section": "(Non)Equivalence",
+    "text": "(Non)Equivalence\nWhen == or != are passed to relation, these will check whether or not the value in the attribute exactly matches the value in the set.\n\n\n\nattribute\nrelation\nset\nreturns\n\n\n\n\n\"AE1\"\n==\n\"AE1\"\ntrue\n\n\n\"AE1\"\n==\n\"AE\"\nfalse\n\n\n\"EH1\"\n!=\n\"AE1\"\ntrue\n\n\n\"AE1\"\n!=\n\"AE1\"\nfalse"
+  },
+  {
+    "objectID": "getting-started/condition-relations.html#in-not-in-contains-excludes",
+    "href": "getting-started/condition-relations.html#in-not-in-contains-excludes",
+    "title": "Condition Relations",
+    "section": "In, Not In, Contains, Excludes",
+    "text": "In, Not In, Contains, Excludes\nThe following relations can be passed to relation to test containment relationships\n\nin: The value in the attribute is in the set\nnot in: The value in the attribute is not in the set\ncontains: The value in the attribute contains the the set\nexcludes: The value in the attribute does not contain the set\n\n\n\n\nattribute\nrelation\nset\nreturns\n\n\n\n\n\"AE1\"\nin\n[\"AE1\", \"AE0\", \"AE2\"]\ntrue\n\n\n\"AE1\"\nnot in\n[\"AE1\", \"AE0\", \"AE2\"]\nfalse\n\n\n\"AE1\"\ncontains\n\"AE\"\ntrue\n\n\n\"AE1\"\nexcludes\n\"1\"\nfalse"
+  },
+  {
+    "objectID": "getting-started/condition-relations.html#regex-matching",
+    "href": "getting-started/condition-relations.html#regex-matching",
+    "title": "Condition Relations",
+    "section": "Regex Matching",
+    "text": "Regex Matching\nThese relations test whether the value in attribute is or is not a regex match for set.\n\nrematches: Does the regex in set match the value in attribute\nreunmatches: Does the regex in set not match the value in attribute\n\n\n\n\nattribute\nrelation\nset\nreturns\n\n\n\n\n\"AE1\"\nrematches\n\"[AEIOU]\"\ntrue\n\n\n\"AE1\"\nrematches\n0\nfalse"
   },
   {
     "objectID": "getting-started/single-file.html",
@@ -168,18 +252,39 @@
     "text": "Providing an output directory\nYou can also provide fave_recode with an output directory with -o.\n\n\n\n\n\n\nThis will happen:\n\n\n\nfave_recode will save the recoded TextGrid to the output directory with the recode string appended to the end of the original filename.\n\n\n\n\n\n\n\n\nIf there is already a file in the output location:\n\n\n\nIf there is already a file in the output location, fave_recode will ask you whether or not you want to overwrite it.\n\n\n\n\n\n\n\n\nIf there the output directory doesn’t exist:\n\n\n\nIf the output directory doesn’t exist, fave_recode will ask you whether or not you want to create it.\n\n\n\nExample\nfave_recode -i data/KY25A_1.TextGrid -s cmu2labov -o output\nls output\n\n\nKY25A_1_recoded.TextGrid"
   },
   {
-    "objectID": "getting-started/rule-scheme-basics.html",
-    "href": "getting-started/rule-scheme-basics.html",
-    "title": "Rule basics",
+    "objectID": "getting-started/overview.html",
+    "href": "getting-started/overview.html",
+    "title": "Getting started with fave-recode",
     "section": "",
-    "text": "Recoding rule schemes can be written in a yaml file. A very simple rule scheme would be to recode the CMU dictionary label AH0 to a schwa-like character, @. Here’s the contents of a just-schwa.yml file."
+    "text": "The idea behind fave-recode is that no matter how much you may adjust the dictionary of a forced-aligner, you may still want to make programmatic changes to the output."
   },
   {
-    "objectID": "getting-started/rule-scheme-basics.html#anatomy-of-a-rule-scheme",
-    "href": "getting-started/rule-scheme-basics.html#anatomy-of-a-rule-scheme",
-    "title": "Rule basics",
-    "section": "Anatomy of a rule scheme",
-    "text": "Anatomy of a rule scheme\nEvery rule scheme file is a list of rules, which indicated by each line starting a new rule beginning with -.\n# rule skeleton\n- rule: ...\n  ...\n- rule: ...\n  ...\n\nThe Rule Name\nEach rule has a rule name, which is indicated by the text following rule:.\n\n\nThe Rule Conditions\nEach rule also has a list of conditions which can result in true or a false. The schwa rule has just one condition.\nattribute: label\nrelation: ==\nset: AH0\n\nattribute refers to properties of a TextGrid interval. Read more here.\nrelation refers to how the specified attribute relates to the set. Read more here.\nset is some reference value or set of values.\n\nThis condition will return true with a TextGrid interval’s label is equal to (==) the string AH0.\n\n\nThe Rule Outcome\nThe label of a TextGrid interval is replaced with the value in return."
+    "objectID": "getting-started/overview.html#installation",
+    "href": "getting-started/overview.html#installation",
+    "title": "Getting started with fave-recode",
+    "section": "Installation",
+    "text": "Installation\nYou can install fave-recode at your system’s command line with pip.\npip install fave-recode"
+  },
+  {
+    "objectID": "getting-started/overview.html#basic-usage",
+    "href": "getting-started/overview.html#basic-usage",
+    "title": "Getting started with fave-recode",
+    "section": "Basic usage",
+    "text": "Basic usage\nInstallation of the fave-recode python package makes the fave_recode executable, which can also be run at the command line. You can get help with --help\nfave_recode --help\n\n\nUsage: fave_recode [OPTIONS]\n\nInputs: [at least 1 required]\n  File inputs. Either a single file with -i or a path with -p. Not both.\n  -i, --input_file FILENAME  single input file\n  -p, --input_path PATH      Path to a set of files\n\nOutputs:\n  -o, --output_file TEXT     An output file name\n  -d, --output_dest PATH     An output directory\n\nOther options:\n  -s, --scheme TEXT          Recoding scheme. Built in options are cmu2labov\n                             and cmu2phila  [required]\n  -r, --recode_stem TEXT     Stem to append to recoded TextGrid file names\n  -t, --target_tier TEXT     Target tier to recode\n  --help                     Show this message and exit.\n\n\nTo recode a single file, you need to provide fave_recode with, minimally, the input file (the -i flag), and the recoding scheme (with the -s flag). There are a few default recoding schemes that come with fave_recode.\nls data\n\n\nKY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid\n\n\nfave_recode -i data/josef-fruehwald_speaker.TextGrid -s cmu2phila\n\nls data\n\n\nKY25A_1.TextGrid          josef-fruehwald_speaker_recoded.TextGrid\njosef-fruehwald_speaker.TextGrid"
+  },
+  {
+    "objectID": "getting-started/condition-attributes.html",
+    "href": "getting-started/condition-attributes.html",
+    "title": "Condition Attributes",
+    "section": "",
+    "text": "Every rule has at least one condition, and each condition targets at least one “attribute” of an AlignedTextGrid interval. For example, the schwa rule below targets the label attribute of the interval, checking to see if it’s value is AH0.\nThe following attributes can be chained together to target specific values:"
+  },
+  {
+    "objectID": "getting-started/condition-attributes.html#examples",
+    "href": "getting-started/condition-attributes.html#examples",
+    "title": "Condition Attributes",
+    "section": "Examples",
+    "text": "Examples\n\nVowels within a target word\nFor exampe, if you wanted to target AE1 that appears in the word “can”\n\nYou need to target the label of the interval.\nYou need to target the inword.label.\n\n\n\n\n\n\n- rule: ae-can\n  conditions:\n    - attribute: label\n      relation: ==\n      set: AE1\n    - attribute: inword.label\n      relation: ==\n      set: can\n  return: \"ae\"\n\n\nT D in the onset of an unstressed syllable\nIf you want to recode T and D as a flap in the onset of an unstressed syllable within a word\n\nYou need to target the label of the interval\nYou need to target the prev.label\nYou need to target the fol.label\n\n\n\n\n\n\n- rule: tx-inword\n  conditions:\n    - attribute: label\n      relation: in\n      set: \n        - T\n        - D\n    - attribute: prev.label\n      relation: rematches\n      set: \"[AEIOU]\"\n    - attribute: fol.label\n      relation: rematches\n      set: \"[AEIOU].0\"      \n  return: \"tx\"\n\n\nT D before an unstressed syllable across a word boundary\nIf you want to recode T and D as flaps when they occur before un unstressed syllable across word boundaries\n\nYou need to target the label\nYou need to target the prev.label\nYou need to target the fol.label\nYou need to target the inword.fol.first.label\n\n\n\n\n\n\n- rule: tx-crossword\n  conditions:\n    - attribute: label\n      relation: in\n      set: \n        - T\n        - D\n    - attribute: prev.label\n      relation: rematches\n      set: \"[AEIOU]\"\n    - attribute: fol.label\n      relation: ==\n      set: \"#\"    \n    - attribute: inword.fol.first.label\n      relation: rematches  \n      set: \"[AEIOU].0\"\n  return: \"tx\""
   },
   {
     "objectID": "getting-started/rule-application.html",
@@ -201,5 +306,278 @@
     "title": "Rule application",
     "section": "Ruleset Application",
     "text": "Ruleset Application\nRules in a ruleset are applied in sequence, and once a rule applies to an interval, no other rules can apply.\n\n\n\n\n\n\nImportant\n\n\n\nThis means you must place more specific rules towards the top of your ruleset.\n\n\nFor example, if you wanted every word with AE1 followed by N to go into one category, unless it’s the word ran, you would need to place the rule about ran into its own rule before the more general rule.\n- rule: ran-rule\n  conditions:\n    - attribute: inword.label\n      relation: ==\n      set: ran\n  return: ae1\n- rule: aen-rule \n  conditions:\n    - attribute: label\n      relation: ==\n      set: AE1\n    - attribute: fol.label\n      relation: ==\n      set: 'N'  \n  return: ae2"
+  },
+  {
+    "objectID": "getting-started/rule-scheme-basics.html",
+    "href": "getting-started/rule-scheme-basics.html",
+    "title": "Rule basics",
+    "section": "",
+    "text": "Recoding rule schemes can be written in a yaml file. A very simple rule scheme would be to recode the CMU dictionary label AH0 to a schwa-like character, @. Here’s the contents of a just-schwa.yml file."
+  },
+  {
+    "objectID": "getting-started/rule-scheme-basics.html#anatomy-of-a-rule-scheme",
+    "href": "getting-started/rule-scheme-basics.html#anatomy-of-a-rule-scheme",
+    "title": "Rule basics",
+    "section": "Anatomy of a rule scheme",
+    "text": "Anatomy of a rule scheme\nEvery rule scheme file is a list of rules, which indicated by each line starting a new rule beginning with -.\n# rule skeleton\n- rule: ...\n  ...\n- rule: ...\n  ...\n\nThe Rule Name\nEach rule has a rule name, which is indicated by the text following rule:.\n\n\nThe Rule Conditions\nEach rule also has a list of conditions which can result in true or a false. The schwa rule has just one condition.\nattribute: label\nrelation: ==\nset: AH0\n\nattribute refers to properties of a TextGrid interval. Read more here.\nrelation refers to how the specified attribute relates to the set. Read more here.\nset is some reference value or set of values.\n\nThis condition will return true with a TextGrid interval’s label is equal to (==) the string AH0.\n\n\nThe Rule Outcome\nThe label of a TextGrid interval is replaced with the value in return."
+  },
+  {
+    "objectID": "getting-started/directory.html",
+    "href": "getting-started/directory.html",
+    "title": "Processing a directory",
+    "section": "",
+    "text": "There are a few different ways you can process a directory of TextGrid files"
+  },
+  {
+    "objectID": "getting-started/directory.html#only-an-input-path-and-scheme-provided",
+    "href": "getting-started/directory.html#only-an-input-path-and-scheme-provided",
+    "title": "Processing a directory",
+    "section": "Only an input path and scheme provided",
+    "text": "Only an input path and scheme provided\nYou can point fave_recode at an entire directory and just specify a recoding scheme.\n\n\n\n\n\n\nThis will happen:\n\n\n\nfave_recode will save each recoded TextGrid to same input directory _recoded added to the end of the filename.\n\n\n\n\n\n\n\n\nIf there is already a file in the output location:\n\n\n\nIf there is already a file in the output location, fave_recode will ask you whether or not you want to overwrite it. It will do this for every already existing file.\n\n\n\nExample\nls data\n\n\nKY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid\n\n\nfave_recode -p data -s cmu2labov\nls data\n\n!fave_recode -p data -s cmu2labov\n!ls data\n\nKY25A_1.TextGrid      josef-fruehwald_speaker.TextGrid\nKY25A_1_recoded.TextGrid  josef-fruehwald_speaker_recoded.TextGrid"
+  },
+  {
+    "objectID": "getting-started/directory.html#providing-a-recode-stem",
+    "href": "getting-started/directory.html#providing-a-recode-stem",
+    "title": "Processing a directory",
+    "section": "Providing a recode stem",
+    "text": "Providing a recode stem\nYou can provide fave_recode with a different recode stem to append to the original filenames with the -r flag.\n\n\n\n\n\n\nThis will happen:\n\n\n\nfave_recode will save each recoded TextGrid to the same directory as the originals with the string you provided added to the end of the filename.\n\n\n\nExample\nls data\n\n\nKY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid\n\n\nfave_recode -p data -s cmu2labov -r _labovcode\nls data\n\n!fave_recode -p data -s cmu2labov -r _labovcode\n!ls data\n\nKY25A_1.TextGrid        josef-fruehwald_speaker.TextGrid\nKY25A_1_labovcode.TextGrid  josef-fruehwald_speaker_labovcode.TextGrid"
+  },
+  {
+    "objectID": "getting-started/directory.html#providing-an-output-directory",
+    "href": "getting-started/directory.html#providing-an-output-directory",
+    "title": "Processing a directory",
+    "section": "Providing an output directory",
+    "text": "Providing an output directory\nYou can also provide fave_recode with an output directory with -d.\n\n\n\n\n\n\nThis will happen:\n\n\n\nfave_recode will save each recoded TextGrid to the output directory with the recode string appended to the end of the original filenames.\n\n\n\n\n\n\n\n\nIf there is already a file in the output location:\n\n\n\nIf there is already a file in the output location, fave_recode will ask you whether or not you want to overwrite it. It will do this for each file.\n\n\n\n\n\n\n\n\nIf there the output directory doesn’t exist:\n\n\n\nIf the output directory doesn’t exist, fave_recode will ask you whether or not you want to create it.\n\n\n\nExample\nfave_recode -p data -s cmu2labov -d output\nls output\n\n\nKY25A_1_recoded.TextGrid  josef-fruehwald_speaker_recoded.TextGrid"
+  },
+  {
+    "objectID": "reference/relations.reunmatches_relation.html",
+    "href": "reference/relations.reunmatches_relation.html",
+    "title": "relations.reunmatches_relation",
+    "section": "",
+    "text": "relations.reunmatches_relation(lhs, rhs)\nDoes the lhs not match a regex for the rhs\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\nleft hand side\nrequired\n\n\nrhs\nstr\nright hand side\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/relations.reunmatches_relation.html#parameters",
+    "href": "reference/relations.reunmatches_relation.html#parameters",
+    "title": "relations.reunmatches_relation",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\nleft hand side\nrequired\n\n\nrhs\nstr\nright hand side\nrequired"
+  },
+  {
+    "objectID": "reference/relations.reunmatches_relation.html#returns",
+    "href": "reference/relations.reunmatches_relation.html#returns",
+    "title": "relations.reunmatches_relation",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/relations.html",
+    "href": "reference/relations.html",
+    "title": "relations",
+    "section": "",
+    "text": "relations\nFunctions defining Boolean relations between lhs (the rule conditions attribute) and the rhs (the rule condition set1)"
+  },
+  {
+    "objectID": "reference/relations.html#functions",
+    "href": "reference/relations.html#functions",
+    "title": "relations",
+    "section": "Functions",
+    "text": "Functions\n\n\n\nName\nDescription\n\n\n\n\ncontains_relation\nDoes lhs contain rhs?\n\n\nequals_relation\nIs lhs == to rhs\n\n\nexcludes_relation\nDoes lhs not contain rhs\n\n\nin_relation\nIs lhs in rhs?\n\n\nnot_in_relation\nIs lhs not in rhs\n\n\nrematches_relation\nsummary"
+  },
+  {
+    "objectID": "reference/relations.html#fave_recode.relations.contains_relation",
+    "href": "reference/relations.html#fave_recode.relations.contains_relation",
+    "title": "relations",
+    "section": "contains_relation",
+    "text": "contains_relation\nrelations.contains_relation(lhs, rhs)\nDoes lhs contain rhs?\n\nfrom fave_recode.relations import contains_relation\n\ncontains_relation('xyz', 'x')\n\nTrue\n\n\n\nParameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side (must work with in)\nrequired\n\n\nrhs\nAny\nright hand side\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/relations.html#fave_recode.relations.equals_relation",
+    "href": "reference/relations.html#fave_recode.relations.equals_relation",
+    "title": "relations",
+    "section": "equals_relation",
+    "text": "equals_relation\nrelations.equals_relation(lhs, rhs)\nIs lhs == to rhs\n\nParameters\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\ndescription"
+  },
+  {
+    "objectID": "reference/relations.html#fave_recode.relations.excludes_relation",
+    "href": "reference/relations.html#fave_recode.relations.excludes_relation",
+    "title": "relations",
+    "section": "excludes_relation",
+    "text": "excludes_relation\nrelations.excludes_relation(lhs, rhs)\nDoes lhs not contain rhs\n\nParameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side (must work with in)\nrequired\n\n\nrhs\nAny\nright handnside\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/relations.html#fave_recode.relations.in_relation",
+    "href": "reference/relations.html#fave_recode.relations.in_relation",
+    "title": "relations",
+    "section": "in_relation",
+    "text": "in_relation\nrelations.in_relation(lhs, rhs)\nIs lhs in rhs?\n\nfrom fave_recode.relations import in_relation\nin_relation('x', 'xyz')\n\nTrue\n\n\n\nParameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side object\nrequired\n\n\nrhs\nAny\nright hand side object (must work with in)\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/relations.html#fave_recode.relations.not_in_relation",
+    "href": "reference/relations.html#fave_recode.relations.not_in_relation",
+    "title": "relations",
+    "section": "not_in_relation",
+    "text": "not_in_relation\nrelations.not_in_relation(lhs, rhs)\nIs lhs not in rhs\n\nfrom fave_recode.relations import not_in_relation\n\nnot_in_relation('x', 'xyz')\n\nFalse\n\n\n\nParameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side (must work with in)\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/relations.html#fave_recode.relations.rematches_relation",
+    "href": "reference/relations.html#fave_recode.relations.rematches_relation",
+    "title": "relations",
+    "section": "rematches_relation",
+    "text": "rematches_relation\nrelations.rematches_relation(lhs, rhs)\nsummary\n\nParameters\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\ndescription\nrequired\n\n\nrhs\nstr\ndescription\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\ndescription"
+  },
+  {
+    "objectID": "reference/rule_classes.Condition.html",
+    "href": "reference/rule_classes.Condition.html",
+    "title": "rule_classes.Condition",
+    "section": "",
+    "text": "rule_classes.Condition(self, condition)\nA rule condition\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nattribute\nstr\nThe attribute path for a SequenceInterval\n\n\nrelation\nCallable\nThe relation function to be used\n\n\nset\nUnion[str, list]\nThe comparison set\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncheck_condition\nCheck if the condition is met\n\n\nvalidate_condition\nValidate wellformedness of condititions\n\n\n\n\n\nrule_classes.Condition.check_condition(obj)\nCheck if the condition is met\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe sequence interval against which the condition is checked\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False\n\n\n\n\n\n\n\nrule_classes.Condition.validate_condition(condition)\nValidate wellformedness of condititions\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncondition\ndict\ncondition dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator"
+  },
+  {
+    "objectID": "reference/rule_classes.Condition.html#attributes",
+    "href": "reference/rule_classes.Condition.html#attributes",
+    "title": "rule_classes.Condition",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\nattribute\nstr\nThe attribute path for a SequenceInterval\n\n\nrelation\nCallable\nThe relation function to be used\n\n\nset\nUnion[str, list]\nThe comparison set"
+  },
+  {
+    "objectID": "reference/rule_classes.Condition.html#methods",
+    "href": "reference/rule_classes.Condition.html#methods",
+    "title": "rule_classes.Condition",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\ncheck_condition\nCheck if the condition is met\n\n\nvalidate_condition\nValidate wellformedness of condititions\n\n\n\n\n\nrule_classes.Condition.check_condition(obj)\nCheck if the condition is met\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe sequence interval against which the condition is checked\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False\n\n\n\n\n\n\n\nrule_classes.Condition.validate_condition(condition)\nValidate wellformedness of condititions\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncondition\ndict\ncondition dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator"
+  },
+  {
+    "objectID": "reference/rule_classes.RuleSet.html",
+    "href": "reference/rule_classes.RuleSet.html",
+    "title": "rule_classes.RuleSet",
+    "section": "",
+    "text": "rule_classes.RuleSet(self, rules=[], rule_path=None)\nA rule set class\nPass RuleSet either a rules dictionary, or a path to a rules yaml file\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nrules\nlist[dict, …]\nA list of rule dictionaries\n[]\n\n\nrule_path\nstr\nA path to a rules .yml file\nNone\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nrules\nlist[Rule, …]\n\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\napply_ruleset\nApply the ruleset\n\n\nmap_ruleset\nApply the ruleset to all sequences\n\n\nread_ruleset\nread in a ruleset\n\n\n\n\n\nrule_classes.RuleSet.apply_ruleset(obj)\nApply the ruleset\nThe rules are checked against the Sequence interval in sequence, and the first one applies, ceasing rule’ application.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe SequenceInterval undergoing rule application\nrequired\n\n\n\n\n\n\n\nrule_classes.RuleSet.map_ruleset(obj)\nApply the ruleset to all sequences\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceTier\nA sequence tier to be recoded\nrequired\n\n\n\n\n\n\n\nrule_classes.RuleSet.read_ruleset(path)\nread in a ruleset\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\npath\nstr\nA path to a ruleset\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors in reading in the ruleset"
+  },
+  {
+    "objectID": "reference/rule_classes.RuleSet.html#parameters",
+    "href": "reference/rule_classes.RuleSet.html#parameters",
+    "title": "rule_classes.RuleSet",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nrules\nlist[dict, …]\nA list of rule dictionaries\n[]\n\n\nrule_path\nstr\nA path to a rules .yml file\nNone"
+  },
+  {
+    "objectID": "reference/rule_classes.RuleSet.html#attributes",
+    "href": "reference/rule_classes.RuleSet.html#attributes",
+    "title": "rule_classes.RuleSet",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\nrules\nlist[Rule, …]"
+  },
+  {
+    "objectID": "reference/rule_classes.RuleSet.html#methods",
+    "href": "reference/rule_classes.RuleSet.html#methods",
+    "title": "rule_classes.RuleSet",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\napply_ruleset\nApply the ruleset\n\n\nmap_ruleset\nApply the ruleset to all sequences\n\n\nread_ruleset\nread in a ruleset\n\n\n\n\n\nrule_classes.RuleSet.apply_ruleset(obj)\nApply the ruleset\nThe rules are checked against the Sequence interval in sequence, and the first one applies, ceasing rule’ application.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe SequenceInterval undergoing rule application\nrequired\n\n\n\n\n\n\n\nrule_classes.RuleSet.map_ruleset(obj)\nApply the ruleset to all sequences\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceTier\nA sequence tier to be recoded\nrequired\n\n\n\n\n\n\n\nrule_classes.RuleSet.read_ruleset(path)\nread in a ruleset\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\npath\nstr\nA path to a ruleset\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors in reading in the ruleset"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.not_in_relation.html",
+    "href": "reference/fave_recode.relations.not_in_relation.html",
+    "title": "not_in_relation",
+    "section": "",
+    "text": "relations.not_in_relation(lhs, rhs)\nIs lhs not in rhs\nfrom fave_recode.relations import not_in_relation\n\nnot_in_relation('x', 'xyz')\n\nFalse"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.not_in_relation.html#parameters",
+    "href": "reference/fave_recode.relations.not_in_relation.html#parameters",
+    "title": "not_in_relation",
+    "section": "Parameters",
+    "text": "Parameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side (must work with in)\nrequired"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.not_in_relation.html#returns",
+    "href": "reference/fave_recode.relations.not_in_relation.html#returns",
+    "title": "not_in_relation",
+    "section": "Returns",
+    "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.negate.html",
+    "href": "reference/fave_recode.relations.negate.html",
+    "title": "negate",
+    "section": "",
+    "text": "relations.negate(f)\nNegate a function\nGiven a function f() that returns a boolean, this will return g() = not f()\nfrom fave_recode.relations import negate\n\ndef f():\n  return True\n\ng = negate(f)\ng()\n\nFalse"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.negate.html#parameters",
+    "href": "reference/fave_recode.relations.negate.html#parameters",
+    "title": "negate",
+    "section": "Parameters",
+    "text": "Parameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nf\nCallable\nA function that returns a boolean\nrequired"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.negate.html#returns",
+    "href": "reference/fave_recode.relations.negate.html#returns",
+    "title": "negate",
+    "section": "Returns",
+    "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nCallable\nnot f()"
+  },
+  {
+    "objectID": "reference/relations.in_relation.html",
+    "href": "reference/relations.in_relation.html",
+    "title": "relations.in_relation",
+    "section": "",
+    "text": "relations.in_relation(lhs, rhs)\nIs lhs in rhs?\nfrom fave_recode.relations import in_relation\nin_relation('x', 'xyz')\n\nTrue"
+  },
+  {
+    "objectID": "reference/relations.in_relation.html#parameters",
+    "href": "reference/relations.in_relation.html#parameters",
+    "title": "relations.in_relation",
+    "section": "Parameters",
+    "text": "Parameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side object\nrequired\n\n\nrhs\nAny\nright hand side object (must work with in)\nrequired"
+  },
+  {
+    "objectID": "reference/relations.in_relation.html#returns",
+    "href": "reference/relations.in_relation.html#returns",
+    "title": "relations.in_relation",
+    "section": "Returns",
+    "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.in_relation.html",
+    "href": "reference/fave_recode.relations.in_relation.html",
+    "title": "in_relation",
+    "section": "",
+    "text": "relations.in_relation(lhs, rhs)\nIs lhs in rhs?\nfrom fave_recode.relations import in_relation\nin_relation('x', 'xyz')\n\nTrue"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.in_relation.html#parameters",
+    "href": "reference/fave_recode.relations.in_relation.html#parameters",
+    "title": "in_relation",
+    "section": "Parameters",
+    "text": "Parameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side object\nrequired\n\n\nrhs\nAny\nright hand side object (must work with in)\nrequired"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.in_relation.html#returns",
+    "href": "reference/fave_recode.relations.in_relation.html#returns",
+    "title": "in_relation",
+    "section": "Returns",
+    "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.contains_relation.html",
+    "href": "reference/fave_recode.relations.contains_relation.html",
+    "title": "contains_relation",
+    "section": "",
+    "text": "relations.contains_relation(lhs, rhs)\nDoes lhs contain rhs?\nfrom fave_recode.relations import contains_relation\n\ncontains_relation('xyz', 'x')\n\nTrue"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.contains_relation.html#parameters",
+    "href": "reference/fave_recode.relations.contains_relation.html#parameters",
+    "title": "contains_relation",
+    "section": "Parameters",
+    "text": "Parameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side (must work with in)\nrequired\n\n\nrhs\nAny\nright hand side\nrequired"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.contains_relation.html#returns",
+    "href": "reference/fave_recode.relations.contains_relation.html#returns",
+    "title": "contains_relation",
+    "section": "Returns",
+    "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
   }
 ]
