@@ -7,6 +7,7 @@
 CI](https://github.com/Forced-Alignment-and-Vowel-Extraction/fave-recode/actions/workflows/test-and-run.yml/badge.svg?branch=dev)](https://github.com/Forced-Alignment-and-Vowel-Extraction/fave-recode/actions/workflows/test-and-run.yml)
 [![Build
 Docs](https://github.com/Forced-Alignment-and-Vowel-Extraction/fave-recode/actions/workflows/build-docs.yml/badge.svg)](https://forced-alignment-and-vowel-extraction.github.io/fave-recode/)
+[![DOI](https://zenodo.org/badge/605740158.svg)](https://zenodo.org/badge/latestdoi/605740158)
 
 The idea behind `fave-recode` is that no matter how much you may adjust
 the dictionary of a forced-aligner, you may still want to make
