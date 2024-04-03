@@ -1,1 +1,1 @@
-Sitemap: https://github.com/Forced-Alignment-and-Vowel-Extraction/fave-recode/sitemap.xml
+Sitemap: https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/sitemap.xml

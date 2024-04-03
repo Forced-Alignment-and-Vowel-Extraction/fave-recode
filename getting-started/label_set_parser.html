@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>fave_recode.relations.not_in_relation</title>
+<title>Label Set Parsers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -153,8 +153,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#parameters" id="toc-parameters" class="nav-link active" data-scroll-target="#parameters">Parameters</a></li>
-  <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
+  <li><a href="#label-set-parser-basics" id="toc-label-set-parser-basics" class="nav-link active" data-scroll-target="#label-set-parser-basics">Label Set Parser Basics</a>
+  <ul class="collapse">
+  <li><a href="#a-property" id="toc-a-property" class="nav-link" data-scroll-target="#a-property">A property</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -163,7 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">not_in_relation</h1>
+<h1 class="title">Label Set Parsers</h1>
 </div>
 
 
@@ -180,70 +182,81 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><code>relations.not_in_relation(lhs, rhs)</code></p>
-<p>Is <code>lhs</code> <em>not</em> in <code>rhs</code></p>
-<div id="6e35b105" class="cell" data-execution_count="1">
-<div class="langname">
-<pre class="langname">python</pre>
-</div>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fave_recode.relations <span class="im">import</span> not_in_relation</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>not_in_relation(<span class="st">'x'</span>, <span class="st">'xyz'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>False</code></pre>
-</div>
-</div>
-<section id="parameters" class="level2">
-<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
+<p>There are some properties of label sets that you might want to include in your output labels. For example, the CMU dictionary encodes vowel stress like so:</p>
 <table class="table">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 26%">
-<col style="width: 48%">
-<col style="width: 15%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
+<th>label</th>
+<th>meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>lhs</code></td>
-<td><code>Any</code></td>
-<td>left hand side</td>
-<td><em>required</em></td>
+<td><code>AY0</code></td>
+<td>unstressed /ay/</td>
 </tr>
 <tr class="even">
-<td><code>rhs</code></td>
-<td><code>Any</code></td>
-<td>right hand side (must work with <code>in</code>)</td>
-<td><em>required</em></td>
+<td><code>AY2</code></td>
+<td>secondary stressed /ay/</td>
 </tr>
-</tbody>
-</table>
-</section>
-<section id="returns" class="level2">
-<h2 class="anchored" data-anchor-id="returns">Returns</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr class="odd">
-<td><code>bool</code></td>
-<td><code>True</code> or <code>False</code></td>
+<td><code>AY1</code></td>
+<td>primary stressed /ay/</td>
 </tr>
 </tbody>
 </table>
+<p>A labelset parser can make these properties available so you can write a recoding rule like so:</p>
+<div class="langname">
+<pre class="langname">yaml</pre>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">rule</span><span class="kw">:</span><span class="at"> ay</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">conditions</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">attribute</span><span class="kw">:</span><span class="at"> label</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">relation</span><span class="kw">:</span><span class="at"> contains</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">set</span><span class="kw">:</span><span class="at"> AY</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">return</span><span class="kw">:</span><span class="at"> ay_{stress}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>fave_recode</code> has built in parser for CMU labels called <code>cmu_parser</code> that you can include like so</p>
+<div class="langname">
+<pre class="langname">bash</pre>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fave_recode</span> <span class="dt">\</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> <span class="at">-i</span> data/josef-fruehwald_speaker.TextGrid <span class="dt">\</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> <span class="at">-s</span> cmu2phila <span class="dt">\</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> <span class="at">-a</span> cmu_parser</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="label-set-parser-basics" class="level2">
+<h2 class="anchored" data-anchor-id="label-set-parser-basics">Label Set Parser Basics</h2>
+<p>A labelset parser has two top level attributes</p>
+<div class="langname">
+<pre class="langname">yaml</pre>
+</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parser</span><span class="kw">:</span><span class="at"> CMU</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">properties</span><span class="kw">:</span><span class="at"> </span><span class="kw">[]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>parser</code> just names the parser</li>
+<li><code>properties</code> is a list of properties you wish to make available.</li>
+</ul>
+<section id="a-property" class="level3">
+<h3 class="anchored" data-anchor-id="a-property">A property</h3>
+<p>A single property that parses primary stress out of the cmu label would look like this:</p>
+<div class="langname">
+<pre class="langname">yaml</pre>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> stress</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">updates</span><span class="kw">:</span><span class="at"> stress</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">default</span><span class="kw">:</span><span class="at"> </span><span class="st">""</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rules</span><span class="kw">:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">rule</span><span class="kw">:</span><span class="at"> </span><span class="st">"1"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">conditions</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">attribute</span><span class="kw">:</span><span class="at"> label</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">relation</span><span class="kw">:</span><span class="at"> contains</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">set</span><span class="kw">:</span><span class="at"> </span><span class="st">"1"</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">return</span><span class="kw">:</span><span class="at"> </span><span class="st">"1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>rule</code> component is identical to <a href="../getting-started/rule-scheme-basics.html">rules for recoding</a>.</p>
+<p>The <code>updates</code> field defines the variable name you want to use to access the value “1” in our recoding rule.</p>
+<p>Unlike a recoding rule, every segment will be given some value for “stress”, so a <code>default</code> value also needs to be provided.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
