@@ -192,6 +192,7 @@ class RuleSet:
             ## Crucial! 
             ## First rule wins
             if application:
+                return True
                 break
     
     def map_ruleset(
