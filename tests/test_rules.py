@@ -203,7 +203,7 @@ class TestRuleSet:
         tier = SequenceTier(tier = [AE, N])
         cmu2labov_rules.map_ruleset(tier)
 
-        assert tier.first.label == "ae"
+        assert tier.first.label == "ae_"
         assert tier.first.fol.label == "N"
 
     def test_empty_ruleset(self):
