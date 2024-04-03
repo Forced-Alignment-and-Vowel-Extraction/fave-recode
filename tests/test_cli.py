@@ -11,6 +11,7 @@ from fave_recode.fave_recode import get_rules, \
                                     validate_input_file,\
                                     validate_output_file
 from fave_recode.schemes import all_schemes
+from fave_recode.labelset_parser import LabelSetParser
 from pathlib import Path
 import pytest
 
@@ -226,9 +227,10 @@ class TestCLIComponents:
             "just_schwa.yml"
         )
         scheme = RuleSet(rule_path=str(schwa_path))
+        parser = LabelSetParser()
         target_tier = "Phone"
 
-        run_recode(atg, scheme, target_tier)
+        run_recode(atg, parser, scheme, target_tier)
         ptier = atg[0].Phone
         schwa_ints = [x for x in ptier if x.label == "@"]
         assert len(schwa_ints) > 0
