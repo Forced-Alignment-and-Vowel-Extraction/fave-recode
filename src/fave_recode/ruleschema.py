@@ -63,5 +63,39 @@ condition_schema = {
     }
 }
 
+label_parser_schema = {
+    "parser": {
+        "type": "string",
+        "required": True
+    },
+    "properties": {
+        "type": "list",
+        "required": True
+    }
+}
+
+parser_property_schema = {
+    "name": {
+        "type": "string",
+        "required": True
+    },
+    "exposed_as": {
+        "type": "string",
+        "required": True
+    },
+    "default": {
+        "type": "string",
+        "required": True
+    },
+    "value_rules": {
+        "type": "list",
+        "required": True
+    }
+}
+
+
+
 rule_validator = Validator(rule_schema)
 condition_validator = Validator(condition_schema)
+label_parser_validator = Validator(label_parser_schema)
+parser_property_validator = Validator(parser_property_schema)
