@@ -1,5 +1,6 @@
 # Getting started with `fave-recode`
 
+
 ![PyPI](https://img.shields.io/pypi/v/fave-recode.png)
 [![codecov](https://codecov.io/gh/Forced-Alignment-and-Vowel-Extraction/fave-recode/graph/badge.svg?token=C23B1H3DAX)](https://codecov.io/gh/Forced-Alignment-and-Vowel-Extraction/fave-recode)
 [![Maintainability](https://api.codeclimate.com/v1/badges/2375ddfef5d77ba1681d/maintainability.png)](https://codeclimate.com/github/Forced-Alignment-and-Vowel-Extraction/fave-recode/maintainability)
@@ -43,6 +44,7 @@ fave_recode --help
       -d, --output_dest PATH     An output directory
 
     Other options:
+      -a, --parser TEXT          Label set parser. Built in options are cmu_parser
       -s, --scheme TEXT          Recoding scheme. Built in options are cmu2labov
                                  and cmu2phila  [required]
       -r, --recode_stem TEXT     Stem to append to recoded TextGrid file names
@@ -61,7 +63,7 @@ ls data
     KY25A_1.TextGrid                 josef-fruehwald_speaker.TextGrid
 
 ``` bash
-fave_recode -i data/josef-fruehwald_speaker.TextGrid -s cmu2phila
+fave_recode -i data/josef-fruehwald_speaker.TextGrid -s cmu2phila -a cmu_parser
 
 ls data
 ```
