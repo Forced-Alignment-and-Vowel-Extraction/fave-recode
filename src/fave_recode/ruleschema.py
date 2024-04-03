@@ -9,7 +9,8 @@ def attribute_check(field, value, error):
         'inword',
         'sub_labels',
         'first',
-        'last'
+        'last',
+        'within'
     ]
     value_components = value.split(".")
     value_valid = [x in aligned_textgrid_properities for x in value_components]
@@ -29,6 +30,10 @@ rule_schema = {
     'return': {
         'type': 'string',
         'required': True
+    },
+    'updates': {
+        'type': 'string',
+        'required': False
     }
 }
 
