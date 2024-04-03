@@ -3,7 +3,7 @@
     - attribute: label
       relation: ==
       set: AH0
-  return: "@"
+  return: "@_{stress}"
 - rule: eyf
   conditions: 
     - attribute: label
@@ -12,7 +12,7 @@
     - attribute: fol.label
       relation: ==
       set: "#"
-  return: eyF
+  return: eyF_{stress}
 - rule: iyF
   conditions: 
     - attribute: label
@@ -21,7 +21,7 @@
     - attribute: fol.label
       relation: ==
       set: "#"
-  return: iyF
+  return: iyF_{stress}
 - rule: owF
   conditions: 
     - attribute: label
@@ -30,7 +30,7 @@
     - attribute: fol.label
       relation: ==
       set: "#"
-  return: owF
+  return: owF_{stress}
 - rule: ay0
   conditions:
     - attribute: label
@@ -48,7 +48,7 @@
         - SH
         - T
         - TH
-  return: ay0
+  return: ay0_{stress}
 - rule: ah
   conditions:
     - attribute: label
@@ -97,7 +97,7 @@
         - NIRVANA
         - KARATE
         - AH
-  return: ah
+  return: ah_{stress}
 - rule: Tuw
   conditions:
     - attribute: label
@@ -117,7 +117,7 @@
         - S
         - T 
         - Z
-  return: Tuw
+  return: Tuw_{stress}
 - rule: iyr
   conditions:
     - attribute: label
@@ -134,7 +134,7 @@
       set: 
         - AXR
         - R
-  return: iyr
+  return: iyr_{stress}
 - rule: eyr
   conditions: 
     - attribute: label
@@ -145,7 +145,7 @@
       set:
         - AXR
         - R
-  return: eyr
+  return: eyr_{stress}
 - rule: ahr
   conditions:
     - attribute: label
@@ -156,7 +156,7 @@
       set: 
         - AXR
         - R
-  return: ahr
+  return: ahr_{stress}
 - rule: owr
   conditions:
     - attribute: label
@@ -173,7 +173,7 @@
       set:
         - AXR
         - R
-  return: owr
+  return: owr_{stress}
 - rule: uwr
   conditions: 
     - attribute: label
@@ -190,19 +190,19 @@
       set:
         - AXR
         - R
-  return: uwr
+  return: uwr_{stress}
 - rule: o
   conditions:
     - attribute: label
       relation: contains
       set: AA
-  return: o
+  return: o_{stress}
 - rule: ae
   conditions: 
     - attribute: label
       relation: contains
       set: AE
-  return: ae
+  return: ae_{stress}
 - rule: wedge
   conditions:
     - attribute: label
@@ -210,76 +210,76 @@
       set:
         - AH1
         - AH2
-  return: uh
+  return: uh_{stress}
 - rule: oh
   conditions:
     - attribute: label
       relation: contains
       set: AO
-  return: oh
+  return: oh_{stress}
 - rule: aw
   conditions:
     - attribute: label
       relation: contains
       set: AW
-  return: aw
+  return: aw_{stress}
 - rule: ay
   conditions:
     - attribute: label
       relation: contains
       set: AY
-  return: ay
+  return: ay_{stress}
 - rule: e
   conditions:
     - attribute: label
       relation: contains
       set: "EH"
-  return: e
-- rule: "*hr"
+  return: e_{stress}
+- rule: "*hr_{stress}"
   conditions:
     - attribute: label
       relation: contains
       set: ER
-  return: "*hr"
+  return: "*hr_{stress}"
 - rule: ey
   conditions:
     - attribute: label
       relation: contains
       set: EY
-  return: ey
+  return: ey_{stress}
 - rule: i
   conditions:
     - attribute: label
       relation: contains
       set: IH
-  return: i
+  return: i_{stress}
 - rule: iy
   conditions:
     - attribute: label
       relation: contains
       set: IY
-  return: iy
+  return: iy_{stress}
 - rule: ow
   conditions:
     - attribute: label
       relation: contains
       set: OW
-  return: ow
+  return: ow_{stress}
 - rule: oy
   conditions: 
     - attribute: label
       relation: contains
       set: OY
-  return: oy
+  return: oy_{stress}
 - rule: u
   conditions: 
     - attribute: label
       relation: contains
       set: UH
-  return: u
+  return: u_{stress}
 - rule: uw
   conditions:
     - attribute: label
       relation: contains
       set: UW
-  return: uw
+  return: uw_{stress}
