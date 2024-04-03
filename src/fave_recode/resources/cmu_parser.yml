@@ -3,9 +3,9 @@ parser: "CMU"
 properties:
 
   - name: "class"
-    exposed_as: "VC"
+    updates: "VC"
     default: ""
-    value_rules:
+    rules:
 
       - rule: "vowel"
         updates: "VC"
@@ -24,9 +24,9 @@ properties:
         return: "consonant"
 
   - name: "stress"
-    exposed_as: "stress"
+    updates: "stress"
     default: ""
-    value_rules:
+    rules:
 
       - rule: "1"
         updates: "stress"      

@@ -79,7 +79,7 @@ parser_property_schema = {
         "type": "string",
         "required": True
     },
-    "exposed_as": {
+    "updates": {
         "type": "string",
         "required": True
     },
@@ -87,7 +87,7 @@ parser_property_schema = {
         "type": "string",
         "required": True
     },
-    "value_rules": {
+    "rules": {
         "type": "list",
         "required": True
     }

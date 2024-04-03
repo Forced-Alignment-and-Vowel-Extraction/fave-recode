@@ -7,9 +7,9 @@ import pytest
 
 example_property = {
     "name": "vowel",
-    "exposed_as": "V",
+    "updates": "V",
     "default": "",
-    "value_rules": [
+    "rules": [
         {
             "rule": "vowel",
             "updates": "V",
