@@ -88,6 +88,10 @@ class Rule:
         self.rule = rule["rule"]
         self.name = self.rule
         self.output = rule["return"]
+        if "updates" in rule:
+            self.updates = rule["updates"]
+        else:
+            self.updates = "label"
     
     def __repr__(self):
         return f"rule: {self.rule} with {len(self.conditions)} conditions. returns {self.output}"
@@ -129,7 +133,7 @@ class Rule:
             raise Exception
         
         if all(cond_met):
-            obj.label = self.output
+            obj.set_feature(self.updates, self.output)
             return True
 
 class RuleSet:
