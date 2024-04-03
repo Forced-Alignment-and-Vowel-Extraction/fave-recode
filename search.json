@@ -568,14 +568,24 @@
     "href": "getting-started/label_set_parser.html",
     "title": "Label Set Parsers",
     "section": "",
-    "text": "There are some properties of label sets that you might want to include in your output labels. For example, the CMU dictionary encodes vowel stress like so:\nA labelset parser can make these properties available so you can write a recoding rule like so:\nfave_recode has built in parser for CMU labels called cmu_parser that you can include like so"
+    "text": "There are some properties of label sets that you might want to include in your output labels. For example, the CMU dictionary encodes vowel stress like so:\nA labelset parser can make these properties available so you can write a recoding rule like so:\nfave_recode has built in parser for CMU labels called cmu_parser that you can include like so",
+    "crumbs": [
+      "Get Started",
+      "Labelset Parsing",
+      "Label Set Parsers"
+    ]
   },
   {
     "objectID": "getting-started/label_set_parser.html#label-set-parser-basics",
     "href": "getting-started/label_set_parser.html#label-set-parser-basics",
     "title": "Label Set Parsers",
     "section": "Label Set Parser Basics",
-    "text": "Label Set Parser Basics\nA labelset parser has two top level attributes\n\nyaml\n\nparser: CMU\nproperties: []\n\nparser just names the parser\nproperties is a list of properties you wish to make available.\n\n\nA property\nA single property that parses primary stress out of the cmu label would look like this:\n\nyaml\n\nname: stress\nupdates: stress\ndefault: \"\"\nrules:\n  - rule: \"1\"\n    conditions: \n      - attribute: label\n        relation: contains\n        set: \"1\"\n        return: \"1\"\nThe rule component is identical to rules for recoding.\nThe updates field defines the variable name you want to use to access the value “1” in our recoding rule.\nUnlike a recoding rule, every segment will be given some value for “stress”, so a default value also needs to be provided."
+    "text": "Label Set Parser Basics\nA labelset parser has two top level attributes\n\nyaml\n\nparser: CMU\nproperties: []\n\nparser just names the parser\nproperties is a list of properties you wish to make available.\n\n\nA property\nA single property that parses primary stress out of the cmu label would look like this:\n\nyaml\n\nname: stress\nupdates: stress\ndefault: \"\"\nrules:\n  - rule: \"1\"\n    conditions: \n      - attribute: label\n        relation: contains\n        set: \"1\"\n        return: \"1\"\nThe rule component is identical to rules for recoding.\nThe updates field defines the variable name you want to use to access the value “1” in our recoding rule.\nUnlike a recoding rule, every segment will be given some value for “stress”, so a default value also needs to be provided.",
+    "crumbs": [
+      "Get Started",
+      "Labelset Parsing",
+      "Label Set Parsers"
+    ]
   },
   {
     "objectID": "getting-started/directory.html",
