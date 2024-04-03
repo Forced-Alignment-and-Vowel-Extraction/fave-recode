@@ -79,6 +79,11 @@ quartodoc:
         - rule_classes.Condition
         - rule_classes.Rule
         - rule_classes.RuleSet
+    - title: Label Set Parsers
+      desc: Label set parsers
+      contents:
+        - labelset_parser.LabelSetParser
+        - labelset_parser.LabelSetParserProperties   
     - title: Relations
     - subtitle: "`in`, `not in`"
       contents:

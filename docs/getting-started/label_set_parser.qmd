@@ -1,0 +1,69 @@
+---
+title: Label Set Parsers
+engine: jupyter
+toc: true
+---
+
+There are some properties of label sets that you might want to include in your output labels.
+For example, the CMU dictionary encodes vowel stress like so:
+
+| label | meaning |
+| ---- | ---- | 
+| `AY0` | unstressed /ay/ |
+| `AY2` | secondary stressed /ay/ |
+| `AY1` | primary stressed /ay/ |
+
+A labelset parser can make these properties available so you can write a recoding rule like so:
+
+```yaml
+- rule: ay
+  conditions:
+    - attribute: label
+      relation: contains
+      set: AY
+  return: ay_{stress}
+```
+
+`fave_recode` has built in parser for CMU labels called `cmu_parser` that you can include like so
+
+```bash
+fave_recode \
+ -i data/josef-fruehwald_speaker.TextGrid \
+ -s cmu2phila \
+ -a cmu_parser
+```
+
+## Label Set Parser Basics
+
+A labelset parser has two top level attributes
+
+```yaml
+parser: CMU
+properties: []
+```
+
+- `parser` just names the parser
+- `properties` is a list of properties you wish to make available.
+
+### A property
+
+A single property that parses primary stress out of the cmu label would look like this:
+
+```yaml
+name: stress
+updates: stress
+default: ""
+rules:
+  - rule: "1"
+    conditions: 
+      - attribute: label
+        relation: contains
+        set: "1"
+        return: "1"
+```
+
+The `rule` component is identical to [rules for recoding](rule-scheme-basics.qmd).
+
+The `updates` field defines the variable name you want to use to access the value "1" in our recoding rule.
+
+Unlike a recoding rule, every segment will be given some value for "stress", so a `default` value also needs to be provided.

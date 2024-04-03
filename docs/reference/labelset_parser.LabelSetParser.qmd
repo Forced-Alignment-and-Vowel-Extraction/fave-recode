@@ -1,0 +1,75 @@
+# labelset_parser.LabelSetParser { #fave_recode.labelset_parser.LabelSetParser }
+
+`labelset_parser.LabelSetParser(self, parser=None, parser_path=None)`
+
+A labelset parser object
+
+## Parameters
+
+| Name          | Type                   | Description                                                       | Default   |
+|---------------|------------------------|-------------------------------------------------------------------|-----------|
+| `parser`      | [dict](`dict`)         | A dictionary defining the parser rules. Defaults to None.         | `None`    |
+| `parser_path` | [Path](`pathlib.Path`) | A path to a yaml file definition of the parser. Defaults to None. | `None`    |
+
+## Methods
+
+| Name | Description |
+| --- | --- |
+| [apply_parser](#fave_recode.labelset_parser.LabelSetParser.apply_parser) | Apply the parser to a single interval |
+| [map_parser](#fave_recode.labelset_parser.LabelSetParser.map_parser) | Map the parser to an entire sequence tier. |
+| [read_parser](#fave_recode.labelset_parser.LabelSetParser.read_parser) | Read in a yaml file defining the parser |
+| [validate_parser](#fave_recode.labelset_parser.LabelSetParser.validate_parser) | Validate wellformedness of parser |
+
+### apply_parser { #fave_recode.labelset_parser.LabelSetParser.apply_parser }
+
+`labelset_parser.LabelSetParser.apply_parser(obj)`
+
+Apply the parser to a single interval
+
+#### Parameters
+
+| Name   | Type                                                                        | Description        | Default    |
+|--------|-----------------------------------------------------------------------------|--------------------|------------|
+| `obj`  | [SequenceInterval](`aligned_textgrid.sequences.sequences.SequenceInterval`) | A SequenceInterval | _required_ |
+
+### map_parser { #fave_recode.labelset_parser.LabelSetParser.map_parser }
+
+`labelset_parser.LabelSetParser.map_parser(obj)`
+
+Map the parser to an entire sequence tier.
+
+#### Parameters
+
+| Name   | Type                                                            | Description    | Default    |
+|--------|-----------------------------------------------------------------|----------------|------------|
+| `obj`  | [SequenceTier](`aligned_textgrid.sequences.tiers.SequenceTier`) | A SequenceTier | _required_ |
+
+### read_parser { #fave_recode.labelset_parser.LabelSetParser.read_parser }
+
+`labelset_parser.LabelSetParser.read_parser(path)`
+
+Read in a yaml file defining the parser
+
+#### Parameters
+
+| Name   | Type                   | Description                       | Default    |
+|--------|------------------------|-----------------------------------|------------|
+| `path` | [Path](`pathlib.Path`) | Path to the yaml file definition. | _required_ |
+
+### validate_parser { #fave_recode.labelset_parser.LabelSetParser.validate_parser }
+
+`labelset_parser.LabelSetParser.validate_parser(parser)`
+
+Validate wellformedness of parser
+
+#### Parameters
+
+| Name     | Type           | Description       | Default    |
+|----------|----------------|-------------------|------------|
+| `parser` | [dict](`dict`) | parser dictionary | _required_ |
+
+#### Raises
+
+| Type                     | Description                        |
+|--------------------------|------------------------------------|
+| [Exception](`Exception`) | Any errors raised by the validator |
