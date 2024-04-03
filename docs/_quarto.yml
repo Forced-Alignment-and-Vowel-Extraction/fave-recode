@@ -5,6 +5,7 @@ project:
 website:
   page-navigation: true
   image: assets/logo.png
+  favicon: assets/logo.png
   navbar:
     left:
       - file: getting-started/overview.qmd
@@ -40,9 +41,12 @@ website:
 format:
   html: 
     theme:
-      light: flatly
-      dark: darkly
+      light: [flatly, styles/light.scss]
+      dark: [darkly, styles/dark.scss]
+    css: styles/styles.css
     toc: true
+    filters: 
+      - codeblocklabel
 
 # tell quarto to read the generated sidebar
 metadata-files:
