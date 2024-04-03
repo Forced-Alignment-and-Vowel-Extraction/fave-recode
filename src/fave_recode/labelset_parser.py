@@ -23,6 +23,9 @@ class LabelSetParser():
             ]
         elif parser_path:
             self.read_parser(parser_path)
+        else:
+            self.properties = [LabelSetParserProperties()]
+        
 
     def apply_parser(self, obj: SequenceInterval):
         for property in self.properties:
@@ -64,11 +67,16 @@ class LabelSetParser():
 
 
 class LabelSetParserProperties():
-    def __init__(self, property: dict):
-        self.validate_property(property)
-        self.rules = RuleSet(property["value_rules"])
-        self.exposed_as = property["exposed_as"]
-        self.default = property["default"]
+    def __init__(self, property: dict = None):
+        if property:
+            self.validate_property(property)
+            self.rules = RuleSet(property["value_rules"])
+            self.exposed_as = property["exposed_as"]
+            self.default = property["default"]
+        else:
+            self.rules = RuleSet()
+            self.exposed_as = "_"
+            self.default = None
 
     def validate_property(self, property: dict):
         """Validate wellformedness of parser property
