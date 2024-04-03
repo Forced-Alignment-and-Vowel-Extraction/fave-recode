@@ -8,7 +8,6 @@ properties:
     rules:
 
       - rule: "vowel"
-        updates: "VC"
         conditions:
           - attribute: label
             relation: "rematches"
@@ -16,7 +15,6 @@ properties:
         return: "vowel"
 
       - rule: "consonant"
-        updates: "VC"
         conditions:
           - attribute: label
             relation: "rematches"
@@ -29,7 +27,6 @@ properties:
     rules:
 
       - rule: "1"
-        updates: "stress"      
         conditions:
           - attribute: label
             relation: contains
@@ -37,7 +34,6 @@ properties:
         return: "1"
 
       - rule: "2"
-        updates: "stress"
         conditions:
           - attribute: label
             relation: contains
@@ -45,7 +41,6 @@ properties:
         return: "2"
 
       - rule: "0"
-        updates: "stress"
         conditions:
           - attribute: label
             relation: contains
