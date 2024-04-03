@@ -36,7 +36,9 @@ website:
               contents:
                 - getting-started/condition-attributes.qmd
                 - getting-started/condition-relations.qmd
-
+        - section: Labelset Parsing
+          contents:
+            - getting-started/label_set_parser.qmd
 
 format:
   html: 
