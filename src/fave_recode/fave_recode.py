@@ -1,5 +1,6 @@
 from aligned_textgrid import AlignedTextGrid, custom_classes, Word, Phone
 from fave_recode.rule_classes import RuleSet
+from fave_recode.labelset_parser import LabelSetParser
 from fave_recode.schemes import all_schemes
 from pathlib import Path
 from typing import Union
@@ -42,6 +43,10 @@ import io
     cloup.constraints.mutually_exclusive,
     ["input_path", "output_file"]
 )
+@click.option("-a","--parser",
+              type = click.STRING,
+              help = "Label set parser."\
+                " Built in options are cmu_parser")
 @click.option("-s", "--scheme",
               type=click.STRING,
               help = "Recoding scheme."\
@@ -60,17 +65,20 @@ def fave_recode(
     input_path = None,
     output_file = None,
     output_dest = None,
+    parser = None,
     scheme = None,
     save_recode = True,
     recode_stem = "_recoded",
     target_tier = "Phone"
 )->Union[AlignedTextGrid,list]:
+    parser = get_parser(parser)
     rules = get_rules(scheme)
     if input_file:
         input_p = Path(input_file.name)
         ratg = process_file(
             input_path=input_p, 
             output_file=output_file, 
+            parser = parser,
             scheme = rules, 
             recode_stem = recode_stem,
             save_recode = save_recode,
@@ -79,6 +87,7 @@ def fave_recode(
         ratg = process_directory(
             input_path = input_path,
             output_dest = output_dest,
+            parser = parser,
             scheme = rules,
             recode_stem = recode_stem,
             target_tier = target_tier,
@@ -97,10 +106,24 @@ def get_rules(
         return RuleSet(rule_path = str(scheme_path))
     raise Exception(f"Cannot find rule schema file: {scheme}")
 
+def get_parser(
+        parser: str
+    ) -> LabelSetParser:
+    if not parser:
+        return LabelSetParser()
+    if parser in all_schemes:
+        return LabelSetParser(parser_path = Path(all_schemes[parser]))
+    scheme_path = Path(parser)
+    if scheme_path.is_file():
+        return LabelSetParser(parser_path = scheme_path)
+    raise Exception(f"Cannot find rule schema file: {parser}")
+
+
 def process_directory(
        input_path: str,
        scheme: RuleSet,
        save_recode: bool, 
+       parser: LabelSetParser = None,
        output_dest: Union[str,None] = None,
        recode_stem: str = "_recoded",
        target_tier: str = "Phone"
@@ -112,6 +135,7 @@ def process_directory(
 
         ratg = process_file(
             input_path = tg,
+            parser = parser,
             scheme = scheme,
             save_recode = save_recode,
             output_file = output_dest,
@@ -126,12 +150,15 @@ def process_file(
         input_path: Path, 
         scheme: RuleSet,
         save_recode: bool,
+        parser: LabelSetParser = None,
         output_file: str = None,
         recode_stem:str = "_recoded",
         target_tier: str = "Phone"
     ):
     atg = validate_input_file(input_path)
-    run_recode(atg, scheme, target_tier)
+    if not parser:
+        parser = LabelSetParser()
+    run_recode(atg, parser, scheme, target_tier)
 
     if output_file and save_recode:
         output_path = make_output_path(
@@ -227,12 +254,15 @@ def make_output_path(
          
 def run_recode(
         atg: AlignedTextGrid, 
+        parser: LabelSetParser,
         scheme: RuleSet, 
         target_tier: str
     ):
     all_targets = [t for tgr in atg 
                    for t in tgr 
                    if t.entry_class.__name__ == target_tier]
+    for tier in all_targets:
+        parser.map_parser(tier)
     for tier in all_targets:
         scheme.map_ruleset(tier)
 

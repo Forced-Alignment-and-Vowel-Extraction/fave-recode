@@ -48,7 +48,10 @@ ls data
 ```
 
 ```bash
-fave_recode -i data/josef-fruehwald_speaker.TextGrid -s cmu2phila
+fave_recode \
+  -i data/josef-fruehwald_speaker.TextGrid \
+  -a cmu_parser \
+  -s cmu2phila 
 
 ls data
 ```

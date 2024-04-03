@@ -8,6 +8,10 @@ website:
       - reference/rule_classes.RuleSet.qmd
       section: Rule Classes
     - contents:
+      - reference/labelset_parser.LabelSetParser.qmd
+      - reference/labelset_parser.LabelSetParserProperties.qmd
+      section: Label Set Parsers
+    - contents:
       - contents:
         - reference/relations.in_relation.qmd
         - reference/relations.not_in_relation.qmd

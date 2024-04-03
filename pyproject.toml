@@ -16,7 +16,7 @@ repository = "https://github.com/Forced-Alignment-and-Vowel-Extraction/fave-reco
 
 [tool.poetry.dependencies]
 python = "^3.10"
-aligned-textgrid = "^v0.4.1"
+aligned-textgrid = "^0.6.4"
 pyyaml = "^6.0"
 cerberus = "^1.3.5"
 click = "^8.1.7"
@@ -41,7 +41,8 @@ build-backend = "poetry.core.masonry.api"
 addopts = [
     "--import-mode=importlib",
     "--cov-config=.coveragerc",
-    "--cov"
+    "--cov",
+    "--cov-report=xml:cov.xml"
 ]
 filterwarnings =[
     "ignore::UserWarning"

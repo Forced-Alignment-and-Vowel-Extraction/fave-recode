@@ -10,6 +10,15 @@ Rule application classes
 | [rule_classes.Rule](rule_classes.Rule.qmd#fave_recode.rule_classes.Rule) | _A rule class_ |
 | [rule_classes.RuleSet](rule_classes.RuleSet.qmd#fave_recode.rule_classes.RuleSet) | A rule set class |
 
+## Label Set Parsers
+
+Label set parsers
+
+| | |
+| --- | --- |
+| [labelset_parser.LabelSetParser](labelset_parser.LabelSetParser.qmd#fave_recode.labelset_parser.LabelSetParser) | A labelset parser object |
+| [labelset_parser.LabelSetParserProperties](labelset_parser.LabelSetParserProperties.qmd#fave_recode.labelset_parser.LabelSetParserProperties) | A property of the labelset, including rules that |
+
 ## Relations
 
 ### `in`, `not in`
