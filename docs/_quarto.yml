@@ -5,6 +5,7 @@ project:
 website:
   page-navigation: true
   image: assets/logo.png
+  favicon: assets/logo.png
   navbar:
     left:
       - file: getting-started/overview.qmd
@@ -35,14 +36,19 @@ website:
               contents:
                 - getting-started/condition-attributes.qmd
                 - getting-started/condition-relations.qmd
-
+        - section: Labelset Parsing
+          contents:
+            - getting-started/label_set_parser.qmd
 
 format:
   html: 
     theme:
-      light: flatly
-      dark: darkly
+      light: [flatly, styles/light.scss]
+      dark: [darkly, styles/dark.scss]
+    css: styles/styles.css
     toc: true
+    filters: 
+      - codeblocklabel
 
 # tell quarto to read the generated sidebar
 metadata-files:
@@ -75,6 +81,11 @@ quartodoc:
         - rule_classes.Condition
         - rule_classes.Rule
         - rule_classes.RuleSet
+    - title: Label Set Parsers
+      desc: Label set parsers
+      contents:
+        - labelset_parser.LabelSetParser
+        - labelset_parser.LabelSetParserProperties   
     - title: Relations
     - subtitle: "`in`, `not in`"
       contents:

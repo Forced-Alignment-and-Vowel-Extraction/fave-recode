@@ -163,3 +163,4 @@ cython_debug/
 notebooks/
 .vscode/
 poetry.lock
+cov.xml

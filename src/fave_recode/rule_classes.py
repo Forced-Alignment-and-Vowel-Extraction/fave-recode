@@ -5,6 +5,7 @@ from fave_recode.relations import relation_dict
 from collections.abc import Callable
 import functools
 import yaml
+import re
 
 def rgetattr(obj: SequenceInterval, 
              attr : str, 
@@ -88,6 +89,10 @@ class Rule:
         self.rule = rule["rule"]
         self.name = self.rule
         self.output = rule["return"]
+        if "updates" in rule:
+            self.updates = rule["updates"]
+        else:
+            self.updates = "label"
     
     def __repr__(self):
         return f"rule: {self.rule} with {len(self.conditions)} conditions. returns {self.output}"
@@ -129,8 +134,18 @@ class Rule:
             raise Exception
         
         if all(cond_met):
-            obj.label = self.output
+            output = self.parse_output(obj)
+            obj.set_feature(self.updates, output)
             return True
+        
+    def parse_output(self, obj):
+        get_features = re.findall(r"\{(.*?)\}", self.output)
+        feature_dict = {
+            f:rgetattr(obj, f)
+            for f in get_features
+        }
+        output = self.output.format(**feature_dict)
+        return output
 
 class RuleSet:
     """A rule set class
@@ -177,6 +192,7 @@ class RuleSet:
             ## Crucial! 
             ## First rule wins
             if application:
+                return True
                 break
     
     def map_ruleset(

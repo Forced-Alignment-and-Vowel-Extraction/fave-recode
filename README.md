@@ -1,11 +1,14 @@
 # Getting started with `fave-recode`
 
+
+![PyPI](https://img.shields.io/pypi/v/fave-recode.png)
 [![codecov](https://codecov.io/gh/Forced-Alignment-and-Vowel-Extraction/fave-recode/graph/badge.svg?token=C23B1H3DAX)](https://codecov.io/gh/Forced-Alignment-and-Vowel-Extraction/fave-recode)
 [![Maintainability](https://api.codeclimate.com/v1/badges/2375ddfef5d77ba1681d/maintainability.png)](https://codeclimate.com/github/Forced-Alignment-and-Vowel-Extraction/fave-recode/maintainability)
 [![FAVE Python
 CI](https://github.com/Forced-Alignment-and-Vowel-Extraction/fave-recode/actions/workflows/test-and-run.yml/badge.svg?branch=dev)](https://github.com/Forced-Alignment-and-Vowel-Extraction/fave-recode/actions/workflows/test-and-run.yml)
 [![Build
 Docs](https://github.com/Forced-Alignment-and-Vowel-Extraction/fave-recode/actions/workflows/build-docs.yml/badge.svg)](https://forced-alignment-and-vowel-extraction.github.io/fave-recode/)
+[![DOI](https://zenodo.org/badge/605740158.svg)](https://zenodo.org/badge/latestdoi/605740158)
 
 The idea behind `fave-recode` is that no matter how much you may adjust
 the dictionary of a forced-aligner, you may still want to make
@@ -41,6 +44,7 @@ fave_recode --help
       -d, --output_dest PATH     An output directory
 
     Other options:
+      -a, --parser TEXT          Label set parser. Built in options are cmu_parser
       -s, --scheme TEXT          Recoding scheme. Built in options are cmu2labov
                                  and cmu2phila  [required]
       -r, --recode_stem TEXT     Stem to append to recoded TextGrid file names
@@ -59,7 +63,7 @@ ls data
     KY25A_1.TextGrid                 josef-fruehwald_speaker.TextGrid
 
 ``` bash
-fave_recode -i data/josef-fruehwald_speaker.TextGrid -s cmu2phila
+fave_recode -i data/josef-fruehwald_speaker.TextGrid -s cmu2phila -a cmu_parser
 
 ls data
 ```

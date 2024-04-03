@@ -1,0 +1,48 @@
+parser: "CMU"
+
+properties:
+
+  - name: "class"
+    updates: "VC"
+    default: ""
+    rules:
+
+      - rule: "vowel"
+        conditions:
+          - attribute: label
+            relation: "rematches"
+            set: "[AEIOU]"
+        return: "vowel"
+
+      - rule: "consonant"
+        conditions:
+          - attribute: label
+            relation: "rematches"
+            set: "[A-Z]"
+        return: "consonant"
+
+  - name: "stress"
+    updates: "stress"
+    default: ""
+    rules:
+
+      - rule: "1"
+        conditions:
+          - attribute: label
+            relation: contains
+            set: "1"
+        return: "1"
+
+      - rule: "2"
+        conditions:
+          - attribute: label
+            relation: contains
+            set: "2"
+        return: "2"
+
+      - rule: "0"
+        conditions:
+          - attribute: label
+            relation: contains
+            set: "2"
+        return: "0"
