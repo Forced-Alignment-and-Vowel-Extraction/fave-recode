@@ -1,5 +1,83 @@
 [
   {
+    "objectID": "reference/relations.equals_relation.html",
+    "href": "reference/relations.equals_relation.html",
+    "title": "relations.equals_relation",
+    "section": "",
+    "text": "relations.equals_relation(lhs, rhs)\nIs lhs == to rhs\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False",
+    "crumbs": [
+      "Relations",
+      "equals, not equals",
+      "relations.equals_relation"
+    ]
+  },
+  {
+    "objectID": "reference/relations.equals_relation.html#parameters",
+    "href": "reference/relations.equals_relation.html#parameters",
+    "title": "relations.equals_relation",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side\nrequired",
+    "crumbs": [
+      "Relations",
+      "equals, not equals",
+      "relations.equals_relation"
+    ]
+  },
+  {
+    "objectID": "reference/relations.equals_relation.html#returns",
+    "href": "reference/relations.equals_relation.html#returns",
+    "title": "relations.equals_relation",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nbool\nTrue or False",
+    "crumbs": [
+      "Relations",
+      "equals, not equals",
+      "relations.equals_relation"
+    ]
+  },
+  {
+    "objectID": "reference/fave_recode.relations.rematches_relation.html",
+    "href": "reference/fave_recode.relations.rematches_relation.html",
+    "title": "rematches_relation",
+    "section": "",
+    "text": "relations.rematches_relation(lhs, rhs)\nsummary\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\ndescription\nrequired\n\n\nrhs\nstr\ndescription\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\ndescription"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.rematches_relation.html#parameters",
+    "href": "reference/fave_recode.relations.rematches_relation.html#parameters",
+    "title": "rematches_relation",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\ndescription\nrequired\n\n\nrhs\nstr\ndescription\nrequired"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.rematches_relation.html#returns",
+    "href": "reference/fave_recode.relations.rematches_relation.html#returns",
+    "title": "rematches_relation",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nbool\ndescription"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.excludes_relation.html",
+    "href": "reference/fave_recode.relations.excludes_relation.html",
+    "title": "excludes_relation",
+    "section": "",
+    "text": "relations.excludes_relation(lhs, rhs)\nDoes lhs not contain rhs\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side (must work with in)\nrequired\n\n\nrhs\nAny\nright handnside\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.excludes_relation.html#parameters",
+    "href": "reference/fave_recode.relations.excludes_relation.html#parameters",
+    "title": "excludes_relation",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side (must work with in)\nrequired\n\n\nrhs\nAny\nright handnside\nrequired"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.excludes_relation.html#returns",
+    "href": "reference/fave_recode.relations.excludes_relation.html#returns",
+    "title": "excludes_relation",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
     "objectID": "reference/rule_classes.Rule.html",
     "href": "reference/rule_classes.Rule.html",
     "title": "rule_classes.Rule",
@@ -33,6 +111,42 @@
     ]
   },
   {
+    "objectID": "reference/relations.reunmatches_relation.html",
+    "href": "reference/relations.reunmatches_relation.html",
+    "title": "relations.reunmatches_relation",
+    "section": "",
+    "text": "relations.reunmatches_relation(lhs, rhs)\nDoes the lhs not match a regex for the rhs\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\nleft hand side\nrequired\n\n\nrhs\nstr\nright hand side\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False",
+    "crumbs": [
+      "Relations",
+      "Regex match",
+      "relations.reunmatches_relation"
+    ]
+  },
+  {
+    "objectID": "reference/relations.reunmatches_relation.html#parameters",
+    "href": "reference/relations.reunmatches_relation.html#parameters",
+    "title": "relations.reunmatches_relation",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\nleft hand side\nrequired\n\n\nrhs\nstr\nright hand side\nrequired",
+    "crumbs": [
+      "Relations",
+      "Regex match",
+      "relations.reunmatches_relation"
+    ]
+  },
+  {
+    "objectID": "reference/relations.reunmatches_relation.html#returns",
+    "href": "reference/relations.reunmatches_relation.html#returns",
+    "title": "relations.reunmatches_relation",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nbool\nTrue or False",
+    "crumbs": [
+      "Relations",
+      "Regex match",
+      "relations.reunmatches_relation"
+    ]
+  },
+  {
     "objectID": "reference/fave_recode.relations.in_relation.html",
     "href": "reference/fave_recode.relations.in_relation.html",
     "title": "in_relation",
@@ -52,6 +166,63 @@
     "title": "in_relation",
     "section": "Returns",
     "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/relations.in_relation.html",
+    "href": "reference/relations.in_relation.html",
+    "title": "relations.in_relation",
+    "section": "",
+    "text": "relations.in_relation(lhs, rhs)\nIs lhs in rhs?\npython\n\nfrom fave_recode.relations import in_relation\nin_relation('x', 'xyz')\n\nTrue",
+    "crumbs": [
+      "Relations",
+      "`in`, `not in`",
+      "relations.in_relation"
+    ]
+  },
+  {
+    "objectID": "reference/relations.in_relation.html#parameters",
+    "href": "reference/relations.in_relation.html#parameters",
+    "title": "relations.in_relation",
+    "section": "Parameters",
+    "text": "Parameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side object\nrequired\n\n\nrhs\nAny\nright hand side object (must work with in)\nrequired",
+    "crumbs": [
+      "Relations",
+      "`in`, `not in`",
+      "relations.in_relation"
+    ]
+  },
+  {
+    "objectID": "reference/relations.in_relation.html#returns",
+    "href": "reference/relations.in_relation.html#returns",
+    "title": "relations.in_relation",
+    "section": "Returns",
+    "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False",
+    "crumbs": [
+      "Relations",
+      "`in`, `not in`",
+      "relations.in_relation"
+    ]
+  },
+  {
+    "objectID": "reference/fave_recode.relations.equals_relation.html",
+    "href": "reference/fave_recode.relations.equals_relation.html",
+    "title": "equals_relation",
+    "section": "",
+    "text": "relations.equals_relation(lhs, rhs)\nIs lhs == to rhs\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\ndescription"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.equals_relation.html#parameters",
+    "href": "reference/fave_recode.relations.equals_relation.html#parameters",
+    "title": "equals_relation",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side\nrequired"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.equals_relation.html#returns",
+    "href": "reference/fave_recode.relations.equals_relation.html#returns",
+    "title": "equals_relation",
+    "section": "",
+    "text": "Type\nDescription\n\n\n\n\nbool\ndescription"
   },
   {
     "objectID": "reference/index.html",
@@ -94,188 +265,6 @@
     ]
   },
   {
-    "objectID": "reference/rule_classes.Condition.html",
-    "href": "reference/rule_classes.Condition.html",
-    "title": "rule_classes.Condition",
-    "section": "",
-    "text": "rule_classes.Condition(self, condition)\nA rule condition\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nattribute\nstr\nThe attribute path for a SequenceInterval\n\n\nrelation\nCallable\nThe relation function to be used\n\n\nset\nUnion[str, list]\nThe comparison set\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncheck_condition\nCheck if the condition is met\n\n\nvalidate_condition\nValidate wellformedness of condititions\n\n\n\n\n\nrule_classes.Condition.check_condition(obj)\nCheck if the condition is met\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe sequence interval against which the condition is checked\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False\n\n\n\n\n\n\n\nrule_classes.Condition.validate_condition(condition)\nValidate wellformedness of condititions\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncondition\ndict\ncondition dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator",
-    "crumbs": [
-      "Rule Classes",
-      "rule_classes.Condition"
-    ]
-  },
-  {
-    "objectID": "reference/rule_classes.Condition.html#attributes",
-    "href": "reference/rule_classes.Condition.html#attributes",
-    "title": "rule_classes.Condition",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\nattribute\nstr\nThe attribute path for a SequenceInterval\n\n\nrelation\nCallable\nThe relation function to be used\n\n\nset\nUnion[str, list]\nThe comparison set",
-    "crumbs": [
-      "Rule Classes",
-      "rule_classes.Condition"
-    ]
-  },
-  {
-    "objectID": "reference/rule_classes.Condition.html#methods",
-    "href": "reference/rule_classes.Condition.html#methods",
-    "title": "rule_classes.Condition",
-    "section": "",
-    "text": "Name\nDescription\n\n\n\n\ncheck_condition\nCheck if the condition is met\n\n\nvalidate_condition\nValidate wellformedness of condititions\n\n\n\n\n\nrule_classes.Condition.check_condition(obj)\nCheck if the condition is met\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe sequence interval against which the condition is checked\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False\n\n\n\n\n\n\n\nrule_classes.Condition.validate_condition(condition)\nValidate wellformedness of condititions\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncondition\ndict\ncondition dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator",
-    "crumbs": [
-      "Rule Classes",
-      "rule_classes.Condition"
-    ]
-  },
-  {
-    "objectID": "reference/relations.html",
-    "href": "reference/relations.html",
-    "title": "relations",
-    "section": "",
-    "text": "relations\nFunctions defining Boolean relations between lhs (the rule conditions attribute) and the rhs (the rule condition set1)"
-  },
-  {
-    "objectID": "reference/relations.html#functions",
-    "href": "reference/relations.html#functions",
-    "title": "relations",
-    "section": "Functions",
-    "text": "Functions\n\n\n\nName\nDescription\n\n\n\n\ncontains_relation\nDoes lhs contain rhs?\n\n\nequals_relation\nIs lhs == to rhs\n\n\nexcludes_relation\nDoes lhs not contain rhs\n\n\nin_relation\nIs lhs in rhs?\n\n\nnot_in_relation\nIs lhs not in rhs\n\n\nrematches_relation\nsummary"
-  },
-  {
-    "objectID": "reference/relations.html#fave_recode.relations.contains_relation",
-    "href": "reference/relations.html#fave_recode.relations.contains_relation",
-    "title": "relations",
-    "section": "contains_relation",
-    "text": "contains_relation\nrelations.contains_relation(lhs, rhs)\nDoes lhs contain rhs?\n\n\npython\n\nfrom fave_recode.relations import contains_relation\n\ncontains_relation('xyz', 'x')\n\nTrue\n\n\n\nParameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side (must work with in)\nrequired\n\n\nrhs\nAny\nright hand side\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
-  },
-  {
-    "objectID": "reference/relations.html#fave_recode.relations.equals_relation",
-    "href": "reference/relations.html#fave_recode.relations.equals_relation",
-    "title": "relations",
-    "section": "equals_relation",
-    "text": "equals_relation\nrelations.equals_relation(lhs, rhs)\nIs lhs == to rhs\n\nParameters\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\ndescription"
-  },
-  {
-    "objectID": "reference/relations.html#fave_recode.relations.excludes_relation",
-    "href": "reference/relations.html#fave_recode.relations.excludes_relation",
-    "title": "relations",
-    "section": "excludes_relation",
-    "text": "excludes_relation\nrelations.excludes_relation(lhs, rhs)\nDoes lhs not contain rhs\n\nParameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side (must work with in)\nrequired\n\n\nrhs\nAny\nright handnside\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
-  },
-  {
-    "objectID": "reference/relations.html#fave_recode.relations.in_relation",
-    "href": "reference/relations.html#fave_recode.relations.in_relation",
-    "title": "relations",
-    "section": "in_relation",
-    "text": "in_relation\nrelations.in_relation(lhs, rhs)\nIs lhs in rhs?\n\n\npython\n\nfrom fave_recode.relations import in_relation\nin_relation('x', 'xyz')\n\nTrue\n\n\n\nParameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side object\nrequired\n\n\nrhs\nAny\nright hand side object (must work with in)\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
-  },
-  {
-    "objectID": "reference/relations.html#fave_recode.relations.not_in_relation",
-    "href": "reference/relations.html#fave_recode.relations.not_in_relation",
-    "title": "relations",
-    "section": "not_in_relation",
-    "text": "not_in_relation\nrelations.not_in_relation(lhs, rhs)\nIs lhs not in rhs\n\n\npython\n\nfrom fave_recode.relations import not_in_relation\n\nnot_in_relation('x', 'xyz')\n\nFalse\n\n\n\nParameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side (must work with in)\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
-  },
-  {
-    "objectID": "reference/relations.html#fave_recode.relations.rematches_relation",
-    "href": "reference/relations.html#fave_recode.relations.rematches_relation",
-    "title": "relations",
-    "section": "rematches_relation",
-    "text": "rematches_relation\nrelations.rematches_relation(lhs, rhs)\nsummary\n\nParameters\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\ndescription\nrequired\n\n\nrhs\nstr\ndescription\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\ndescription"
-  },
-  {
-    "objectID": "reference/fave_recode.relations.rematches_relation.html",
-    "href": "reference/fave_recode.relations.rematches_relation.html",
-    "title": "rematches_relation",
-    "section": "",
-    "text": "relations.rematches_relation(lhs, rhs)\nsummary\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\ndescription\nrequired\n\n\nrhs\nstr\ndescription\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\ndescription"
-  },
-  {
-    "objectID": "reference/fave_recode.relations.rematches_relation.html#parameters",
-    "href": "reference/fave_recode.relations.rematches_relation.html#parameters",
-    "title": "rematches_relation",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\ndescription\nrequired\n\n\nrhs\nstr\ndescription\nrequired"
-  },
-  {
-    "objectID": "reference/fave_recode.relations.rematches_relation.html#returns",
-    "href": "reference/fave_recode.relations.rematches_relation.html#returns",
-    "title": "rematches_relation",
-    "section": "",
-    "text": "Type\nDescription\n\n\n\n\nbool\ndescription"
-  },
-  {
-    "objectID": "reference/relations.equals_relation.html",
-    "href": "reference/relations.equals_relation.html",
-    "title": "relations.equals_relation",
-    "section": "",
-    "text": "relations.equals_relation(lhs, rhs)\nIs lhs == to rhs\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False",
-    "crumbs": [
-      "Relations",
-      "equals, not equals",
-      "relations.equals_relation"
-    ]
-  },
-  {
-    "objectID": "reference/relations.equals_relation.html#parameters",
-    "href": "reference/relations.equals_relation.html#parameters",
-    "title": "relations.equals_relation",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side\nrequired",
-    "crumbs": [
-      "Relations",
-      "equals, not equals",
-      "relations.equals_relation"
-    ]
-  },
-  {
-    "objectID": "reference/relations.equals_relation.html#returns",
-    "href": "reference/relations.equals_relation.html#returns",
-    "title": "relations.equals_relation",
-    "section": "",
-    "text": "Type\nDescription\n\n\n\n\nbool\nTrue or False",
-    "crumbs": [
-      "Relations",
-      "equals, not equals",
-      "relations.equals_relation"
-    ]
-  },
-  {
-    "objectID": "reference/relations.reunmatches_relation.html",
-    "href": "reference/relations.reunmatches_relation.html",
-    "title": "relations.reunmatches_relation",
-    "section": "",
-    "text": "relations.reunmatches_relation(lhs, rhs)\nDoes the lhs not match a regex for the rhs\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\nleft hand side\nrequired\n\n\nrhs\nstr\nright hand side\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False",
-    "crumbs": [
-      "Relations",
-      "Regex match",
-      "relations.reunmatches_relation"
-    ]
-  },
-  {
-    "objectID": "reference/relations.reunmatches_relation.html#parameters",
-    "href": "reference/relations.reunmatches_relation.html#parameters",
-    "title": "relations.reunmatches_relation",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\nleft hand side\nrequired\n\n\nrhs\nstr\nright hand side\nrequired",
-    "crumbs": [
-      "Relations",
-      "Regex match",
-      "relations.reunmatches_relation"
-    ]
-  },
-  {
-    "objectID": "reference/relations.reunmatches_relation.html#returns",
-    "href": "reference/relations.reunmatches_relation.html#returns",
-    "title": "relations.reunmatches_relation",
-    "section": "",
-    "text": "Type\nDescription\n\n\n\n\nbool\nTrue or False",
-    "crumbs": [
-      "Relations",
-      "Regex match",
-      "relations.reunmatches_relation"
-    ]
-  },
-  {
     "objectID": "reference/relations.rematches_relation.html",
     "href": "reference/relations.rematches_relation.html",
     "title": "relations.rematches_relation",
@@ -312,27 +301,6 @@
     ]
   },
   {
-    "objectID": "reference/fave_recode.relations.not_in_relation.html",
-    "href": "reference/fave_recode.relations.not_in_relation.html",
-    "title": "not_in_relation",
-    "section": "",
-    "text": "relations.not_in_relation(lhs, rhs)\nIs lhs not in rhs\npython\n\nfrom fave_recode.relations import not_in_relation\n\nnot_in_relation('x', 'xyz')\n\nFalse"
-  },
-  {
-    "objectID": "reference/fave_recode.relations.not_in_relation.html#parameters",
-    "href": "reference/fave_recode.relations.not_in_relation.html#parameters",
-    "title": "not_in_relation",
-    "section": "Parameters",
-    "text": "Parameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side (must work with in)\nrequired"
-  },
-  {
-    "objectID": "reference/fave_recode.relations.not_in_relation.html#returns",
-    "href": "reference/fave_recode.relations.not_in_relation.html#returns",
-    "title": "not_in_relation",
-    "section": "Returns",
-    "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
-  },
-  {
     "objectID": "getting-started/condition-attributes.html",
     "href": "getting-started/condition-attributes.html",
     "title": "Condition Attributes",
@@ -356,115 +324,6 @@
       "Customizing a recoding scheme",
       "Details",
       "Condition Attributes"
-    ]
-  },
-  {
-    "objectID": "getting-started/rule-scheme-basics.html",
-    "href": "getting-started/rule-scheme-basics.html",
-    "title": "Rule basics",
-    "section": "",
-    "text": "Recoding rule schemes can be written in a yaml file. A very simple rule scheme would be to recode the CMU dictionary label AH0 to a schwa-like character, @. Here’s the contents of a just-schwa.yml file.",
-    "crumbs": [
-      "Get Started",
-      "Customizing a recoding scheme",
-      "Rule basics"
-    ]
-  },
-  {
-    "objectID": "getting-started/rule-scheme-basics.html#anatomy-of-a-rule-scheme",
-    "href": "getting-started/rule-scheme-basics.html#anatomy-of-a-rule-scheme",
-    "title": "Rule basics",
-    "section": "Anatomy of a rule scheme",
-    "text": "Anatomy of a rule scheme\nEvery rule scheme file is a list of rules, which indicated by each line starting a new rule beginning with -.\n\nyaml\n\n# rule skeleton\n- rule: ...\n  ...\n- rule: ...\n  ...\n\nThe Rule Name\nEach rule has a rule name, which is indicated by the text following rule:.\n\n\nThe Rule Conditions\nEach rule also has a list of conditions which can result in true or a false. The schwa rule has just one condition.\n\nyaml\n\nattribute: label\nrelation: ==\nset: AH0\n\nattribute refers to properties of a TextGrid interval. Read more here.\nrelation refers to how the specified attribute relates to the set. Read more here.\nset is some reference value or set of values.\n\nThis condition will return true with a TextGrid interval’s label is equal to (==) the string AH0.\n\n\nThe Rule Outcome\nThe label of a TextGrid interval is replaced with the value in return.",
-    "crumbs": [
-      "Get Started",
-      "Customizing a recoding scheme",
-      "Rule basics"
-    ]
-  },
-  {
-    "objectID": "getting-started/condition-relations.html",
-    "href": "getting-started/condition-relations.html",
-    "title": "Condition Relations",
-    "section": "",
-    "text": "Every rule condition has a boolean “relation” between the attribute and the set. The following relations are defined.",
-    "crumbs": [
-      "Get Started",
-      "Customizing a recoding scheme",
-      "Details",
-      "Condition Relations"
-    ]
-  },
-  {
-    "objectID": "getting-started/condition-relations.html#nonequivalence",
-    "href": "getting-started/condition-relations.html#nonequivalence",
-    "title": "Condition Relations",
-    "section": "(Non)Equivalence",
-    "text": "(Non)Equivalence\nWhen == or != are passed to relation, these will check whether or not the value in the attribute exactly matches the value in the set.\n\n\n\nattribute\nrelation\nset\nreturns\n\n\n\n\n\"AE1\"\n==\n\"AE1\"\ntrue\n\n\n\"AE1\"\n==\n\"AE\"\nfalse\n\n\n\"EH1\"\n!=\n\"AE1\"\ntrue\n\n\n\"AE1\"\n!=\n\"AE1\"\nfalse",
-    "crumbs": [
-      "Get Started",
-      "Customizing a recoding scheme",
-      "Details",
-      "Condition Relations"
-    ]
-  },
-  {
-    "objectID": "getting-started/condition-relations.html#in-not-in-contains-excludes",
-    "href": "getting-started/condition-relations.html#in-not-in-contains-excludes",
-    "title": "Condition Relations",
-    "section": "In, Not In, Contains, Excludes",
-    "text": "In, Not In, Contains, Excludes\nThe following relations can be passed to relation to test containment relationships\n\nin: The value in the attribute is in the set\nnot in: The value in the attribute is not in the set\ncontains: The value in the attribute contains the the set\nexcludes: The value in the attribute does not contain the set\n\n\n\n\nattribute\nrelation\nset\nreturns\n\n\n\n\n\"AE1\"\nin\n[\"AE1\", \"AE0\", \"AE2\"]\ntrue\n\n\n\"AE1\"\nnot in\n[\"AE1\", \"AE0\", \"AE2\"]\nfalse\n\n\n\"AE1\"\ncontains\n\"AE\"\ntrue\n\n\n\"AE1\"\nexcludes\n\"1\"\nfalse",
-    "crumbs": [
-      "Get Started",
-      "Customizing a recoding scheme",
-      "Details",
-      "Condition Relations"
-    ]
-  },
-  {
-    "objectID": "getting-started/condition-relations.html#regex-matching",
-    "href": "getting-started/condition-relations.html#regex-matching",
-    "title": "Condition Relations",
-    "section": "Regex Matching",
-    "text": "Regex Matching\nThese relations test whether the value in attribute is or is not a regex match for set.\n\nrematches: Does the regex in set match the value in attribute\nreunmatches: Does the regex in set not match the value in attribute\n\n\n\n\nattribute\nrelation\nset\nreturns\n\n\n\n\n\"AE1\"\nrematches\n\"[AEIOU]\"\ntrue\n\n\n\"AE1\"\nrematches\n0\nfalse",
-    "crumbs": [
-      "Get Started",
-      "Customizing a recoding scheme",
-      "Details",
-      "Condition Relations"
-    ]
-  },
-  {
-    "objectID": "getting-started/overview.html",
-    "href": "getting-started/overview.html",
-    "title": "Getting started with fave-recode",
-    "section": "",
-    "text": "The idea behind fave-recode is that no matter how much you may adjust the dictionary of a forced-aligner, you may still want to make programmatic changes to the output.",
-    "crumbs": [
-      "Get Started",
-      "Getting started with `fave-recode`"
-    ]
-  },
-  {
-    "objectID": "getting-started/overview.html#installation",
-    "href": "getting-started/overview.html#installation",
-    "title": "Getting started with fave-recode",
-    "section": "Installation",
-    "text": "Installation\nYou can install fave-recode at your system’s command line with pip.\n\nbash\n\npip install fave-recode",
-    "crumbs": [
-      "Get Started",
-      "Getting started with `fave-recode`"
-    ]
-  },
-  {
-    "objectID": "getting-started/overview.html#basic-usage",
-    "href": "getting-started/overview.html#basic-usage",
-    "title": "Getting started with fave-recode",
-    "section": "Basic usage",
-    "text": "Basic usage\nInstallation of the fave-recode python package makes the fave_recode executable, which can also be run at the command line. You can get help with --help\n\nbash\n\nfave_recode --help\n\n\nUsage: fave_recode [OPTIONS]\n\nInputs: [at least 1 required]\n  File inputs. Either a single file with -i or a path with -p. Not both.\n  -i, --input_file FILENAME  single input file\n  -p, --input_path PATH      Path to a set of files\n\nOutputs:\n  -o, --output_file TEXT     An output file name\n  -d, --output_dest PATH     An output directory\n\nOther options:\n  -a, --parser TEXT          Label set parser. Built in options are cmu_parser\n  -s, --scheme TEXT          Recoding scheme. Built in options are cmu2labov\n                             and cmu2phila  [required]\n  -r, --recode_stem TEXT     Stem to append to recoded TextGrid file names\n  -t, --target_tier TEXT     Target tier to recode\n  --help                     Show this message and exit.\n\n\nTo recode a single file, you need to provide fave_recode with, minimally, the input file (the -i flag), and the recoding scheme (with the -s flag). There are a few default recoding schemes that come with fave_recode.\n\nbash\n\nls data\n\n\nKY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid\n\n\n\nbash\n\nfave_recode \\\n  -i data/josef-fruehwald_speaker.TextGrid \\\n  -a cmu_parser \\\n  -s cmu2phila \n\nls data\n\n\nKY25A_1.TextGrid          josef-fruehwald_speaker_recoded.TextGrid\njosef-fruehwald_speaker.TextGrid",
-    "crumbs": [
-      "Get Started",
-      "Getting started with `fave-recode`"
     ]
   },
   {
@@ -528,6 +387,63 @@
     ]
   },
   {
+    "objectID": "getting-started/rule-scheme-basics.html",
+    "href": "getting-started/rule-scheme-basics.html",
+    "title": "Rule basics",
+    "section": "",
+    "text": "Recoding rule schemes can be written in a yaml file. A very simple rule scheme would be to recode the CMU dictionary label AH0 to a schwa-like character, @. Here’s the contents of a just-schwa.yml file.",
+    "crumbs": [
+      "Get Started",
+      "Customizing a recoding scheme",
+      "Rule basics"
+    ]
+  },
+  {
+    "objectID": "getting-started/rule-scheme-basics.html#anatomy-of-a-rule-scheme",
+    "href": "getting-started/rule-scheme-basics.html#anatomy-of-a-rule-scheme",
+    "title": "Rule basics",
+    "section": "Anatomy of a rule scheme",
+    "text": "Anatomy of a rule scheme\nEvery rule scheme file is a list of rules, which indicated by each line starting a new rule beginning with -.\n\nyaml\n\n# rule skeleton\n- rule: ...\n  ...\n- rule: ...\n  ...\n\nThe Rule Name\nEach rule has a rule name, which is indicated by the text following rule:.\n\n\nThe Rule Conditions\nEach rule also has a list of conditions which can result in true or a false. The schwa rule has just one condition.\n\nyaml\n\nattribute: label\nrelation: ==\nset: AH0\n\nattribute refers to properties of a TextGrid interval. Read more here.\nrelation refers to how the specified attribute relates to the set. Read more here.\nset is some reference value or set of values.\n\nThis condition will return true with a TextGrid interval’s label is equal to (==) the string AH0.\n\n\nThe Rule Outcome\nThe label of a TextGrid interval is replaced with the value in return.",
+    "crumbs": [
+      "Get Started",
+      "Customizing a recoding scheme",
+      "Rule basics"
+    ]
+  },
+  {
+    "objectID": "getting-started/overview.html",
+    "href": "getting-started/overview.html",
+    "title": "Getting started with fave-recode",
+    "section": "",
+    "text": "The idea behind fave-recode is that no matter how much you may adjust the dictionary of a forced-aligner, you may still want to make programmatic changes to the output.",
+    "crumbs": [
+      "Get Started",
+      "Getting started with `fave-recode`"
+    ]
+  },
+  {
+    "objectID": "getting-started/overview.html#installation",
+    "href": "getting-started/overview.html#installation",
+    "title": "Getting started with fave-recode",
+    "section": "Installation",
+    "text": "Installation\nYou can install fave-recode at your system’s command line with pip.\n\nbash\n\npip install fave-recode",
+    "crumbs": [
+      "Get Started",
+      "Getting started with `fave-recode`"
+    ]
+  },
+  {
+    "objectID": "getting-started/overview.html#basic-usage",
+    "href": "getting-started/overview.html#basic-usage",
+    "title": "Getting started with fave-recode",
+    "section": "Basic usage",
+    "text": "Basic usage\nInstallation of the fave-recode python package makes the fave_recode executable, which can also be run at the command line. You can get help with --help\n\nbash\n\nfave_recode --help\n\n\nUsage: fave_recode [OPTIONS]\n\nInputs: [at least 1 required]\n  File inputs. Either a single file with -i or a path with -p. Not both.\n  -i, --input_file FILENAME  single input file\n  -p, --input_path PATH      Path to a set of files\n\nOutputs:\n  -o, --output_file TEXT     An output file name\n  -d, --output_dest PATH     An output directory\n\nOther options:\n  -a, --parser TEXT          Label set parser. Built in options are cmu_parser\n  -s, --scheme TEXT          Recoding scheme. Built in options are cmu2labov\n                             and cmu2phila  [required]\n  -r, --recode_stem TEXT     Stem to append to recoded TextGrid file names\n  -t, --target_tier TEXT     Target tier to recode\n  --help                     Show this message and exit.\n\n\nTo recode a single file, you need to provide fave_recode with, minimally, the input file (the -i flag), and the recoding scheme (with the -s flag). There are a few default recoding schemes that come with fave_recode.\n\nbash\n\nls data\n\n\nKY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid\n\n\n\nbash\n\nfave_recode \\\n  -i data/josef-fruehwald_speaker.TextGrid \\\n  -a cmu_parser \\\n  -s cmu2phila \n\nls data\n\n\nKY25A_1.TextGrid          josef-fruehwald_speaker_recoded.TextGrid\njosef-fruehwald_speaker.TextGrid",
+    "crumbs": [
+      "Get Started",
+      "Getting started with `fave-recode`"
+    ]
+  },
+  {
     "objectID": "getting-started/rule-application.html",
     "href": "getting-started/rule-application.html",
     "title": "Rule application",
@@ -564,27 +480,55 @@
     ]
   },
   {
-    "objectID": "getting-started/label_set_parser.html",
-    "href": "getting-started/label_set_parser.html",
-    "title": "Label Set Parsers",
+    "objectID": "getting-started/condition-relations.html",
+    "href": "getting-started/condition-relations.html",
+    "title": "Condition Relations",
     "section": "",
-    "text": "There are some properties of label sets that you might want to include in your output labels. For example, the CMU dictionary encodes vowel stress like so:\nA labelset parser can make these properties available so you can write a recoding rule like so:\nfave_recode has built in parser for CMU labels called cmu_parser that you can include like so",
+    "text": "Every rule condition has a boolean “relation” between the attribute and the set. The following relations are defined.",
     "crumbs": [
       "Get Started",
-      "Labelset Parsing",
-      "Label Set Parsers"
+      "Customizing a recoding scheme",
+      "Details",
+      "Condition Relations"
     ]
   },
   {
-    "objectID": "getting-started/label_set_parser.html#label-set-parser-basics",
-    "href": "getting-started/label_set_parser.html#label-set-parser-basics",
-    "title": "Label Set Parsers",
-    "section": "Label Set Parser Basics",
-    "text": "Label Set Parser Basics\nA labelset parser has two top level attributes\n\nyaml\n\nparser: CMU\nproperties: []\n\nparser just names the parser\nproperties is a list of properties you wish to make available.\n\n\nA property\nA single property that parses primary stress out of the cmu label would look like this:\n\nyaml\n\nname: stress\nupdates: stress\ndefault: \"\"\nrules:\n  - rule: \"1\"\n    conditions: \n      - attribute: label\n        relation: contains\n        set: \"1\"\n        return: \"1\"\nThe rule component is identical to rules for recoding.\nThe updates field defines the variable name you want to use to access the value “1” in our recoding rule.\nUnlike a recoding rule, every segment will be given some value for “stress”, so a default value also needs to be provided.",
+    "objectID": "getting-started/condition-relations.html#nonequivalence",
+    "href": "getting-started/condition-relations.html#nonequivalence",
+    "title": "Condition Relations",
+    "section": "(Non)Equivalence",
+    "text": "(Non)Equivalence\nWhen == or != are passed to relation, these will check whether or not the value in the attribute exactly matches the value in the set.\n\n\n\nattribute\nrelation\nset\nreturns\n\n\n\n\n\"AE1\"\n==\n\"AE1\"\ntrue\n\n\n\"AE1\"\n==\n\"AE\"\nfalse\n\n\n\"EH1\"\n!=\n\"AE1\"\ntrue\n\n\n\"AE1\"\n!=\n\"AE1\"\nfalse",
     "crumbs": [
       "Get Started",
-      "Labelset Parsing",
-      "Label Set Parsers"
+      "Customizing a recoding scheme",
+      "Details",
+      "Condition Relations"
+    ]
+  },
+  {
+    "objectID": "getting-started/condition-relations.html#in-not-in-contains-excludes",
+    "href": "getting-started/condition-relations.html#in-not-in-contains-excludes",
+    "title": "Condition Relations",
+    "section": "In, Not In, Contains, Excludes",
+    "text": "In, Not In, Contains, Excludes\nThe following relations can be passed to relation to test containment relationships\n\nin: The value in the attribute is in the set\nnot in: The value in the attribute is not in the set\ncontains: The value in the attribute contains the the set\nexcludes: The value in the attribute does not contain the set\n\n\n\n\nattribute\nrelation\nset\nreturns\n\n\n\n\n\"AE1\"\nin\n[\"AE1\", \"AE0\", \"AE2\"]\ntrue\n\n\n\"AE1\"\nnot in\n[\"AE1\", \"AE0\", \"AE2\"]\nfalse\n\n\n\"AE1\"\ncontains\n\"AE\"\ntrue\n\n\n\"AE1\"\nexcludes\n\"1\"\nfalse",
+    "crumbs": [
+      "Get Started",
+      "Customizing a recoding scheme",
+      "Details",
+      "Condition Relations"
+    ]
+  },
+  {
+    "objectID": "getting-started/condition-relations.html#regex-matching",
+    "href": "getting-started/condition-relations.html#regex-matching",
+    "title": "Condition Relations",
+    "section": "Regex Matching",
+    "text": "Regex Matching\nThese relations test whether the value in attribute is or is not a regex match for set.\n\nrematches: Does the regex in set match the value in attribute\nreunmatches: Does the regex in set not match the value in attribute\n\n\n\n\nattribute\nrelation\nset\nreturns\n\n\n\n\n\"AE1\"\nrematches\n\"[AEIOU]\"\ntrue\n\n\n\"AE1\"\nrematches\n0\nfalse",
+    "crumbs": [
+      "Get Started",
+      "Customizing a recoding scheme",
+      "Details",
+      "Condition Relations"
     ]
   },
   {
@@ -636,36 +580,27 @@
     ]
   },
   {
-    "objectID": "reference/labelset_parser.LabelSetParser.html",
-    "href": "reference/labelset_parser.LabelSetParser.html",
-    "title": "labelset_parser.LabelSetParser",
+    "objectID": "getting-started/label_set_parser.html",
+    "href": "getting-started/label_set_parser.html",
+    "title": "Label Set Parsers",
     "section": "",
-    "text": "labelset_parser.LabelSetParser(self, parser=None, parser_path=None)\nA labelset parser object\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nparser\ndict\nA dictionary defining the parser rules. Defaults to None.\nNone\n\n\nparser_path\nPath\nA path to a yaml file definition of the parser. Defaults to None.\nNone\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\napply_parser\nApply the parser to a single interval\n\n\nmap_parser\nMap the parser to an entire sequence tier.\n\n\nread_parser\nRead in a yaml file defining the parser\n\n\nvalidate_parser\nValidate wellformedness of parser\n\n\n\n\n\nlabelset_parser.LabelSetParser.apply_parser(obj)\nApply the parser to a single interval\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nA SequenceInterval\nrequired\n\n\n\n\n\n\n\nlabelset_parser.LabelSetParser.map_parser(obj)\nMap the parser to an entire sequence tier.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceTier\nA SequenceTier\nrequired\n\n\n\n\n\n\n\nlabelset_parser.LabelSetParser.read_parser(path)\nRead in a yaml file defining the parser\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\npath\nPath\nPath to the yaml file definition.\nrequired\n\n\n\n\n\n\n\nlabelset_parser.LabelSetParser.validate_parser(parser)\nValidate wellformedness of parser\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nparser\ndict\nparser dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator",
+    "text": "There are some properties of label sets that you might want to include in your output labels. For example, the CMU dictionary encodes vowel stress like so:\nA labelset parser can make these properties available so you can write a recoding rule like so:\nfave_recode has built in parser for CMU labels called cmu_parser that you can include like so",
     "crumbs": [
-      "Label Set Parsers",
-      "labelset_parser.LabelSetParser"
+      "Get Started",
+      "Labelset Parsing",
+      "Label Set Parsers"
     ]
   },
   {
-    "objectID": "reference/labelset_parser.LabelSetParser.html#parameters",
-    "href": "reference/labelset_parser.LabelSetParser.html#parameters",
-    "title": "labelset_parser.LabelSetParser",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nparser\ndict\nA dictionary defining the parser rules. Defaults to None.\nNone\n\n\nparser_path\nPath\nA path to a yaml file definition of the parser. Defaults to None.\nNone",
+    "objectID": "getting-started/label_set_parser.html#label-set-parser-basics",
+    "href": "getting-started/label_set_parser.html#label-set-parser-basics",
+    "title": "Label Set Parsers",
+    "section": "Label Set Parser Basics",
+    "text": "Label Set Parser Basics\nA labelset parser has two top level attributes\n\nyaml\n\nparser: CMU\nproperties: []\n\nparser just names the parser\nproperties is a list of properties you wish to make available.\n\n\nA property\nA single property that parses primary stress out of the cmu label would look like this:\n\nyaml\n\nname: stress\nupdates: stress\ndefault: \"\"\nrules:\n  - rule: \"1\"\n    conditions: \n      - attribute: label\n        relation: contains\n        set: \"1\"\n        return: \"1\"\nThe rule component is identical to rules for recoding.\nThe updates field defines the variable name you want to use to access the value “1” in our recoding rule.\nUnlike a recoding rule, every segment will be given some value for “stress”, so a default value also needs to be provided.",
     "crumbs": [
-      "Label Set Parsers",
-      "labelset_parser.LabelSetParser"
-    ]
-  },
-  {
-    "objectID": "reference/labelset_parser.LabelSetParser.html#methods",
-    "href": "reference/labelset_parser.LabelSetParser.html#methods",
-    "title": "labelset_parser.LabelSetParser",
-    "section": "",
-    "text": "Name\nDescription\n\n\n\n\napply_parser\nApply the parser to a single interval\n\n\nmap_parser\nMap the parser to an entire sequence tier.\n\n\nread_parser\nRead in a yaml file defining the parser\n\n\nvalidate_parser\nValidate wellformedness of parser\n\n\n\n\n\nlabelset_parser.LabelSetParser.apply_parser(obj)\nApply the parser to a single interval\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nA SequenceInterval\nrequired\n\n\n\n\n\n\n\nlabelset_parser.LabelSetParser.map_parser(obj)\nMap the parser to an entire sequence tier.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceTier\nA SequenceTier\nrequired\n\n\n\n\n\n\n\nlabelset_parser.LabelSetParser.read_parser(path)\nRead in a yaml file defining the parser\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\npath\nPath\nPath to the yaml file definition.\nrequired\n\n\n\n\n\n\n\nlabelset_parser.LabelSetParser.validate_parser(parser)\nValidate wellformedness of parser\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nparser\ndict\nparser dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator",
-    "crumbs": [
-      "Label Set Parsers",
-      "labelset_parser.LabelSetParser"
+      "Get Started",
+      "Labelset Parsing",
+      "Label Set Parsers"
     ]
   },
   {
@@ -713,61 +648,135 @@
     ]
   },
   {
-    "objectID": "reference/relations.not_in_relation.html",
-    "href": "reference/relations.not_in_relation.html",
-    "title": "relations.not_in_relation",
+    "objectID": "reference/rule_classes.Condition.html",
+    "href": "reference/rule_classes.Condition.html",
+    "title": "rule_classes.Condition",
     "section": "",
-    "text": "relations.not_in_relation(lhs, rhs)\nIs lhs not in rhs\npython\n\nfrom fave_recode.relations import not_in_relation\n\nnot_in_relation('x', 'xyz')\n\nFalse",
+    "text": "rule_classes.Condition(self, condition)\nA rule condition\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nattribute\nstr\nThe attribute path for a SequenceInterval\n\n\nrelation\nCallable\nThe relation function to be used\n\n\nset\nUnion[str, list]\nThe comparison set\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncheck_condition\nCheck if the condition is met\n\n\nvalidate_condition\nValidate wellformedness of condititions\n\n\n\n\n\nrule_classes.Condition.check_condition(obj)\nCheck if the condition is met\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe sequence interval against which the condition is checked\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False\n\n\n\n\n\n\n\nrule_classes.Condition.validate_condition(condition)\nValidate wellformedness of condititions\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncondition\ndict\ncondition dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator",
     "crumbs": [
-      "Relations",
-      "`in`, `not in`",
-      "relations.not_in_relation"
+      "Rule Classes",
+      "rule_classes.Condition"
     ]
   },
   {
-    "objectID": "reference/relations.not_in_relation.html#parameters",
-    "href": "reference/relations.not_in_relation.html#parameters",
-    "title": "relations.not_in_relation",
+    "objectID": "reference/rule_classes.Condition.html#attributes",
+    "href": "reference/rule_classes.Condition.html#attributes",
+    "title": "rule_classes.Condition",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\nattribute\nstr\nThe attribute path for a SequenceInterval\n\n\nrelation\nCallable\nThe relation function to be used\n\n\nset\nUnion[str, list]\nThe comparison set",
+    "crumbs": [
+      "Rule Classes",
+      "rule_classes.Condition"
+    ]
+  },
+  {
+    "objectID": "reference/rule_classes.Condition.html#methods",
+    "href": "reference/rule_classes.Condition.html#methods",
+    "title": "rule_classes.Condition",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\ncheck_condition\nCheck if the condition is met\n\n\nvalidate_condition\nValidate wellformedness of condititions\n\n\n\n\n\nrule_classes.Condition.check_condition(obj)\nCheck if the condition is met\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nThe sequence interval against which the condition is checked\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False\n\n\n\n\n\n\n\nrule_classes.Condition.validate_condition(condition)\nValidate wellformedness of condititions\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncondition\ndict\ncondition dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator",
+    "crumbs": [
+      "Rule Classes",
+      "rule_classes.Condition"
+    ]
+  },
+  {
+    "objectID": "reference/fave_recode.relations.not_in_relation.html",
+    "href": "reference/fave_recode.relations.not_in_relation.html",
+    "title": "not_in_relation",
+    "section": "",
+    "text": "relations.not_in_relation(lhs, rhs)\nIs lhs not in rhs\npython\n\nfrom fave_recode.relations import not_in_relation\n\nnot_in_relation('x', 'xyz')\n\nFalse"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.not_in_relation.html#parameters",
+    "href": "reference/fave_recode.relations.not_in_relation.html#parameters",
+    "title": "not_in_relation",
     "section": "Parameters",
-    "text": "Parameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side (must work with in)\nrequired",
-    "crumbs": [
-      "Relations",
-      "`in`, `not in`",
-      "relations.not_in_relation"
-    ]
+    "text": "Parameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side (must work with in)\nrequired"
   },
   {
-    "objectID": "reference/relations.not_in_relation.html#returns",
-    "href": "reference/relations.not_in_relation.html#returns",
-    "title": "relations.not_in_relation",
+    "objectID": "reference/fave_recode.relations.not_in_relation.html#returns",
+    "href": "reference/fave_recode.relations.not_in_relation.html#returns",
+    "title": "not_in_relation",
     "section": "Returns",
-    "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False",
-    "crumbs": [
-      "Relations",
-      "`in`, `not in`",
-      "relations.not_in_relation"
-    ]
+    "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
   },
   {
-    "objectID": "reference/fave_recode.relations.excludes_relation.html",
-    "href": "reference/fave_recode.relations.excludes_relation.html",
-    "title": "excludes_relation",
+    "objectID": "reference/relations.html",
+    "href": "reference/relations.html",
+    "title": "relations",
     "section": "",
-    "text": "relations.excludes_relation(lhs, rhs)\nDoes lhs not contain rhs\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side (must work with in)\nrequired\n\n\nrhs\nAny\nright handnside\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+    "text": "relations\nFunctions defining Boolean relations between lhs (the rule conditions attribute) and the rhs (the rule condition set1)"
   },
   {
-    "objectID": "reference/fave_recode.relations.excludes_relation.html#parameters",
-    "href": "reference/fave_recode.relations.excludes_relation.html#parameters",
-    "title": "excludes_relation",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side (must work with in)\nrequired\n\n\nrhs\nAny\nright handnside\nrequired"
+    "objectID": "reference/relations.html#functions",
+    "href": "reference/relations.html#functions",
+    "title": "relations",
+    "section": "Functions",
+    "text": "Functions\n\n\n\nName\nDescription\n\n\n\n\ncontains_relation\nDoes lhs contain rhs?\n\n\nequals_relation\nIs lhs == to rhs\n\n\nexcludes_relation\nDoes lhs not contain rhs\n\n\nin_relation\nIs lhs in rhs?\n\n\nnot_in_relation\nIs lhs not in rhs\n\n\nrematches_relation\nsummary"
   },
   {
-    "objectID": "reference/fave_recode.relations.excludes_relation.html#returns",
-    "href": "reference/fave_recode.relations.excludes_relation.html#returns",
-    "title": "excludes_relation",
+    "objectID": "reference/relations.html#fave_recode.relations.contains_relation",
+    "href": "reference/relations.html#fave_recode.relations.contains_relation",
+    "title": "relations",
+    "section": "contains_relation",
+    "text": "contains_relation\nrelations.contains_relation(lhs, rhs)\nDoes lhs contain rhs?\n\n\npython\n\nfrom fave_recode.relations import contains_relation\n\ncontains_relation('xyz', 'x')\n\nTrue\n\n\n\nParameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side (must work with in)\nrequired\n\n\nrhs\nAny\nright hand side\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/relations.html#fave_recode.relations.equals_relation",
+    "href": "reference/relations.html#fave_recode.relations.equals_relation",
+    "title": "relations",
+    "section": "equals_relation",
+    "text": "equals_relation\nrelations.equals_relation(lhs, rhs)\nIs lhs == to rhs\n\nParameters\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\ndescription"
+  },
+  {
+    "objectID": "reference/relations.html#fave_recode.relations.excludes_relation",
+    "href": "reference/relations.html#fave_recode.relations.excludes_relation",
+    "title": "relations",
+    "section": "excludes_relation",
+    "text": "excludes_relation\nrelations.excludes_relation(lhs, rhs)\nDoes lhs not contain rhs\n\nParameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side (must work with in)\nrequired\n\n\nrhs\nAny\nright handnside\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/relations.html#fave_recode.relations.in_relation",
+    "href": "reference/relations.html#fave_recode.relations.in_relation",
+    "title": "relations",
+    "section": "in_relation",
+    "text": "in_relation\nrelations.in_relation(lhs, rhs)\nIs lhs in rhs?\n\n\npython\n\nfrom fave_recode.relations import in_relation\nin_relation('x', 'xyz')\n\nTrue\n\n\n\nParameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side object\nrequired\n\n\nrhs\nAny\nright hand side object (must work with in)\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/relations.html#fave_recode.relations.not_in_relation",
+    "href": "reference/relations.html#fave_recode.relations.not_in_relation",
+    "title": "relations",
+    "section": "not_in_relation",
+    "text": "not_in_relation\nrelations.not_in_relation(lhs, rhs)\nIs lhs not in rhs\n\n\npython\n\nfrom fave_recode.relations import not_in_relation\n\nnot_in_relation('x', 'xyz')\n\nFalse\n\n\n\nParameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side (must work with in)\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+  },
+  {
+    "objectID": "reference/relations.html#fave_recode.relations.rematches_relation",
+    "href": "reference/relations.html#fave_recode.relations.rematches_relation",
+    "title": "relations",
+    "section": "rematches_relation",
+    "text": "rematches_relation\nrelations.rematches_relation(lhs, rhs)\nsummary\n\nParameters\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nstr\ndescription\nrequired\n\n\nrhs\nstr\ndescription\nrequired\n\n\n\n\n\nReturns\n\n\n\nType\nDescription\n\n\n\n\nbool\ndescription"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.contains_relation.html",
+    "href": "reference/fave_recode.relations.contains_relation.html",
+    "title": "contains_relation",
     "section": "",
-    "text": "Type\nDescription\n\n\n\n\nbool\nTrue or False"
+    "text": "relations.contains_relation(lhs, rhs)\nDoes lhs contain rhs?\npython\n\nfrom fave_recode.relations import contains_relation\n\ncontains_relation('xyz', 'x')\n\nTrue"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.contains_relation.html#parameters",
+    "href": "reference/fave_recode.relations.contains_relation.html#parameters",
+    "title": "contains_relation",
+    "section": "Parameters",
+    "text": "Parameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side (must work with in)\nrequired\n\n\nrhs\nAny\nright hand side\nrequired"
+  },
+  {
+    "objectID": "reference/fave_recode.relations.contains_relation.html#returns",
+    "href": "reference/fave_recode.relations.contains_relation.html#returns",
+    "title": "contains_relation",
+    "section": "Returns",
+    "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
   },
   {
     "objectID": "reference/labelset_parser.LabelSetParserProperties.html",
@@ -803,25 +812,37 @@
     ]
   },
   {
-    "objectID": "reference/fave_recode.relations.contains_relation.html",
-    "href": "reference/fave_recode.relations.contains_relation.html",
-    "title": "contains_relation",
+    "objectID": "reference/labelset_parser.LabelSetParser.html",
+    "href": "reference/labelset_parser.LabelSetParser.html",
+    "title": "labelset_parser.LabelSetParser",
     "section": "",
-    "text": "relations.contains_relation(lhs, rhs)\nDoes lhs contain rhs?\npython\n\nfrom fave_recode.relations import contains_relation\n\ncontains_relation('xyz', 'x')\n\nTrue"
+    "text": "labelset_parser.LabelSetParser(self, parser=None, parser_path=None)\nA labelset parser object\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nparser\ndict\nA dictionary defining the parser rules. Defaults to None.\nNone\n\n\nparser_path\nPath\nA path to a yaml file definition of the parser. Defaults to None.\nNone\n\n\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\napply_parser\nApply the parser to a single interval\n\n\nmap_parser\nMap the parser to an entire sequence tier.\n\n\nread_parser\nRead in a yaml file defining the parser\n\n\nvalidate_parser\nValidate wellformedness of parser\n\n\n\n\n\nlabelset_parser.LabelSetParser.apply_parser(obj)\nApply the parser to a single interval\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nA SequenceInterval\nrequired\n\n\n\n\n\n\n\nlabelset_parser.LabelSetParser.map_parser(obj)\nMap the parser to an entire sequence tier.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceTier\nA SequenceTier\nrequired\n\n\n\n\n\n\n\nlabelset_parser.LabelSetParser.read_parser(path)\nRead in a yaml file defining the parser\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\npath\nPath\nPath to the yaml file definition.\nrequired\n\n\n\n\n\n\n\nlabelset_parser.LabelSetParser.validate_parser(parser)\nValidate wellformedness of parser\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nparser\ndict\nparser dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator",
+    "crumbs": [
+      "Label Set Parsers",
+      "labelset_parser.LabelSetParser"
+    ]
   },
   {
-    "objectID": "reference/fave_recode.relations.contains_relation.html#parameters",
-    "href": "reference/fave_recode.relations.contains_relation.html#parameters",
-    "title": "contains_relation",
-    "section": "Parameters",
-    "text": "Parameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side (must work with in)\nrequired\n\n\nrhs\nAny\nright hand side\nrequired"
+    "objectID": "reference/labelset_parser.LabelSetParser.html#parameters",
+    "href": "reference/labelset_parser.LabelSetParser.html#parameters",
+    "title": "labelset_parser.LabelSetParser",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nparser\ndict\nA dictionary defining the parser rules. Defaults to None.\nNone\n\n\nparser_path\nPath\nA path to a yaml file definition of the parser. Defaults to None.\nNone",
+    "crumbs": [
+      "Label Set Parsers",
+      "labelset_parser.LabelSetParser"
+    ]
   },
   {
-    "objectID": "reference/fave_recode.relations.contains_relation.html#returns",
-    "href": "reference/fave_recode.relations.contains_relation.html#returns",
-    "title": "contains_relation",
-    "section": "Returns",
-    "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False"
+    "objectID": "reference/labelset_parser.LabelSetParser.html#methods",
+    "href": "reference/labelset_parser.LabelSetParser.html#methods",
+    "title": "labelset_parser.LabelSetParser",
+    "section": "",
+    "text": "Name\nDescription\n\n\n\n\napply_parser\nApply the parser to a single interval\n\n\nmap_parser\nMap the parser to an entire sequence tier.\n\n\nread_parser\nRead in a yaml file defining the parser\n\n\nvalidate_parser\nValidate wellformedness of parser\n\n\n\n\n\nlabelset_parser.LabelSetParser.apply_parser(obj)\nApply the parser to a single interval\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceInterval\nA SequenceInterval\nrequired\n\n\n\n\n\n\n\nlabelset_parser.LabelSetParser.map_parser(obj)\nMap the parser to an entire sequence tier.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nobj\nSequenceTier\nA SequenceTier\nrequired\n\n\n\n\n\n\n\nlabelset_parser.LabelSetParser.read_parser(path)\nRead in a yaml file defining the parser\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\npath\nPath\nPath to the yaml file definition.\nrequired\n\n\n\n\n\n\n\nlabelset_parser.LabelSetParser.validate_parser(parser)\nValidate wellformedness of parser\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nparser\ndict\nparser dictionary\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nException\nAny errors raised by the validator",
+    "crumbs": [
+      "Label Set Parsers",
+      "labelset_parser.LabelSetParser"
+    ]
   },
   {
     "objectID": "reference/relations.not_equals_relation.html",
@@ -860,63 +881,6 @@
     ]
   },
   {
-    "objectID": "reference/relations.in_relation.html",
-    "href": "reference/relations.in_relation.html",
-    "title": "relations.in_relation",
-    "section": "",
-    "text": "relations.in_relation(lhs, rhs)\nIs lhs in rhs?\npython\n\nfrom fave_recode.relations import in_relation\nin_relation('x', 'xyz')\n\nTrue",
-    "crumbs": [
-      "Relations",
-      "`in`, `not in`",
-      "relations.in_relation"
-    ]
-  },
-  {
-    "objectID": "reference/relations.in_relation.html#parameters",
-    "href": "reference/relations.in_relation.html#parameters",
-    "title": "relations.in_relation",
-    "section": "Parameters",
-    "text": "Parameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side object\nrequired\n\n\nrhs\nAny\nright hand side object (must work with in)\nrequired",
-    "crumbs": [
-      "Relations",
-      "`in`, `not in`",
-      "relations.in_relation"
-    ]
-  },
-  {
-    "objectID": "reference/relations.in_relation.html#returns",
-    "href": "reference/relations.in_relation.html#returns",
-    "title": "relations.in_relation",
-    "section": "Returns",
-    "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False",
-    "crumbs": [
-      "Relations",
-      "`in`, `not in`",
-      "relations.in_relation"
-    ]
-  },
-  {
-    "objectID": "reference/fave_recode.relations.equals_relation.html",
-    "href": "reference/fave_recode.relations.equals_relation.html",
-    "title": "equals_relation",
-    "section": "",
-    "text": "relations.equals_relation(lhs, rhs)\nIs lhs == to rhs\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side\nrequired\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nbool\ndescription"
-  },
-  {
-    "objectID": "reference/fave_recode.relations.equals_relation.html#parameters",
-    "href": "reference/fave_recode.relations.equals_relation.html#parameters",
-    "title": "equals_relation",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side\nrequired"
-  },
-  {
-    "objectID": "reference/fave_recode.relations.equals_relation.html#returns",
-    "href": "reference/fave_recode.relations.equals_relation.html#returns",
-    "title": "equals_relation",
-    "section": "",
-    "text": "Type\nDescription\n\n\n\n\nbool\ndescription"
-  },
-  {
     "objectID": "reference/fave_recode.relations.negate.html",
     "href": "reference/fave_recode.relations.negate.html",
     "title": "negate",
@@ -936,5 +900,41 @@
     "title": "negate",
     "section": "Returns",
     "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nCallable\nnot f()"
+  },
+  {
+    "objectID": "reference/relations.not_in_relation.html",
+    "href": "reference/relations.not_in_relation.html",
+    "title": "relations.not_in_relation",
+    "section": "",
+    "text": "relations.not_in_relation(lhs, rhs)\nIs lhs not in rhs\npython\n\nfrom fave_recode.relations import not_in_relation\n\nnot_in_relation('x', 'xyz')\n\nFalse",
+    "crumbs": [
+      "Relations",
+      "`in`, `not in`",
+      "relations.not_in_relation"
+    ]
+  },
+  {
+    "objectID": "reference/relations.not_in_relation.html#parameters",
+    "href": "reference/relations.not_in_relation.html#parameters",
+    "title": "relations.not_in_relation",
+    "section": "Parameters",
+    "text": "Parameters\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlhs\nAny\nleft hand side\nrequired\n\n\nrhs\nAny\nright hand side (must work with in)\nrequired",
+    "crumbs": [
+      "Relations",
+      "`in`, `not in`",
+      "relations.not_in_relation"
+    ]
+  },
+  {
+    "objectID": "reference/relations.not_in_relation.html#returns",
+    "href": "reference/relations.not_in_relation.html#returns",
+    "title": "relations.not_in_relation",
+    "section": "Returns",
+    "text": "Returns\n\n\n\nType\nDescription\n\n\n\n\nbool\nTrue or False",
+    "crumbs": [
+      "Relations",
+      "`in`, `not in`",
+      "relations.not_in_relation"
+    ]
   }
 ]
