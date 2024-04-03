@@ -105,6 +105,8 @@ class LabelSetParserProperties():
             self.validate_property(property)
             self.rules = RuleSet(property["rules"])
             self.updates = property["updates"]
+            for rule in self.rules.rules:
+                rule.updates = self.updates
             self.default = property["default"]
         else:
             self.rules = RuleSet()
