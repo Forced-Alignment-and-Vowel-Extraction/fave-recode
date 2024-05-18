@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Processing a directory</title>
+<title>fave-recode - Processing a directory</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,6 +117,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">fave-recode</span>
+    </a>
+  </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -342,7 +347,7 @@ If there is already a file in the output location:
 <pre class="langname">bash</pre>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="ef981157" class="cell" data-execution_count="2">
+<div id="3db6533d" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
 <pre><code>KY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid</code></pre>
 </div>
@@ -352,7 +357,7 @@ If there is already a file in the output location:
 </div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fave_recode</span> <span class="at">-p</span> data <span class="at">-s</span> cmu2labov</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="8bd42327" class="cell" data-execution_count="3">
+<div id="98da5bbf" class="cell" data-execution_count="3">
 <div class="langname">
 <pre class="langname">python</pre>
 </div>
@@ -387,7 +392,7 @@ This will happen:
 <pre class="langname">bash</pre>
 </div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="57c53cd7" class="cell" data-execution_count="5">
+<div id="60a91c70" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
 <pre><code>KY25A_1.TextGrid  josef-fruehwald_speaker.TextGrid</code></pre>
 </div>
@@ -397,7 +402,7 @@ This will happen:
 </div>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fave_recode</span> <span class="at">-p</span> data <span class="at">-s</span> cmu2labov <span class="at">-r</span> _labovcode</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="181ff7cb" class="cell" data-execution_count="6">
+<div id="df268dcc" class="cell" data-execution_count="6">
 <div class="langname">
 <pre class="langname">python</pre>
 </div>
@@ -459,7 +464,7 @@ If there the output directory doesn’t exist:
 </div>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fave_recode</span> <span class="at">-p</span> data <span class="at">-s</span> cmu2labov <span class="at">-d</span> output</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="d2f1a9db" class="cell" data-execution_count="9">
+<div id="282a56da" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
 <pre><code>KY25A_1_recoded.TextGrid  josef-fruehwald_speaker_recoded.TextGrid</code></pre>
 </div>
