@@ -1,83 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/relations.reunmatches_relation.html</loc>
-    <lastmod>2025-02-25T21:07:38.960Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/rule_classes.Condition.html</loc>
-    <lastmod>2025-02-25T21:07:38.897Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/rule_classes.RuleSet.html</loc>
-    <lastmod>2025-02-25T21:07:38.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/rule_classes.Rule.html</loc>
-    <lastmod>2025-02-25T21:07:38.908Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/labelset_parser.LabelSetParser.html</loc>
-    <lastmod>2025-02-25T21:07:38.933Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/index.html</loc>
-    <lastmod>2025-02-25T21:07:38.874Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/getting-started/condition-attributes.html</loc>
-    <lastmod>2025-02-25T21:07:14.640Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/getting-started/label_set_parser.html</loc>
-    <lastmod>2025-02-25T21:07:14.640Z</lastmod>
-  </url>
-  <url>
     <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/getting-started/single-file.html</loc>
-    <lastmod>2025-02-25T21:07:14.641Z</lastmod>
+    <lastmod>2025-02-25T21:08:24.043Z</lastmod>
   </url>
   <url>
     <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/getting-started/directory.html</loc>
-    <lastmod>2025-02-25T21:07:14.640Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/getting-started/rule-application.html</loc>
-    <lastmod>2025-02-25T21:07:14.641Z</lastmod>
+    <lastmod>2025-02-25T21:08:24.042Z</lastmod>
   </url>
   <url>
     <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/getting-started/rule-scheme-basics.html</loc>
-    <lastmod>2025-02-25T21:07:14.641Z</lastmod>
+    <lastmod>2025-02-25T21:08:24.043Z</lastmod>
   </url>
   <url>
-    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/getting-started/condition-relations.html</loc>
-    <lastmod>2025-02-25T21:07:14.640Z</lastmod>
+    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/getting-started/condition-attributes.html</loc>
+    <lastmod>2025-02-25T21:08:24.041Z</lastmod>
   </url>
   <url>
-    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/getting-started/overview.html</loc>
-    <lastmod>2025-02-25T21:07:14.641Z</lastmod>
+    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/rule_classes.Rule.html</loc>
+    <lastmod>2025-02-25T21:08:48.210Z</lastmod>
   </url>
   <url>
-    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/relations.not_in_relation.html</loc>
-    <lastmod>2025-02-25T21:07:38.946Z</lastmod>
+    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/index.html</loc>
+    <lastmod>2025-02-25T21:08:48.179Z</lastmod>
   </url>
   <url>
-    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/labelset_parser.LabelSetParserProperties.html</loc>
-    <lastmod>2025-02-25T21:07:38.939Z</lastmod>
+    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/labelset_parser.LabelSetParser.html</loc>
+    <lastmod>2025-02-25T21:08:48.235Z</lastmod>
   </url>
   <url>
-    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/relations.in_relation.html</loc>
-    <lastmod>2025-02-25T21:07:38.943Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/relations.not_equals_relation.html</loc>
-    <lastmod>2025-02-25T21:07:38.953Z</lastmod>
+    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/rule_classes.RuleSet.html</loc>
+    <lastmod>2025-02-25T21:08:48.221Z</lastmod>
   </url>
   <url>
     <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/relations.equals_relation.html</loc>
-    <lastmod>2025-02-25T21:07:38.950Z</lastmod>
+    <lastmod>2025-02-25T21:08:48.251Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/relations.not_in_relation.html</loc>
+    <lastmod>2025-02-25T21:08:48.248Z</lastmod>
   </url>
   <url>
     <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/relations.rematches_relation.html</loc>
-    <lastmod>2025-02-25T21:07:38.957Z</lastmod>
+    <lastmod>2025-02-25T21:08:48.258Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/labelset_parser.LabelSetParserProperties.html</loc>
+    <lastmod>2025-02-25T21:08:48.241Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/relations.not_equals_relation.html</loc>
+    <lastmod>2025-02-25T21:08:48.254Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/relations.reunmatches_relation.html</loc>
+    <lastmod>2025-02-25T21:08:48.261Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/rule_classes.Condition.html</loc>
+    <lastmod>2025-02-25T21:08:48.200Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/reference/relations.in_relation.html</loc>
+    <lastmod>2025-02-25T21:08:48.244Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/getting-started/rule-application.html</loc>
+    <lastmod>2025-02-25T21:08:24.043Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/getting-started/condition-relations.html</loc>
+    <lastmod>2025-02-25T21:08:24.042Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/getting-started/overview.html</loc>
+    <lastmod>2025-02-25T21:08:24.042Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Forced-Alignment-and-Vowel-Extraction.github.io/fave-recode/getting-started/label_set_parser.html</loc>
+    <lastmod>2025-02-25T21:08:24.042Z</lastmod>
   </url>
 </urlset>
