@@ -16,11 +16,12 @@ repository = "https://github.com/Forced-Alignment-and-Vowel-Extraction/fave-reco
 
 [tool.poetry.dependencies]
 python = "^3.10"
-aligned-textgrid = "^0.6.4"
+aligned-textgrid = "^0.7.8"
 pyyaml = "^6.0"
 cerberus = "^1.3.5"
 click = "^8.1.7"
 cloup = "^3.0.2"
+pytest = "<8.0.0"
 
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.0.0"
