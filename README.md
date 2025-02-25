@@ -3,7 +3,7 @@
 
 ![PyPI](https://img.shields.io/pypi/v/fave-recode.png)
 [![codecov](https://codecov.io/gh/Forced-Alignment-and-Vowel-Extraction/fave-recode/graph/badge.svg?token=C23B1H3DAX)](https://codecov.io/gh/Forced-Alignment-and-Vowel-Extraction/fave-recode)
-[![Maintainability](https://api.codeclimate.com/v1/badges/2375ddfef5d77ba1681d/maintainability.png)](https://codeclimate.com/github/Forced-Alignment-and-Vowel-Extraction/fave-recode/maintainability)
+[![Maintainability](https://qlty.sh/badges/0333bba8-0ca6-4f22-b503-e4994cdce96b/maintainability.svg)](https://qlty.sh/gh/Forced-Alignment-and-Vowel-Extraction/projects/fave-recode)
 [![FAVE Python
 CI](https://github.com/Forced-Alignment-and-Vowel-Extraction/fave-recode/actions/workflows/test-and-run.yml/badge.svg?branch=dev)](https://github.com/Forced-Alignment-and-Vowel-Extraction/fave-recode/actions/workflows/test-and-run.yml)
 [![Build
