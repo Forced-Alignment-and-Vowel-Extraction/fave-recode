@@ -48,7 +48,7 @@ jobs:
     - name: Test with pytest
       run: |
         source $VENV
-        pytest -p no:faulthandler
+        pytest --cov=./ --cov-report=xml -p no:faulthandler
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v5
       with:
