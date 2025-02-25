@@ -3,6 +3,7 @@ project:
   output-dir: _site
 
 website:
+  title: fave-recode
   page-navigation: true
   image: assets/logo.png
   favicon: assets/logo.png
@@ -47,8 +48,7 @@ format:
       dark: [darkly, styles/dark.scss]
     css: styles/styles.css
     toc: true
-    filters: 
-      - codeblocklabel
+  
 
 # tell quarto to read the generated sidebar
 metadata-files:
@@ -56,14 +56,20 @@ metadata-files:
 
 filters:
   - "interlinks"
+  - codeblocklabel
 
 interlinks:
+  fast: true
   sources:
+    numpy:
+      url: https://numpy.org/doc/stable/
     python:
       url: https://docs.python.org/3/
-    griffe:
-      url: https://mkdocstrings.github.io/griffe/
+    aligned_textgrid:
+      url: https://forced-alignment-and-vowel-extraction.github.io/alignedTextGrid/ 
 
+resources: 
+  - objects.inv
 
 quartodoc:
   # the name used to import the package you want to create reference docs for
