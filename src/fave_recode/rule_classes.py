@@ -2,7 +2,7 @@ from aligned_textgrid.sequences.sequences import SequenceInterval
 from aligned_textgrid.sequences.tiers import SequenceTier
 from fave_recode.ruleschema import rule_validator, condition_validator
 from fave_recode.relations import relation_dict
-from collections.abc import Callable
+from collections.abc import Callable, Sequence
 import functools
 import yaml
 import re
@@ -82,7 +82,7 @@ class Rule:
     """
     def __init__(
             self,
-            rule: dict|'Rule'
+            rule: dict
     ):
         if isinstance(rule, Rule):
             self.conditions = rule.conditions
@@ -155,7 +155,7 @@ class Rule:
         output = self.output.format(**feature_dict)
         return output
 
-class RuleSet:
+class RuleSet(Sequence):
     """A rule set class
 
     Pass `RuleSet` either a rules dictionary, or a path 
@@ -180,7 +180,13 @@ class RuleSet:
             self.read_ruleset(rule_path)
     
     def __repr__(self):
-        return f"A ruleset with {len(self.rules)} rules"
+        return f"A ruleset with {len(self)} rules"
+    
+    def __getitem__(self, idx):
+        return self.rules[idx]
+
+    def __len__(self):
+        return len(self.rules)
 
     def __add__(self, value:'RuleSet')->'RuleSet':
         if not isinstance(value, RuleSet):
