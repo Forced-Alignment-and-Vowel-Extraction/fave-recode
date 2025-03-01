@@ -212,3 +212,9 @@ class TestRuleSet:
 
         these_rules.apply_ruleset(this_phone)
         assert this_phone.label == "AE"
+
+    def test_ruleset_add(self):
+        these_rules = RuleSet(rule_path=cmu2labov_path)
+        new_rules = these_rules+these_rules
+
+        assert len(new_rules) == len(these_rules)*2
