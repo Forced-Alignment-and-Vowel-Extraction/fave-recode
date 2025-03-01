@@ -82,8 +82,16 @@ class Rule:
     """
     def __init__(
             self,
-            rule: dict
+            rule: dict|'Rule'
     ):
+        if isinstance(rule, Rule):
+            self.conditions = rule.conditions
+            self.rule = rule.rule
+            self.name = rule.name
+            self.output = rule.output
+            self.updates = rule.updates
+            return
+        
         self.validate_rule(rule)
         self.conditions = [Condition(x) for x in rule["conditions"]]
         self.rule = rule["rule"]
@@ -173,6 +181,14 @@ class RuleSet:
     
     def __repr__(self):
         return f"A ruleset with {len(self.rules)} rules"
+
+    def __add__(self, value:'RuleSet')->'RuleSet':
+        if not isinstance(value, RuleSet):
+            raise ValueError
+        
+        return RuleSet(
+            rules= self.rules + value.rules
+        )
     
     def apply_ruleset(
             self,
